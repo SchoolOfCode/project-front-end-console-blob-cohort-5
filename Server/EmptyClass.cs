@@ -2,7 +2,7 @@ using System;
 
 namespace Server
 {
-    public class WeatherForecast
+    public class ToBeNamed
     {
         public DateTime Date { get; set; }
 
