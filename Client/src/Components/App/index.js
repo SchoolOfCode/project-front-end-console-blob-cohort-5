@@ -6,11 +6,11 @@ function App() {
   const data = [
     {
       Value: 1,
-      label: "Netherlands",
+      label: "Switzerland",
     },
     {
       value: 2,
-      label: "England",
+      label: "united-kingdom",
     },
     {
       value: 3,
@@ -18,7 +18,7 @@ function App() {
     },
   ];
 
-  const [query, setQuery] = useState('England');
+  const [query, setQuery] = useState('United-Kingdom');
   const [search, setSearch] = useState(' ');
   // use effect takes an arrow function as a parameter, when the app renders the first time, it runs useEffect
   useEffect(() => {
@@ -27,11 +27,11 @@ function App() {
 
   const getRecipes = async () => {
     const response = await fetch(
-      `https://api.covid19api.com/premium/country/data/${query}`
+      `https://api.covid19api.com/country/${query}/status/confirmed/live?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z`
     );
-    const data = await response.json();
-    setSearch(data.hits);
-    console.log(data);
+    const resData = await response.json();
+    setSearch(resData[0]);
+    console.log(resData);
   };
 
   const getSearch = e => {
@@ -40,10 +40,15 @@ function App() {
     setSearch(' '); // after we click enter to run the search it cleans the search field
   };
 
+  const onClick = () => {
+    // e.preventDefault();
+    setQuery(data);
+  };
+
   return (
     <div className="App">
       Dropdown Menu... <br />
-      <Select onChange= {setQuery} options={data} />
+      <Select onClick= {onClick} options={data} />
     </div>
   );
 }
