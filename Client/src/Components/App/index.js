@@ -1,45 +1,49 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
-//import React, { useEffect, useState } from "react"
-import React from "react"
->>>>>>> 6c7348cbb048bf462770ca842fa24450bf2d2ede
+import React, { useState,useEffect } from 'react';
 import './App.css';
 import Select from 'react-select';
 
 function App() {
-
-<<<<<<< HEAD
   const data = [
-
     {
       Value: 1,
-      label: "Netherlands"
+      label: "Netherlands",
     },
     {
       value: 2,
-      label: "England"
+      label: "England",
     },
     {
       value: 3,
-      label: "France"
-    }
+      label: "France",
+    },
   ];
+
+  const [query, setQuery] = useState('England');
+  const [search, setSearch] = useState(' ');
+  // use effect takes an arrow function as a parameter, when the app renders the first time, it runs useEffect
+  useEffect(() => {
+    getRecipes();
+  }, [query]);
+
+  const getRecipes = async () => {
+    const response = await fetch(
+      `https://api.covid19api.com/premium/country/data/${query}`
+    );
+    const data = await response.json();
+    setSearch(data.hits);
+    console.log(data);
+  };
+
+  const getSearch = e => {
+    e.preventDefault();
+    setQuery(search);
+    setSearch(' '); // after we click enter to run the search it cleans the search field
+  };
 
   return (
     <div className="App">
       Dropdown Menu... <br />
-
-      <Select
-        options={data}
-      />
-=======
-  //const []
-  return (
-    <div className="App">
-      <input className="search-bar" type= "text"/> 
-      Console.blob("cohort5 yes!!!")
->>>>>>> 6c7348cbb048bf462770ca842fa24450bf2d2ede
+      <Select onChange= {setQuery} options={data} />
     </div>
   );
 }
