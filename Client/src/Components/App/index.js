@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+//import React, { useEffect, useState } from "react"
+import React from "react"
+>>>>>>> 6c7348cbb048bf462770ca842fa24450bf2d2ede
 import './App.css';
 import Select from 'react-select';
 
 function App() {
 
+<<<<<<< HEAD
   const data = [
 
     {
@@ -27,6 +33,13 @@ function App() {
       <Select
         options={data}
       />
+=======
+  //const []
+  return (
+    <div className="App">
+      <input className="search-bar" type= "text"/> 
+      Console.blob("cohort5 yes!!!")
+>>>>>>> 6c7348cbb048bf462770ca842fa24450bf2d2ede
     </div>
   );
 }
