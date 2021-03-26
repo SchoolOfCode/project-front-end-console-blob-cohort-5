@@ -9,7 +9,8 @@ import SearchBar from "./SearchBar.js";
 function App() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] = useState([]);
-  const [searchCountry] = useState("")
+  const [searchCountry, setSearchCountry] = useState("")
+  
 
   useEffect(() => {
     axios
@@ -117,7 +118,7 @@ function App() {
 
       </CardDeck>
 
-      <SearchBar />
+      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
 
       <Columns queries={queries}>{countries}</Columns>
     </div>

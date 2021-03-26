@@ -2,8 +2,8 @@ import Form from "react-bootstrap/Form";
 import React, { useState } from 'react';
 
 
-function SearchBar() {
-    const [setSearchCountry] = useState("")
+function SearchBar({searchCountry, setSearchCountry}) {
+  
     return (
         < Form >
             <Form.Group controlId="formGroupEmail">
