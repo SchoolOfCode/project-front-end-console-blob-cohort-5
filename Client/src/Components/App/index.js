@@ -1,56 +1,137 @@
-import React, { useState,useEffect } from 'react';
-import './App.css';
-import Select from 'react-select';
+
+import React, { useEffect, useState } from 'react';
+import Card from 'react-bootstrap/Card';
+import CardDeck from "react-bootstrap/CardDeck";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from "axios";
+import Columns from "react-columns";
+import SearchBar from "./SearchBar.js";
+import Button from '../Button' //button component
 
 function App() {
-  const data = [
-    {
-      Value: 1,
-      label: "Switzerland",
-    },
-    {
-      value: 2,
-      label: "united-kingdom",
-    },
-    {
-      value: 3,
-      label: "France",
-    },
-  ];
+  const [latest, setLatest] = useState([]);
+  const [results, setResults] = useState([]);
+  const [searchCountry, setSearchCountry] = useState("")
+  
 
-  const [query, setQuery] = useState('United-Kingdom');
-  const [search, setSearch] = useState(' ');
-  // use effect takes an arrow function as a parameter, when the app renders the first time, it runs useEffect
   useEffect(() => {
-    getRecipes();
-  }, [query]);
+    axios
+      .all([
+        axios.get("https://corona.lmao.ninja/v2/all"),
+        axios.get("https://corona.lmao.ninja/v2/countries")
+      ])
+      .then(responseArr => {
+        setLatest(responseArr[0].data);
+        setResults(responseArr[1].data);
+        console.log(responseArr[1].data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
 
-  const getRecipes = async () => {
-    const response = await fetch(
-      `https://api.covid19api.com/country/${query}/status/confirmed/live?from=2020-03-01T00:00:00Z&to=2020-04-01T00:00:00Z`
+  const date = new Date(parseInt(latest.updated));
+  const lastUpdated = date.toString();
+
+
+  const filterCountry = results.filter(item => {
+    return searchCountry !== "" ? item.country === searchCountry : item;
+  })
+
+  // reuseable component
+  const countries = filterCountry.map((data, i) => {
+    return (
+      <Card
+        key={i}
+        bg="light"
+        text="dark"
+        className="text-center"
+        style={{ margin: "10px" }}
+      >
+        <Card.Img variant="top" src={data.countryInfo.flag} />
+        <Card.Body>
+          <Card.Title>{data.country}</Card.Title>
+          <Card.Text>Cases: {data.cases}</Card.Text>
+          <Card.Text>Deaths: {data.deaths}</Card.Text>
+          <Card.Text>Recovered: {data.recovered}</Card.Text>
+        </Card.Body>
+      </Card>
     );
-    const resData = await response.json();
-    setSearch(resData[0]);
-    console.log(resData);
-  };
+  });
 
-  const getSearch = e => {
-    e.preventDefault();
-    setQuery(search);
-    setSearch(' '); // after we click enter to run the search it cleans the search field
-  };
-
-  const onClick = () => {
-    // e.preventDefault();
-    setQuery(data);
-  };
+  var queries = [{
+    columns: 2,
+    query: 'min-width: 500px'
+  }, {
+    columns: 3,
+    query: 'min-width: 1000px'
+  }];
+  
+  //function for button component
+  function testClick(){ 
+   console.log("component works");
+ }
 
   return (
-    <div className="App">
-      Dropdown Menu... <br />
-      <Select onClick= {onClick} options={data} />
+    <div>
+      <br />
+      <h2 style={{ textAlign: "center" }}>Covid-19 Live Stats</h2>
+      <br />
+      <CardDeck>
+        <Card
+          bg="secondary"
+          text="white"
+          className="text-center"
+          style={{ margin: "10px" }}
+        >
+          <Card.Body>
+            <Card.Title>Cases</Card.Title>
+            <Card.Text>{latest.cases}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small>Last updated {lastUpdated}</small>
+          </Card.Footer>
+        </Card>
+
+        <Card
+          bg="danger"
+          text="white"
+          className="text-center"
+          style={{ margin: "10px" }}
+        >
+          <Card.Body>
+            <Card.Title>Deaths</Card.Title>
+            <Card.Text>{latest.deaths}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small>Last updated {lastUpdated}</small>
+          </Card.Footer>
+        </Card>
+
+        <Card
+          bg="success"
+          text="white"
+          className="text-center"
+          style={{ margin: "10px" }}
+        >
+          <Card.Body>
+            <Card.Title>Recovered</Card.Title>
+            <Card.Text>{latest.recovered}</Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small>Last updated {lastUpdated}</small>
+          </Card.Footer>
+        </Card>
+
+      </CardDeck>
+
+      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
+
+      <Columns queries={queries}>{countries}</Columns>
+    <Button text= "click me" handleclick = {testClick}/>
+
     </div>
   );
-}
 
+  }
 export default App;
