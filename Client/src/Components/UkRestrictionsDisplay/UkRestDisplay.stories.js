@@ -1,20 +1,18 @@
-import Button from "./index";
+import React from "react";
+
+import UKRestrictionsDisplay from "./index.js";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
 export default {
-  title: "Button",
-  component: Button,
+  title: "UKRestrictionsDisplay",
+  component: UKRestrictionsDisplay,
+  argTypes: {data, color, size},
 };
 
-export const button = () => {
+export const uKRestrictionsDisplay = () => {
   return (
     <>
-      <Button
-        handleClick={() => {
-          console.log("Clicked");
-        } } 
-        text="CLICK ME" 
-        variant="button1"
+      <UKRestrictionsDisplay
 
       />
     </>

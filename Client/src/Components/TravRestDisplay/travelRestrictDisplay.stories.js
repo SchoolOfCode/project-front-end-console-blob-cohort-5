@@ -1,4 +1,5 @@
 import React from 'react';
+import UKRestrictionsDisplay from '../UkRestrictionsDisplay';
 import TravelRestrictionsDisplay from "./index";
 
 /* eslint import/no-anonymous-default-export: [2, {"allowObject": true}] */
@@ -11,17 +12,14 @@ export default {
 
 const Template = (args) => <TravelRestrictionsDisplay {...args} />;
 
-export const button = () => {
+export const travelRestrictionsDisplay = () => {
   return (
-    <>
-      <Button
-        handleClick={() => {
-          console.log("Clicked");
-        }}
-        text="CLICK ME"
-        variant="button1"
+    
+      <UKRestrictionsDisplay
 
-      />
-    </>
+      
+   />
+
+     
   );
 };
