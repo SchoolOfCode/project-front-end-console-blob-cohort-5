@@ -13,4 +13,6 @@ function SourceComponent({data, color, size}){
 
 }
 
-export defau;
+
+export default SourceComponent;
+

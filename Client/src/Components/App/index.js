@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import Card from 'react-bootstrap/Card';
 import CardDeck from "react-bootstrap/CardDeck";
@@ -5,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import Columns from "react-columns";
 import SearchBar from "./SearchBar.js";
+import Button from '../Button' //button component
 
 function App() {
   const [latest, setLatest] = useState([]);
@@ -64,6 +66,11 @@ function App() {
     columns: 3,
     query: 'min-width: 1000px'
   }];
+  
+  //function for button component
+  function testClick(){ 
+   console.log("component works");
+ }
 
   return (
     <div>
@@ -121,8 +128,10 @@ function App() {
       <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
 
       <Columns queries={queries}>{countries}</Columns>
+    <Button text= "click me" handleclick = {testClick}/>
+
     </div>
   );
-}
 
+  }
 export default App;
