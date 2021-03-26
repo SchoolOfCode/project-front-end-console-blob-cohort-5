@@ -1,12 +1,16 @@
 import React from 'react';
 import css from './Button.module.css';
 
-function Button ({text,handleclick}) {
+
+function Button ({text,handleclick, variant,className, ...rest}) {
   
   return (
-  <div>
-   <button onClick= {handleclick}>{text}</button> 
-   </div>
+  
+   <button onClick= {handleclick}>{text}
+           className={cn(css.base, css[variant], className)} 
+   
+   </button> 
+   
   )
 };
 
