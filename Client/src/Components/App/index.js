@@ -4,12 +4,12 @@ import CardDeck from "react-bootstrap/CardDeck";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import Columns from "react-columns";
-import Form from "react-bootstrap/Form";
+import SearchBar from "./SearchBar.js";
 
 function App() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] = useState([]);
-  const [searchCountry, setSearchCountry] = useState("")
+  const [searchCountry] = useState("")
 
   useEffect(() => {
     axios
@@ -51,8 +51,6 @@ function App() {
           <Card.Text>Cases: {data.cases}</Card.Text>
           <Card.Text>Deaths: {data.deaths}</Card.Text>
           <Card.Text>Recovered: {data.recovered}</Card.Text>
-          {/* <Card.Text>Today's cases: {data.todayCases}</Card.Text>
-          <Card.Text>Today's deaths: {data.todayDeaths}</Card.Text> */}
         </Card.Body>
       </Card>
     );
@@ -119,14 +117,7 @@ function App() {
 
       </CardDeck>
 
-      <Form>
-        <Form.Group controlId="formGroupEmail">
-          <Form.Control
-            type="text"
-            placeholder="Search a country"
-            onChange={e => setSearchCountry(e.target.value)} />
-        </Form.Group>
-      </Form>
+      <SearchBar />
 
       <Columns queries={queries}>{countries}</Columns>
     </div>
