@@ -7,7 +7,7 @@ import Button from "./index.js";
 export default {
   title: "Button",
   component: Button,
-  // argTypes: { onClick: { action: "clicked" } },
+  argTypes: { onClick: { action: "clicked" } },
 };
 
 //👇 We create a “template” of how args map to rendering
@@ -17,13 +17,13 @@ export const LargeButton = Template.bind({})
 LargeButton.args = {
   /*👇 The args you need here will depend on your component */
   text: "Click Me",
-  variant: "large"
-
+  variant: "large",
+  primary: true
 };
 export const SmallButton = Template.bind({})
 SmallButton.args = {
   /*👇 The args you need here will depend on your component */
-  text: "Click",
+  text: "Click Me too",
   variant: "small",
 };
 
