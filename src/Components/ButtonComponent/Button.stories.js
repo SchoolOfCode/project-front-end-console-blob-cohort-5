@@ -7,24 +7,23 @@ import Button from "./index.js";
 export default {
   title: "Button",
   component: Button,
-  argTypes: { onClick: { action: "clicked" } },
+  // argTypes: { onClick: { action: "clicked" } },
 };
 
 //👇 We create a “template” of how args map to rendering
-const Template = (args) => <Button {...args} />;
+const Template = args => <Button {...args} />;
 
-export const LargeButton = Template.bind({});
-
+export const LargeButton = Template.bind({})
 LargeButton.args = {
   /*👇 The args you need here will depend on your component */
   text: "Click Me",
+  variant: "large"
 
 };
-export const SmallButton = Template.bind({});
-
+export const SmallButton = Template.bind({})
 SmallButton.args = {
   /*👇 The args you need here will depend on your component */
-  text: "Click Me",
+  text: "Click",
   variant: "small",
 };
 

@@ -4,11 +4,13 @@ import SearchBar from './index';
 
 const defaultProps = {
     searchCountry: "", 
+    placeholderText:"",
     setSearchCountry: () => {}
 };
 
 const populatedProps = {
     searchCountry: "Colombia",
+    placeholderText:"Search Country here",
     setSearchCountry: () => {}
 };
 
