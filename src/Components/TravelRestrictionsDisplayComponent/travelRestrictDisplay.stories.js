@@ -1,12 +1,13 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import UKRestrictionsDisplay from './index';
+import TravelRestrictionsDisplay from './index';
 
 
 const defaultProps = {
     data: {}, 
     color: "",
-    size: ""
+    size: "",
+    imgSize: ""
 };
 
 // const populatedProps = {
@@ -15,8 +16,8 @@ const defaultProps = {
 // };
 
 
-storiesOf('UKRestrictionsDisplay', module)
-.add('default', () => <UKRestrictionsDisplay {...defaultProps} />);
+storiesOf('TravelRestrictionsDisplay', module)
+.add('default', () => <TravelRestrictionsDisplay {...defaultProps} />);
 // .add("populatedProps", () => <SearchBar {...populatedProps} />);
 
 

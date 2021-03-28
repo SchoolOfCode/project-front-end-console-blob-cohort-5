@@ -6,6 +6,10 @@ module.exports = {
   "addons": [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/preset-create-react-app"
-  ]
+    "@storybook/preset-create-react-app",
+    //added by Mafe
+    // 'storybook-css-modules-preset',
+    //
+  ],
+  
 }

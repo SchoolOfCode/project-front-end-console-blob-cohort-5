@@ -27,3 +27,5 @@ SmallButton.args = {
   text: "Click Me",
   variant: "small",
 };
+
+//I added npm i storybook-css-modules-preset

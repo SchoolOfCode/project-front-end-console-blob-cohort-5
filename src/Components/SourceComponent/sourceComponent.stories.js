@@ -1,6 +1,6 @@
 import React from 'react';
 import {storiesOf} from '@storybook/react';
-import UKRestrictionsDisplay from './index';
+import SourceComponent from './index';
 
 
 const defaultProps = {
@@ -15,8 +15,6 @@ const defaultProps = {
 // };
 
 
-storiesOf('UKRestrictionsDisplay', module)
-.add('default', () => <UKRestrictionsDisplay {...defaultProps} />);
+storiesOf('SourceComponent', module)
+.add('default', () => <SourceComponent {...defaultProps} />);
 // .add("populatedProps", () => <SearchBar {...populatedProps} />);
-
-
