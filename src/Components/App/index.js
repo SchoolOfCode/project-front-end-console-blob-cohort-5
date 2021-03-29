@@ -1,17 +1,14 @@
 import React from 'react';
-import UKRestrictionsDisplay from '../UKRestrictionsDisplay';
 import UKPage from "../UKMainPageComponent/index";
+import WorldPage from '../WorldMainPageComponent';
 
 function App () {
   
   return (
   
    <>
-    <UKPage />
-
-
-
-
+    {/* <UKPage /> */}
+    <WorldPage/>
 
 
    </>

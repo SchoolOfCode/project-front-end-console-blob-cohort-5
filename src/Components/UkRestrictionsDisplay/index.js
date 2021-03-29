@@ -7,7 +7,7 @@ function UKRestrictionsDisplay({ data, color, size, heading}) {
    <div className={cn(css[color], css[size])}>
      <h1 className={css[heading]}>{data.country}</h1>
      <p>{data.covidHeadline}</p>
-     <p>{data.quarantineRestirctions}</p>
+     <p>{data.quarantineRestrictions}</p>
    </div>
   );
 }
