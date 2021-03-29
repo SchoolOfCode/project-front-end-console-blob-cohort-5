@@ -1,6 +1,7 @@
-.base {
+/* base is medium button */
+.base { 
     padding: 0.7em;
-    background-color: lightgreen;
+    background-color: rgb(233, 212, 27);
     border: 2px solid gray;
     color: var(--secondary-dark);
     border-radius: 10px;
@@ -9,20 +10,38 @@
     box-sizing: border-box;
   }
   
-  .base:hover {
+.base:hover {
     background-color: ghostwhite;
     border: 2px solid lightgreen;
     color: var(--tertiary-light);
   }
   
   .small {
-    border: 1px solid transparent;
-    background-color: transparent;
-    color: lightgreen;
+    /* border: 1px solid transparent; */
     font-weight: bold;
+    font-size: 0.7em;
     padding: 0.4em;
   }
   .small:hover {
+    background-color: transparent;
+    border: 1px solid lightgreen;
+    color: lightgreen;
+    color: ghostwhite;
+  }
+  
+    
+  .large {
+    
+    border: 1px solid ;
+    border-color: ivory;
+    border-width: 5px;    
+    color: rgb(235, 235, 235);
+    font-weight: bold;
+    font-size: 26px;
+    padding: 1em;
+    width: 40%;
+  }
+  .large:hover {
     background-color: transparent;
     border: 1px solid lightgreen;
     color: lightgreen;

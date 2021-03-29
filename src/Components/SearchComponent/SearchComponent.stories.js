@@ -8,13 +8,31 @@ const defaultProps = {
     setSearchCountry: () => {}
 };
 
-const populatedProps = {
+const wideSearchBar = {
     searchCountry: "Colombia",
     placeholderText:"Search Country here",
+    variant: "wide",
+    setSearchCountry: () => {}
+};
+
+const roundedBar = {
+    
+    placeholderText:"Country",
+    variant: "rounded",
+    setSearchCountry: () => {}
+};
+
+const dynamicBar = {
+    
+    placeholderText:"Country",
+    variant: "dynamic",
     setSearchCountry: () => {}
 };
 
 
+
 storiesOf('SearchBar', module)
 .add('default', () => <SearchBar {...defaultProps} />)
-.add("populatedProps", () => <SearchBar {...populatedProps} />);
+.add("wideSearchBar", () => <SearchBar {...wideSearchBar} />)
+.add("roundedBar", () => <SearchBar {...roundedBar} />)
+.add("dynamicBar", () => <SearchBar {...dynamicBar} />);

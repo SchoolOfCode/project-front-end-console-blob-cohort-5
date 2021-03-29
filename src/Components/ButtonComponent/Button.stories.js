@@ -16,15 +16,21 @@ const Template = args => <Button {...args} />;
 export const LargeButton = Template.bind({})
 LargeButton.args = {
   /*👇 The args you need here will depend on your component */
-  text: "Click Me",
-  variant: "large",
-  primary: true
+  text: "Large",
+  size: "large"
+
 };
 export const SmallButton = Template.bind({})
 SmallButton.args = {
   /*👇 The args you need here will depend on your component */
-  text: "Click Me too",
-  variant: "small",
+  text: "S",
+  size: "small",
+};
+
+export const MediumButton = Template.bind({})
+MediumButton.args = {
+  /*👇 The args you need here will depend on your component */
+  text: "Medium"
 };
 
 //I added npm i storybook-css-modules-preset
