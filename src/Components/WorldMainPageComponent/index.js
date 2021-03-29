@@ -1,41 +1,52 @@
-import React, {useState} from 'react';
-import css from './WorldPage.module.css';
-import cn from 'classnames';
-import SearchBar from '../SearchComponent/index.js'
-import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
-import FlightWidget from '../Fligh Widget Component';
-import HotelWidget from '../Hotel Widget Component';
-import WorldMap from '../Wold Map Component';
+import React, { useState } from "react";
+import css from "./WorldPage.module.css";
+import cn from "classnames";
+import SearchBar from "../SearchComponent/index.js";
+import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
+import FlightWidget from "../Fligh Widget Component";
+import HotelWidget from "../Hotel Widget Component";
+import WorldMap from "../Wold Map Component";
+
+const BACKEND_URL = "http://localhost:5000";
 
 
+function WorldPage() {
 
+    const [searchCountry, setSearchCountry] = useState("");
+    const [countryData, setCountryData]= useState(""); 
 
+  async function fetchCountriesDB(searchCountry) {
+    let response = await fetch(`${BACKEND_URL}/country?search=${searchCountry}`);
+    let data = await response.json();
+    setCountryData(data);
+    console.log(data);
+  }
 
-function WorldPage () {
+  let wData = {
+    england: {},
+    spain: {
+      countryName: "Spain",
+      entryRestrictions: "No Entry Allowed",
+      qurantineRestrictions: "14 day on arrival",
+    },
+  };
 
-    let wData = {
-        england:{},
-        spain:{
-            countryName:"Spain",
-            entryRestrictions: "No Entry Allowed",
-            qurantineRestrictions:"14 day on arrival"
-        }
-    }
+  
 
-const [country, setCountry] = useState("spain")
-
-return(
+  return (
     <div>
-    <SearchBar setSearchCountry={setCountry} searchCountry={country} placeholderText={"Search Country Here"}/>
-    {/* searches database and brings back object for country */}
-    <TravelRestrictionsDisplay data={wData[country]}/> 
-    <FlightWidget />
-    <HotelWidget />
-<WorldMap/>
-</div>
-
-);
-
+      <SearchBar
+        setSearchCountry={setCountry}
+        searchCountry={country}
+        placeholderText={"Search Country Here"}
+      />
+      {/* searches database and brings back object for country */}
+      <TravelRestrictionsDisplay data={wData[country]} />
+      <FlightWidget />
+      <HotelWidget />
+      <WorldMap />
+    </div>
+  );
 }
 
 export default WorldPage;
