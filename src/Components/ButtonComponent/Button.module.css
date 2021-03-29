@@ -1,31 +1,44 @@
 .base {
-    padding: 0.7em;
-    background-color: lightgreen;
-    border: 2px solid gray;
-    color: var(--secondary-dark);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 0.9em;
-    box-sizing: border-box;
-  }
-  
-  .base:hover {
-    background-color: ghostwhite;
-    border: 2px solid lightgreen;
-    color: var(--tertiary-light);
-  }
-  
-  .small {
-    border: 1px solid transparent;
-    background-color: transparent;
-    color: lightgreen;
-    font-weight: bold;
-    padding: 0.4em;
-  }
-  .small:hover {
-    background-color: transparent;
-    border: 1px solid lightgreen;
-    color: lightgreen;
-    color: ghostwhite;
-  }
-  
+  padding: 0.7em;
+  background-color: rgb(231, 221, 80);
+  border: 2px solid gray;
+  color: var(--secondary-dark);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9em;
+  box-sizing: border-box;
+}
+.base:hover {
+  background-color: ghostwhite;
+  border: 2px solid lightgreen;
+  color: var(--tertiary-light);
+}
+.small {
+  /* border: 1px solid transparent; */
+  background-color: lightgreen;
+  font-weight: bold;
+  font-size: 0.7em;
+  padding: 0.4em;
+}
+.small:hover {
+  background-color: transparent;
+  border: 1px solid lightgreen;
+  color: lightgreen;
+  color: ghostwhite;
+}
+.large {
+  border: 1px solid ;
+  border-color: ivory;
+  border-radius:40%;
+  color: rgb(235, 235, 235);
+  font-weight: bold;
+  font-size: 26px;
+  padding: 1em;
+  width: 40%;
+}
+.large:hover {
+  background-color: transparent;
+  border: 1px solid lightgreen;
+  color: lightgreen;
+  color: ghostwhite;
+}
