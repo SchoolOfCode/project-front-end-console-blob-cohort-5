@@ -7,8 +7,8 @@ function Button ({text,handleclick, variant,className, ...rest}) {
   
   return (
   
-   <button onClick= {handleclick}>{text}
-           className={cn(css.base, css[variant], className)} 
+   <button className={cn(css.base, css[variant], className)} onClick= {handleclick}>
+   {text}  
    
    </button> 
    
