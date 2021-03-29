@@ -1,29 +1,37 @@
-import React from 'react';
-import css from './travelRestrictDisplay.module.css';
-import cn from 'classnames'
+// import React from 'react';
+// import css from './travelRestrictDisplay.module.css';
+// import cn from 'classnames'
 
-function TravelRestrictionsDisplay({ data, color, size, imgSize }) {
-  return (
-    <div className={cn(css[color], css[size])}>
-      <h1>{data.countryName}</h1>
-      <p>{data.entryRestrictions}</p>
-      <p>{data.quarantineRestirctions}</p>
-      <img className={cn(css[imgSize])} src={data.imgSrc} alt="Country Flag" />
-    </div>
-  );
-}
+// function TravelRestrictionsDisplay({ countryCode, color, size, imgSize }) {
 
-// { backgroundColor: 'red' }
 
-//Display 
-//Country Name
-//Country Flag 
-//Country Entry Req 
-//Country Quarantine Requirements
+// const [countryData, setCountryData]= useState(""); 
 
-//Props
-// Data Object  
+// let BACKEND_URL = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`
+
+// useEffect(() => {
+//   async function fetchCountryData(countryCode) {
+//     let response = await fetch(`${BACKEND_URL}/POL/2021-03-26`);
+//     let data = await response.json();
+//     setCountryData(data);
+//     console.log(data);
+
+//     fetchCountryData(countryCode)
+//   }
+// }, [countryCode])
 
 
 
-export default TravelRestrictionsDisplay;
+//   return (
+//     <div className={cn(css[color], css[size])}>
+//       <h1>{data.countryName}</h1>
+//       <p>{data.entryRestrictions}</p>
+//       <p>{data.quarantineRestirctions}</p>
+//       <img className={cn(css[imgSize])} src={data.imgSrc} alt="Country Flag" />
+//     </div>
+//   );
+// }
+
+
+
+// export default TravelRestrictionsDisplay;
