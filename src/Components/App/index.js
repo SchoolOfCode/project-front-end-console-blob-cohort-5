@@ -1,5 +1,6 @@
 import React from 'react';
 import UKPage from "../UKMainPageComponent/index";
+import MyMap from '../World Map Component/MyMap';
 import WorldPage from '../WorldMainPageComponent';
 
 function App () {
@@ -8,7 +9,7 @@ function App () {
   
    <>
     {/* <UKPage /> */}
-    <WorldPage/>
+    <MyMap/>
 
 
    </>
