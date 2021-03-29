@@ -43,7 +43,7 @@ display: flex;
 align-items: center;
 margin-right: -24px;
 
-@media screen and (mas-width: 768px){
+@media screen and (max-width: 768px){
     display: none;
 }
 `
