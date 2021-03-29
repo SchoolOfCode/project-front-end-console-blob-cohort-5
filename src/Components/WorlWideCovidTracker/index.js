@@ -10,7 +10,7 @@ import SearchBar from "../SearchComponent";
 function WwTracker() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] = useState([]);
-  const [searchCountry, setSearchCountry] = useState("")
+  const [searchCountry, setSearchCountry] = useState("") // May need to move to App level 
   
 
   useEffect(() => {
