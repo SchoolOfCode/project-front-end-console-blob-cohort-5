@@ -11,6 +11,8 @@ return(
     <div>
     <SearchBar />
     <UKRestrictionsDisplay />
+    <UKMap />
+    <HotelWidget />
     </div>
 
 );
