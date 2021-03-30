@@ -1,53 +1,46 @@
-import React, {useState, useEffect} from 'react';
-import useFetch from '../../CustomHooks/useFetch';
-import UKPage from "../UKMainPageComponent/index";
-import WorldPage from '../WorldMainPageComponent';
-import css from './App.css';
-import CountryCodesList from './countriesCodesList'
 
 
-function App () {
-
-const[countryCode, setCountryCode] = useState("POL")
-
-  // const [countryData, setCountryData]= useState(""); 
-
-let BACKEND_URL = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`
+import React from "react";
+import Home from "../HomePage";
+import UKPage from "../UKMainPageComponent";
+import WorldPage from "../WorldMainPageComponent";
+import WwTracker from "../WorlWideCovidTracker"
 
 
-let country = useFetch(`${BACKEND_URL}/${countryCode}/2021-03-10`,[countryCode])
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Navbar from "../Navbar";
 
-console.log(country)
-console.log(country)
-// let policyType = country.policyActions[8].policy_type_display
+function App() {
+  return (
+    <div className="App">
+    <Router>
+    <nav className="nav-bar">
+      <h1>Home Page</h1>
+      <div>
 
-// if (policyType=!undefined){
-//   console.log(policyType)
-// } 
+          {/* <Link to="/">Home</Link>
+      
+          <Link to="/UKPage">UK Page</Link>
+          <Link to="/WorldPage">World Page</Link>
+          <Link to="/WorldTracker">World Covid Tracker</Link> */}
+<Navbar/>
+      <Switch>
+      
 
+        <Route path="/UKPage"><UKPage/></Route>
+        <Route path="/WorldPage"><WorldPage/></Route>
+        <Route path="/WorldTracker"><WwTracker/></Route>
+        <Route path="/"><Home /></Route>
 
-function handleChange(e){
-  setCountryCode(e.target.value)
+      </Switch>
+    </div>
+
+    </nav>
+    </Router>
+    </div>
+  );
 }
 
-return (
-<>
 
-<CountryCodesList handleChange={handleChange}/>
-
-
-
-<div style={{width:"50%"}}>
-  <p>{`Confirmed cases: ${country.stringencyData.confirmed}`}</p>
-  {/* <p>{`Workplace Restrictions: ${country.policyActions[1].policy_value_display_field}`}</p> */}
-  {/* <p>{`International Travel Restrictions: ${country.policyActions[7].policy_value_display_field}`}</p> */}
-  {/* <p>{`Notes: ${country.policyActions[7].notes}`}</p> */}
-
-</div>
-
-</>
-   
-  )
-};
 
 export default App;

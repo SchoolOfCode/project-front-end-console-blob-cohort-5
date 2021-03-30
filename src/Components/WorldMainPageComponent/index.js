@@ -1,35 +1,40 @@
-// import React, { useState } from "react";
-// import css from "./WorldPage.module.css";
-// import cn from "classnames";
-// import SearchBar from "../SearchComponent/index.js";
-// import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
-// import FlightWidget from "../Fligh Widget Component";
-// import HotelWidget from "../Hotel Widget Component";
-// import WorldMap from "../Wold Map Component";
-
-// const BACKEND_URL = "http://localhost:5000";
+import React from 'react';
+import css from './WorldPage.module.css';
+import cn from 'classnames';
+import SearchBar from '../SearchComponent/index.js';
+import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
 
 
-// function WorldPage() {
+// // const BACKEND_URL = "http://localhost:5000";
 
-//     const [searchCountry, setSearchCountry] = useState("");
-//     const [countryData, setCountryData]= useState(""); 
+function WorldPage () {
 
-//   async function fetchCountriesDB(searchCountry) {
-//     let response = await fetch(`${BACKEND_URL}/country?search=${searchCountry}`);
-//     let data = await response.json();
-//     setCountryData(data);
-//     console.log(data);
-//   }
+return(
+    <div>
+    {/* <SearchBar />
+    <TravelRestrictionsDisplay /> */}
+    <h1>World Page</h1>
+    </div>
 
-//   let wData = {
-//     england: {},
-//     spain: {
-//       countryName: "Spain",
-//       entryRestrictions: "No Entry Allowed",
-//       qurantineRestrictions: "14 day on arrival",
-//     },
-//   };
+
+// //     const [searchCountry, setSearchCountry] = useState("");
+// //     const [countryData, setCountryData]= useState(""); 
+
+// //   async function fetchCountriesDB(searchCountry) {
+// //     let response = await fetch(`${BACKEND_URL}/country?search=${searchCountry}`);
+// //     let data = await response.json();
+// //     setCountryData(data);
+// //     console.log(data);
+// //   }
+
+// //   let wData = {
+// //     england: {},
+// //     spain: {
+// //       countryName: "Spain",
+// //       entryRestrictions: "No Entry Allowed",
+// //       qurantineRestrictions: "14 day on arrival",
+// //     },
+// //   };
 
   
 
@@ -46,7 +51,10 @@
 //       <HotelWidget />
 //       <WorldMap />
 //     </div>
-//   );
-// }
 
-// export default WorldPage;
+  );
+
+};
+
+export default WorldPage;
+
