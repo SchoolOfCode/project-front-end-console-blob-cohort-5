@@ -11,7 +11,7 @@ function WwTracker() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] = useState([]);
   const [searchCountry, setSearchCountry] = useState("") // May need to move to App level 
-  
+
 
   useEffect(() => {
     axios
@@ -65,11 +65,11 @@ function WwTracker() {
     columns: 3,
     query: 'min-width: 1000px'
   }];
-  
+
   //function for button component
-  function testClick(){ 
-   console.log("component works");
- }
+  function testClick() {
+    console.log("component works");
+  }
 
   return (
     <div>
@@ -124,12 +124,12 @@ function WwTracker() {
 
       </CardDeck>
 
-      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry}/>
+      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry} placeholderText="Search for a country, to see COVID-19 stats..." />
 
       <Columns queries={queries}>{countries}</Columns>
 
     </div>
   );
 
-  }
+}
 export default WwTracker;
