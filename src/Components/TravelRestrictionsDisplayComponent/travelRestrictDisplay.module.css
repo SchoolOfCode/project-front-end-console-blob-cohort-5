@@ -4,6 +4,8 @@
     align-self: auto;
     margin: auto;
     color: dimgrey;
+    width:auto;
+    
 }
 
 .blueBox{
@@ -11,6 +13,7 @@
     align-self: auto;
     margin: auto;
     color: blanchedalmond;
+    width: auto;
 }
 
 /* Sizes */
