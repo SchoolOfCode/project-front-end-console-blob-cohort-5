@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, NavLink, Bars, NavMenu, NavBtn, NavBtnLink } from './NavbarElements.js'
+import { Nav, NavLink, Bars, NavMenu, } from './NavbarElements.js';
 
 const Navbar = () => {
     return (
@@ -8,6 +8,7 @@ const Navbar = () => {
             <Nav>
                 <NavLink to="/">
                     <h1>Logo</h1>
+
                 </NavLink>
                 <Bars />
                 <NavMenu>
@@ -20,15 +21,15 @@ const Navbar = () => {
                     <NavLink to="/Abroad" activeStyle>
                         Abroad
                     </NavLink>
-                    <NavLink to="/world_stats" activeStyle>
+                    <NavLink path="/World_stats" activeStyle>
                         World Stats
                 </NavLink>
                 </NavMenu>
             </Nav>
 
         </div>
-
     );
 };
 
 export default Navbar;
+

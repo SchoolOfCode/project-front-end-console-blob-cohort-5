@@ -1,23 +1,27 @@
 import React from 'react';
 import Button from '../ButtonComponent/index.js'
 import Navbar from '../Navbar/index.js'
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import
 
 
 
+  function App() {
 
-function App() {
+    return (
 
-  return (
+      <div>
+        <Router>
+          <Navbar />
+        </Router>
+        <Switch>
+          <Route path="">
+        </Switch>
 
-    <div>
-      <Router>
-        <Navbar />
-      </Router>
 
-      <Button variant="large" text="Uk" />
-      <Button variant="large" text="Abrod" />
-      <Navbar />
+          <Button variant="large" text="Uk" />
+          <Button variant="large" text="Abroad" />
+
 
     </div>
 
