@@ -36,10 +36,10 @@ function UKPage() {
             Restrictions: {dataUK.quarantineRestrictions}{" "}
           </p>
         </div>
-        <div>
+        <div className ={css.HotelWidget}>
           <HotelWidget />
         </div>
-        <div>
+        <div className ={css.UKRestrictionsDisplay}>
           <UKRestrictionsDisplay />
         </div>
         <div>
