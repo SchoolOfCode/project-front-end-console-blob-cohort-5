@@ -1,16 +1,24 @@
-// // import React, { useState } from "react";
-// // import css from "./WorldPage.module.css";
-// // import cn from "classnames";
-// // import SearchBar from "../SearchComponent/index.js";
-// // import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
-// // import FlightWidget from "../Fligh Widget Component";
-// // import HotelWidget from "../Hotel Widget Component";
-// // import WorldMap from "../Wold Map Component";
+
+import React from 'react';
+import css from './WorldPage.module.css';
+import cn from 'classnames';
+import SearchBar from '../SearchComponent/index.js';
+import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
+
 
 // // const BACKEND_URL = "http://localhost:5000";
 
 
-// // function WorldPage() {
+
+function WorldPage () {
+
+return(
+    <div>
+    {/* <SearchBar />
+    <TravelRestrictionsDisplay /> */}
+    <h1>World Page</h1>
+    </div>
+
 
 // //     const [searchCountry, setSearchCountry] = useState("");
 // //     const [countryData, setCountryData]= useState(""); 

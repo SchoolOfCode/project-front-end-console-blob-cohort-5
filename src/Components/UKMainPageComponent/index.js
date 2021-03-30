@@ -1,10 +1,11 @@
 import React from 'react';
 import css from './UKPage.module.css';
 import cn from 'classnames';
-import SearchBar from '../SearchComponent/index.js';
-import UKRestrictionsDisplay from '../UkRestrictionsDisplay';
+
+import SearchBar from '../SearchComponent/index.js'
 import UKMap from '../UKMapComponent';
-import HotelWidget from '../Hotel Widget Component';
+import UKRestrictionsDisplay from '../UkRestrictionsDisplay';
+
 
 
 function UKPage () {
@@ -17,10 +18,12 @@ function UKPage () {
     
 return(
     <div>
-    <SearchBar />
-    <UKRestrictionsDisplay data={dataUK} />
-    <UKMap />
-    <HotelWidget />
+
+    {/* <SearchBar />
+    <UKRestrictionsDisplay /> */}
+    <h1>UK Page</h1>
+   <UKMap />
+
     </div>
 
 );

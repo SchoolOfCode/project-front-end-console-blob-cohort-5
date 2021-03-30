@@ -1,20 +1,44 @@
-import React from 'react';
-import UKPage from "../UKMainPageComponent/index";
-import MyMap from '../World Map Component/MyMap';
-import WorldPage from '../WorldMainPageComponent';
 
-function App () {
-  
+import React from "react";
+import Home from "../HomePage";
+import UKPage from "../UKMainPageComponent";
+import WorldPage from "../WorldMainPageComponent";
+import WwTracker from "../WorlWideCovidTracker"
+
+
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Navbar from "../Navbar";
+
+function App() {
   return (
-  
-   <>
-    {/* <UKPage /> */}
-    <MyMap/>
+    <div className="App">
+    <Router>
+    <nav className="nav-bar">
+      <h1>Home Page</h1>
+      <div>
 
+          {/* <Link to="/">Home</Link>
+      
+          <Link to="/UKPage">UK Page</Link>
+          <Link to="/WorldPage">World Page</Link>
+          <Link to="/WorldTracker">World Covid Tracker</Link> */}
+<Navbar/>
+      <Switch>
+      
 
-   </>
-   
-  )
-};
+        <Route path="/UKPage"><UKPage/></Route>
+        <Route path="/WorldPage"><WorldPage/></Route>
+        <Route path="/WorldTracker"><WwTracker/></Route>
+        <Route path="/"><Home /></Route>
+
+      </Switch>
+    </div>
+
+    </nav>
+    </Router>
+    </div>
+  );
+}
+
 
 export default App;
