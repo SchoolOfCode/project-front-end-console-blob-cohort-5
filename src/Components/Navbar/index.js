@@ -12,16 +12,16 @@ const Navbar = () => {
                 </NavLink>
                 <Bars />
                 <NavMenu>
-                    <NavLink to="/Home" activeStyle>
+                    <NavLink to="/" activeStyle>
                         Home
                 </NavLink>
-                    <NavLink to="/UK" activeStyle>
+                    <NavLink to="/UKPage" activeStyle>
                         UK
                     </NavLink>
-                    <NavLink to="/Abroad" activeStyle>
+                    <NavLink to="/WorldPage" activeStyle>
                         Abroad
                     </NavLink>
-                    <NavLink path="/World_stats" activeStyle>
+                    <NavLink to="/WwTracker" activeStyle>
                         World Stats
                 </NavLink>
                 </NavMenu>
