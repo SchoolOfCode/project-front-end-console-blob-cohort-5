@@ -1,4 +1,3 @@
-
 import React from 'react';
 import css from './WorldPage.module.css';
 import cn from 'classnames';
@@ -7,8 +6,6 @@ import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
 
 
 // // const BACKEND_URL = "http://localhost:5000";
-
-
 
 function WorldPage () {
 
@@ -54,8 +51,10 @@ return(
 //       <HotelWidget />
 //       <WorldMap />
 //     </div>
+
   );
 
 };
 
 export default WorldPage;
+
