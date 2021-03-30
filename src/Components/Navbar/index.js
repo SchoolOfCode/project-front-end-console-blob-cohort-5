@@ -21,7 +21,7 @@ const Navbar = () => {
                     <NavLink to="/WorldPage" activeStyle>
                         Abroad
                     </NavLink>
-                    <NavLink to="/WwTracker" activeStyle>
+                    <NavLink to="/WorldTracker" activeStyle>
                         World Stats
                 </NavLink>
                 </NavMenu>

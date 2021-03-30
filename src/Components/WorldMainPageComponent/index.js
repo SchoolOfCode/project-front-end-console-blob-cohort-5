@@ -10,8 +10,9 @@ function WorldPage () {
 
 return(
     <div>
-    <SearchBar />
-    <TravelRestrictionsDisplay />
+    {/* <SearchBar />
+    <TravelRestrictionsDisplay /> */}
+    <h1>World Page</h1>
     </div>
 
 );

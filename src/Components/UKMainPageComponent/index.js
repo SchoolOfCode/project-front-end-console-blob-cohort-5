@@ -9,8 +9,9 @@ function UKPage () {
 
 return(
     <div>
-    <SearchBar />
-    <UKRestrictionsDisplay />
+    {/* <SearchBar />
+    <UKRestrictionsDisplay /> */}
+    <h1>UK Page</h1>
     </div>
 
 );
