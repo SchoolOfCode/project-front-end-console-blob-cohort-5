@@ -15,6 +15,7 @@ return(
     {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
     <h1>World Page</h1>
+    
     <FlightWidget />
     </div>
 

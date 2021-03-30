@@ -1,0 +1,12 @@
+.main{
+    overflow: visible;
+}
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px 25px;
+    grid-template-areas:
+      ". ."
+      ". .";
+  }

@@ -15,7 +15,7 @@ function App() {
     <div className="App">
     <Router>
     <nav className="nav-bar">
-      <h1>Home Page</h1>
+      
       <div>
 
           {/* <Link to="/">Home</Link>

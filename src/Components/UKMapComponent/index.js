@@ -1,10 +1,10 @@
 import React from 'react';
-import styles  from './UKMap.module.css';
+import css  from './UKMap.module.css';
 
 function UKMap(){
     return (
-        <div className={styles.boxSize}>
-            <img src="https://thumbs.dreamstime.com/b/map-uk-orange-filled-color-80376995.jpg" />
+        <div>
+            <img src="https://www.mapsof.net/uploads/static-maps/Uk_outline_map.png" />
         </div>
     );
 }

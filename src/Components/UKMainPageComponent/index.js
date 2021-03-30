@@ -1,7 +1,6 @@
 import React from 'react';
 import css from './UKPage.module.css';
 import cn from 'classnames';
-import HotelWidet from '../Hotel Widget Component';
 import SearchBar from '../SearchComponent/index.js';
 import UKMap from '../UKMapComponent';
 import UKRestrictionsDisplay from '../UkRestrictionsDisplay';
@@ -19,13 +18,16 @@ function UKPage() {
     }
     
 return(
-    <div>
+    <div className={css.main}>
     <h1>UK Page</h1>
-    <HotelWidget />
     <SearchBar /> 
+    <div className={css.container}>
     <UKRestrictionsDisplay /> 
+    <UKMap />
+    <HotelWidget />
     
-   <UKMap />
+    
+   </div>
 
     </div>
 
