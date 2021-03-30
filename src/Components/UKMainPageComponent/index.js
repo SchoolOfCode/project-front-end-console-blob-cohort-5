@@ -19,7 +19,6 @@ function UKPage() {
   return (
     <div className={css.UKpage}>
       <h1>UK Page</h1>
-      <div className="flex-container">
         <div>
           <SearchBar
             searchCountry={searchCountry}
@@ -27,6 +26,7 @@ function UKPage() {
             placeholderText="pick a place in UK"
           />
         </div>
+      <div className={css.flexcontainer}>
         <div>
           <p>
             County:{dataUK.country}
@@ -43,7 +43,7 @@ function UKPage() {
           <UKRestrictionsDisplay />
         </div>
         <div>
-          <UKMap />
+          <UKMap className ={css.UKMap} />
         </div>
       </div>
     </div>
