@@ -3,6 +3,7 @@ function CountryCodesList({handleChange}){
 return (
     <>
 <select id="countries" name="countries" onChange={(e)=>handleChange(e)}>
+<option	value="GBR">United Kingdom of Great Britain and Northern Ireland (the)	</option>
 <option	value="AFG">Afghanistan</option>
 <option	value="ALB">Albania	</option>
 <option	value="DZA">Algeria	</option>
