@@ -54,7 +54,8 @@ return(
 //       <HotelWidget />
 //       <WorldMap />
 //     </div>
-//   );
-// }
+  );
 
-// export default WorldPage;
+};
+
+export default WorldPage;
