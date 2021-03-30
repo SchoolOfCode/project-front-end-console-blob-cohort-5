@@ -1,8 +1,10 @@
+
 import React from "react";
 import Home from "../HomePage";
 import UKPage from "../UKMainPageComponent";
 import WorldPage from "../WorldMainPageComponent";
 import WwTracker from "../WorlWideCovidTracker"
+
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Navbar from "../Navbar";
@@ -14,7 +16,7 @@ function App() {
     <nav className="nav-bar">
       <h1>Home Page</h1>
       <div>
-  
+
           {/* <Link to="/">Home</Link>
       
           <Link to="/UKPage">UK Page</Link>
@@ -37,5 +39,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;
