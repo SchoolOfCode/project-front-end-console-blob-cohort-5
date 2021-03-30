@@ -3,6 +3,7 @@ import css from './WorldPage.module.css';
 import cn from 'classnames';
 import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
+import FlightWidget from '../Fligh Widget Component';
 
 
 // // const BACKEND_URL = "http://localhost:5000";
@@ -14,6 +15,7 @@ return(
     {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
     <h1>World Page</h1>
+    <FlightWidget />
     </div>
 
 
