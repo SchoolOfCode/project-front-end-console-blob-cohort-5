@@ -3,7 +3,6 @@ import css from './WorldPage.module.css';
 import cn from 'classnames';
 import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
-import MyMap from "../World Map Component/MyMap"
 import FlightWidget from '../Fligh Widget Component';
 
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
