@@ -1,4 +1,4 @@
-
+/* 
 .main{
     overflow: visible;
 }
@@ -48,6 +48,14 @@ display: flex;
     border: 2px solid green;
     justify-content: space-between;
   }
+
+
+ .HotelWidget{
+    
+display: flex;
+justify-content: flex-end;
+align-self: flex-end;
+}  */
 
 
 

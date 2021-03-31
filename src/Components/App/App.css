@@ -1,4 +1,9 @@
 
+.App{
+  overflow: scroll;
+  justify-content: center;
+}
+
 
 /* .App-logo {
   height: 40vmin;
