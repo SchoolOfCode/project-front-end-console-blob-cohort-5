@@ -1,6 +1,6 @@
 .App{
   overflow: scroll;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 /* .App-logo {
