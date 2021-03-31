@@ -62,10 +62,11 @@ align-self: flex-end;
 
 
 .UKMap{
- 
+  /* added this in to center the map */
+ display: flex;
+ justify-content: center;
 border: 2px solid chartreuse;
 /* align-items: center; */
-justify-items: center;
 
 
 }

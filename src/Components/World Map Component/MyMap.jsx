@@ -1,22 +1,28 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import mapData from "../../mapdatajson/countries.json";
 import "leaflet/dist/leaflet.css";
 import "./MyMap.css";
-import {useState} from 'react';
 
-class MyMap extends Component {
-//   state = {};
+//old react uses this.setState
+//google the docs
+//bestbet to convert to new React
+
+//converted to new React
+
+
+function MyMap()  {
 
 //this colors can be depending on travel ban for each country
-  color = ['green', 'orange', 'red']; 
-  
+  let color = ['green', 'orange', 'red']; 
 
-  componentDidMount() {
-    console.log(mapData);
-  }
+  useEffect(() => {
+    // console.log(mapData)
+    //big object slowing down computer
+    
+  }, [])
 
-  countryStyle = {
+  let countryStyle = {
     fillColor: "green",
     fillOpacity: 0.5, //between 0-1
     color: "black",
@@ -26,7 +32,7 @@ class MyMap extends Component {
   
 
 
-  onCountryClick = (event) => {
+  const onCountryClick = (event) => {
     event.target.setStyle({
       color: "orange",
       fillColor: "yellow",
@@ -36,7 +42,7 @@ class MyMap extends Component {
     //we might want to add a function tu display som data or to take us to the country stats :)
   };
 
-  onEachCountry = (country, layer) => {
+  const onEachCountry = (country, layer) => {
 
     const countryCode = country.properties.ISO_A3;
 
@@ -49,10 +55,10 @@ class MyMap extends Component {
 
 
     const colorIndex = 1; //we need to create a function that depending on travel ban status, a different color will be selected  
-    layer.options.fillColor = this.color[colorIndex]; 
+    layer.options.fillColor = color[colorIndex]; 
 
     layer.on({
-      click: this.onCountryClick,
+      click: onCountryClick,
     });
 
     return 
@@ -61,7 +67,6 @@ class MyMap extends Component {
 
   
 
-  render() {
     return (
       <div className="box">
         <h1>Map</h1>
@@ -71,14 +76,14 @@ class MyMap extends Component {
           center={[20, 10]}
         >
           <GeoJSON
-            style={this.countryStyle}
+            style={countryStyle}
             data={mapData.features}
-            onEachFeature={this.onEachCountry}
+            onEachFeature={onEachCountry}
           />
         </MapContainer>
       </div>
     );
-  }
+
 }
 
 export default MyMap;
