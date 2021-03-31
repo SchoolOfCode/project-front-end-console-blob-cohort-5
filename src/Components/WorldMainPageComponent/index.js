@@ -8,6 +8,7 @@ import FlightWidget from '../Fligh Widget Component';
 
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
 import useFetch  from "../../CustomHooks/useFetch";
+import MyMap from "../World Map Component/MyMap.jsx";
 
 
 
@@ -39,8 +40,8 @@ return(
   </div>
 
     <div className={css.map}>
-    <h1>MAP</h1>
-    </div>
+      <MyMap/>    
+        </div>
 
 
 <div className={css.bottomRow}>
