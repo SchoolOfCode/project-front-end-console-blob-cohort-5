@@ -3,7 +3,7 @@ import css from './WorldPage.module.css';
 import cn from 'classnames';
 import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
-
+import MyMap from "../World Map Component/MyMap"
 import FlightWidget from '../Fligh Widget Component';
 
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
@@ -20,7 +20,7 @@ function WorldPage () {
   
   const[countryCode, setCountryCode] = useState("GBR")
   const countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`,[countryCode, date]);
-  const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`,[countryCode, date]);
+  // const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`,[countryCode]);
   function handleChange(e){
   setCountryCode(e.target.value);
 }
@@ -34,12 +34,12 @@ return(
     {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
     <h1>World Page</h1>
-    
+    <MyMap />
     <FlightWidget />
 
     <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate}></input>
     <CountryCodesList handleChange={handleChange}/>
-    <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/>
+    {/* <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/> */}
 
     </div>
 
