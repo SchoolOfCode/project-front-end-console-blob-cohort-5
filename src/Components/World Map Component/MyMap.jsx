@@ -26,8 +26,6 @@ class MyMap extends Component {
   
 
 
-
-
   onCountryClick = (event) => {
     event.target.setStyle({
       color: "orange",
@@ -39,20 +37,26 @@ class MyMap extends Component {
   };
 
   onEachCountry = (country, layer) => {
+
+    const countryCode = country.properties.ISO_A3;
+
     const countryName = country.properties.ADMIN;
-    console.log(countryName);
+
+    console.log(`${countryName},${countryCode}`);
+
     layer.bindPopup(countryName); 
-    // const countryCode = country.properties.//When you click on a country, it displays the country name
+
 
 
     const colorIndex = 1; //we need to create a function that depending on travel ban status, a different color will be selected  
     layer.options.fillColor = this.color[colorIndex]; 
 
-
-
     layer.on({
       click: this.onCountryClick,
     });
+
+    return 
+
   };
 
   
