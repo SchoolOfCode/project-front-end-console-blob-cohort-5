@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import css from "./UKPage.module.css";
 // import cn from "classnames";
@@ -20,16 +19,21 @@ function UKPage() {
   return (
     <div className={css.UKpage}>
       <h1>UK Page</h1>
-        <div>
-          <SearchBar
-            searchCountry={searchCountry}
-            setSearchCountry={setSearchCountry}
-            placeholderText="pick a place in UK"
-          />
-        </div>
+      <div>
+        <SearchBar
+          searchCountry={searchCountry}
+          setSearchCountry={setSearchCountry}
+          placeholderText="pick a place in UK"
+        />
+      </div>
       <div className={css.flexcontainer}>
-        <div>
+      
+      <div className={css.flexLeft}>
+
+
+        <div className={css.WebScrapeInfo}>
           <p>
+            {/* this section is webScraped */}
             County:{dataUK.country}
             <br />
             covidHeadline: {dataUK.covidHeadline}
@@ -37,18 +41,29 @@ function UKPage() {
             Restrictions: {dataUK.quarantineRestrictions}{" "}
           </p>
         </div>
-        <div className ={css.HotelWidget}>
-          <HotelWidget />
-        </div>
-        <div className ={css.UKRestrictionsDisplay}>
+        <div className={css.UKRestrictionsDisplay}>
+          {/* this is the API */}
           <UKRestrictionsDisplay />
         </div>
-        <div>
-          <UKMap className ={css.UKMap} />
-    
-    <HotelWidget /> //this need to be put somewhere
+
+</div>
+
+
+<div className={css.flexRight}>
+
+        <div className={css.UKMap}>
+          <UKMap width="40%" />
+          <p>Map goes here</p>
+        </div>
+        <div className={css.HotelWidget}>
+          <HotelWidget />
+          <p>Widget goes here</p>
         </div>
       </div>
+
+
+    </div>
+
 
     </div>
   );
