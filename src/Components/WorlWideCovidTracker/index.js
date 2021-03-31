@@ -34,7 +34,7 @@ function WwTracker() {
 
 
   const filterCountry = results.filter(item => {
-    return searchCountry !== "" ? item.country === searchCountry : item;
+    return searchCountry !== "" ? item.country === searchCountry : null;
   })
 
   // reuseable component
