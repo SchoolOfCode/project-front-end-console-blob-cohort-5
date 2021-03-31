@@ -1,0 +1,77 @@
+/* 
+.main{
+    overflow: visible;
+}
+/* .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 25px 25px;
+    grid-template-areas:
+      ". ."
+      ". .";
+  } */
+
+.UKpage {
+    align-content: center;
+}
+
+.flexcontainer{
+
+display: flex;
+ /* justify-content: space-evenly; */
+ flex-direction: row;
+ 
+} 
+
+.flexLeft {
+    width: 50%;
+    height: 100vh;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid red;
+  }
+
+  .WebScrapeInfo{
+      border: 2px solid yellow;
+  }
+
+  .UKRestrictionsDisplay{
+    border: 2px solid blue;
+ 
+  }
+  
+  .flexRight {
+    width: 50%;
+    margin: 5px;
+    padding: 5px;
+    border: 2px solid green;
+    justify-content: space-between;
+  }
+
+
+ .HotelWidget{
+    
+display: flex;
+justify-content: flex-end;
+align-self: flex-end;
+}  
+
+
+
+
+
+.UKMap{
+ 
+border: 2px solid chartreuse;
+/* align-items: center; */
+justify-items: center;
+
+
+}
+ 
+.HotelWidget{
+ border: 2px solid rebeccapurple;   
+}
+
+

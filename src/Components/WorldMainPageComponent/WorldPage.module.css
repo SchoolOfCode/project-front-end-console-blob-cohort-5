@@ -1,0 +1,32 @@
+.bottomRow{
+    display: flex;
+     /* justify-content: space-evenly; */
+     flex-direction: row;
+     border: 2px solid red;
+}
+
+.inputRow{
+    border: 2px solid rgb(72, 209, 101);
+padding-left: 30%;
+padding-right: 30%;
+}
+
+.flexContainer{
+
+    display: flex;
+     /* justify-content: space-evenly; */
+     flex-direction: column;
+     border: 2px solid rgb(59, 85, 199);
+    } 
+
+
+  .TravelRestrictionsDisplay{
+    border: 2px solid rgb(224, 92, 196);
+    width:40%
+  }
+
+  .flightWidget{
+    border: 2px solid rgb(224, 92, 196);
+    width: 60%;
+    padding-left: 5%;
+}
