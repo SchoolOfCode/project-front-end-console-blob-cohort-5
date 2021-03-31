@@ -13,7 +13,7 @@ function Button ({text,handleclick, size}) {
 
 
 
-   <button onClick= {handleclick}  className={cn(css.base, css[size])}>{text}
+   <button onClick= {handleclick}  className={cn(css.base, css[size])} data-testid="button">{text}
    </button> 
 
   )
