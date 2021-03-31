@@ -9,6 +9,7 @@ display: flex;
 justify-content: space-between;
 padding: 0.5rem calc((100vw - 1000px) /2);
 z-index: 10;
+opacity: 0.6;
 `
 export const NavLink = styled(Link)`
 color: #fff;
@@ -36,6 +37,7 @@ color: #fff;
     transform: translate(-100%, 75%);
     font-size: 1.8rem;
     cursor: pointer;
+   
 }
 `
 export const NavMenu = styled.div`
