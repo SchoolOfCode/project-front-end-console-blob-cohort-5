@@ -2,13 +2,28 @@ import React from 'react';
 import css from './ukRestDisplay.module.css';
 import cn from 'classnames'
 
-function UKRestrictionsDisplay({ data, color, size, heading}) {
+
+
+
+function UKRestrictionsDisplay(data, color, size, heading) {
+
+  const dummyData = {
+    "travelingWithinUKToEngland": "not allowed :(",
+    "travelingWithinUKFromEngland": "not allowed :(",
+    "travelingWithinEnglandParagraph": "not allowed"
+  };
+
+
   return (
    <div className={cn(css[color], css[size])}>
-   <p>Test for display</p>
-     {/* <h1 className={css[heading]}>{data.country}</h1>
-     <p>{data.covidHeadline}</p>
-     <p>{data.quarantineRestrictions}</p> */}
+
+     <h2>Traveling within UK</h2>
+     <p>{dummyData.travelingWithinUKToEngland}</p>
+     <p>{dummyData.travelingWithinUKFromEngland}</p>
+     <h2>Traveling within England</h2>
+     <p>{dummyData.travelingWithinEnglandParagraph}</p>
+
+
    </div>
   );
 }

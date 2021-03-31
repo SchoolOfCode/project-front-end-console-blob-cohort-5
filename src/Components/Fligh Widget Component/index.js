@@ -1,15 +1,14 @@
 import React from 'react';
+import css from "./flightwidget.module.css";
+
 
 function FlightWidget(destinationName){
 return (
     <div>
-        <div data-skyscanner-widget="SearchWidget" data-origin-geo-lookup="true" data-destination-name="'Edinburgh'"
-
-></div>
-<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+       <iframe class={css.widget} src="https://widgets.skyscanner.net/widget-server/widgets/iframe?skyscannerWidget=SearchWidget&locale=en-GB&market=GB&currency=GBP" width></iframe>
 
     </div>
 )
 }
 
-export default FlightWidget
+export default FlightWidget;

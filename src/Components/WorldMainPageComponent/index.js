@@ -3,8 +3,12 @@ import css from './WorldPage.module.css';
 import cn from 'classnames';
 import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
+
+import FlightWidget from '../Fligh Widget Component';
+
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
 import useFetch  from "../../CustomHooks/useFetch";
+
 
 
 function WorldPage () {
@@ -26,9 +30,17 @@ function handleDate(e){
 
 return(
     <div>
+
+    {/* <SearchBar />
+    <TravelRestrictionsDisplay /> */}
+    <h1>World Page</h1>
+    
+    <FlightWidget />
+
     <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate}></input>
     <CountryCodesList handleChange={handleChange}/>
     <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/>
+
     </div>
 
 

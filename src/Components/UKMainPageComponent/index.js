@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import css from "./UKPage.module.css";
 // import cn from "classnames";
@@ -44,8 +45,11 @@ function UKPage() {
         </div>
         <div>
           <UKMap className ={css.UKMap} />
+    
+    <HotelWidget /> //this need to be put somewhere
         </div>
       </div>
+
     </div>
   );
 }
