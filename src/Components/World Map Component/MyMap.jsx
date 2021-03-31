@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { MapContainer, GeoJSON } from "react-leaflet";
 import mapData from "../../mapdatajson/countries.json";
 import "leaflet/dist/leaflet.css";
@@ -11,7 +11,7 @@ import "./MyMap.css";
 //converted to new React
 
 
-function MyMap()  {
+function MyMap({handleCountryChange})  {
 
 //this colors can be depending on travel ban for each country
   let color = ['green', 'orange', 'red']; 
@@ -30,7 +30,7 @@ function MyMap()  {
     // dashArray: 5,
   };
   
-
+  const [ccA3, setccA3] = useState("GBR")
 
   const onCountryClick = (event) => {
     event.target.setStyle({
@@ -38,7 +38,8 @@ function MyMap()  {
       fillColor: "yellow",
       fillOpacity: 0.5,
     });
-    console.log("Doh");
+    console.log(event.sourceTarget.feature.properties.ISO_A3);
+    handleCountryChange(event.sourceTarget.feature.properties.ISO_A3);
     //we might want to add a function tu display som data or to take us to the country stats :)
   };
 
@@ -48,7 +49,7 @@ function MyMap()  {
 
     const countryName = country.properties.ADMIN;
 
-    console.log(`${countryName},${countryCode}`);
+    // console.log(`${countryName},${countryCode}`);
 
     layer.bindPopup(countryName); 
 
