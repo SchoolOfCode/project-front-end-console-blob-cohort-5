@@ -36,7 +36,7 @@ return(
     <h1>World Page</h1>
     
     <FlightWidget />
-
+ 
     <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate}></input>
     <CountryCodesList handleChange={handleChange}/>
     <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/>
