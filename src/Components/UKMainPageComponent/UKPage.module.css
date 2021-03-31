@@ -1,3 +1,4 @@
+
 .main{
     overflow: visible;
 }
@@ -10,3 +11,37 @@
       ". ."
       ". .";
   }
+
+.UKpage {
+    background-color: blueviolet;
+    align-content: center;
+}
+
+.flexcontainer{
+
+display: flex;
+ justify-content: space-evenly;
+
+} 
+
+.UKMap{
+width: 50px; 
+height:100px;
+justify-content: flex-end;
+
+
+}
+
+ .HotelWidget{
+    
+display: flex;
+justify-content: flex-end;
+align-self: flex-end;
+} 
+
+/* .UKRestrictionsDisplay{
+display: flex;
+justify-content: flex-start;
+
+} */
+

@@ -3,6 +3,7 @@ import css from "./hotelWidgetComponent.module.css";
 
 function HotelWidget(destinationName){
 return(
+
     <div>
 <div>
 <iframe class={css.widget} src="https://widgets.skyscanner.net/widget-server/widgets/iframe?skyscannerWidget=HotelSearchWidget&locale=en-GB&market=GB&currency=GBP"
@@ -10,6 +11,7 @@ return(
 
     </div>
 </div>
+
 );
 }
 
