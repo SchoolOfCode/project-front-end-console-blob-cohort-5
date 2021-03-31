@@ -8,6 +8,7 @@ import FlightWidget from '../Fligh Widget Component';
 
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
 import useFetch  from "../../CustomHooks/useFetch";
+import MyMap from "../World Map Component/MyMap.jsx";
 
 
 
@@ -29,18 +30,30 @@ function handleDate(e){
 }
 
 return(
-    <div>
+    <div className={css.flexContainer}>
 
     {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
-    <h1>World Page</h1>
-    <MyMap />
-    <FlightWidget />
- 
-    <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate}></input>
-    <CountryCodesList handleChange={handleChange}/>
-    {/* <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/> */}
 
+  <div className={css.inputRow}>
+    <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate} ></input>
+    <CountryCodesList handleChange={handleChange}/>
+  </div>
+
+    <div className={css.map}>
+      <MyMap/>    
+        </div>
+
+
+<div className={css.bottomRow}>
+    <div className={css.TravelRestrictionsDisplay}>
+      Travel Restrictions Display
+      </div>
+    <div className={css.flightWidget}>
+    <FlightWidget />
+      </div>  
+    {/* <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/> */}
+    </div>
     </div>
 
 
