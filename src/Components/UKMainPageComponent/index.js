@@ -26,7 +26,7 @@ function UKPage() {
           placeholderText="Pick a place in UK..."
         />
       </div>
-      <div className={css.flexcontainer}>
+        <div className={css.flexcontainer}>
       
       <div className={css.flexLeft}>
 

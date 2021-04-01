@@ -10,7 +10,7 @@ justify-content: space-between;
 padding: 0.5rem calc((100vw - 1000px) /2);
 z-index: 10;
 opacity: 0.6;
-position: fixed;
+
 min-width: 100%;
 
 `
