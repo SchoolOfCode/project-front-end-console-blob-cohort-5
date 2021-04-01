@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
 
         <div>
-            <Nav>
+            <Nav data-testid="nav">
                 <NavLink to="/">
                     <img src={logo} />
 
