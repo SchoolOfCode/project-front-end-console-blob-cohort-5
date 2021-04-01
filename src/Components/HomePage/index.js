@@ -1,13 +1,17 @@
 import React from 'react';
 import Button from "../ButtonComponent/index";
 import css from "./HomePage.module.css";
-import MyMap from "../World Map Component/MyMap"
+import { useHistory } from 'react-router-dom';
+
 
 function HomePage() {
+
+  const history = useHistory();
+
   return (
   <div className={css.main}>
-    <Button size="large" text="Traveling Within UK"/>
-    <Button size="large" text="Traveling Abroad"/>
+    <Button size="large" text="Traveling Within UK" handleclick={() => history.push('../UKPage')}/>
+    <Button size="large" text="Traveling Abroad" handleclick={() => history.push('../WorldPage')}/>
     
   </div> 
   );
