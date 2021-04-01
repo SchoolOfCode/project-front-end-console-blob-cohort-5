@@ -19,9 +19,9 @@ function HomePage() {
       </div>
 
       <div className={css.buttons}>
-        <Button size="large" text="Traveling Within UK" handleclick={() => history.push('../UKPage')} />
+        <Button size="medium" text="Traveling Within UK" handleclick={() => history.push('../UKPage')} />
 
-        <Button size="large" text="Traveling Abroad" handleclick={() => history.push('../WorldPage')} />
+        <Button size="medium" text="Traveling Abroad" handleclick={() => history.push('../WorldPage')} />
       </div>
     </div>
   );
