@@ -8,3 +8,18 @@
   min-height: 100vh;
   
   }
+
+  .slogan{
+    width: 50vw;
+    border: 2px solid red;
+
+  }
+
+
+.buttons {
+
+  display: flex;
+  justify-content: space-between;
+  width: 50vw;
+  
+}
