@@ -1,7 +1,7 @@
 import React from 'react';
 import { Nav, NavLink, Bars, NavMenu, } from './NavbarElements.js';
+import logo from "./TravelSafe500px.png"
 
-import logo from "./animatedlogo.gif";
 
 
 const Navbar = () => {
