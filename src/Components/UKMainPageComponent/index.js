@@ -23,7 +23,7 @@ function UKPage() {
         <SearchBar
           searchCountry={searchCountry}
           setSearchCountry={setSearchCountry}
-          placeholderText="pick a place in UK"
+          placeholderText="Pick a place in UK..."
         />
       </div>
       <div className={css.flexcontainer}>

@@ -4,10 +4,11 @@ import cn from 'classnames';
 import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
 import FlightWidget from '../Fligh Widget Component';
-
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
 import useFetch  from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/MyMap.jsx";
+import CountriesList from "../CountryCodeList/CountryListObject"
+
 
 
 
@@ -20,13 +21,17 @@ function WorldPage () {
   
   const[countryCode, setCountryCode] = useState("GBR")
   const countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`,[countryCode, date]);
-  // const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`,[countryCode]);
+  const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`,[countryCode]);
   function handleChange(e){
   setCountryCode(e.target.value);
 }
 function handleDate(e){
   setDate(e.target.value);
 }
+
+
+let today = new Date().toISOString().substr(0, 10);
+
 
 return(
     <div className={css.flexContainer}>
@@ -35,61 +40,29 @@ return(
     <TravelRestrictionsDisplay /> */}
 
   <div className={css.inputRow}>
-    <input placeholder={"Check Older Date"} type={"date"} onChange={handleDate} ></input>
+    <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input>
     <CountryCodesList handleChange={handleChange}/>
+
+
+
   </div>
 
     <div className={css.map}>
-      <MyMap/>    
+      <MyMap handleCountryChange={setCountryCode}/>    
         </div>
+
 
 
 <div className={css.bottomRow}>
     <div className={css.TravelRestrictionsDisplay}>
-      Travel Restrictions Display
+      
+    <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/>
       </div>
     <div className={css.flightWidget}>
     <FlightWidget />
       </div>  
-    {/* <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"mustardBox"}/> */}
     </div>
     </div>
-
-
-// //     const [searchCountry, setSearchCountry] = useState("");
-// //     const [countryData, setCountryData]= useState(""); 
-
-// //   async function fetchCountriesDB(searchCountry) {
-// //     let response = await fetch(`${BACKEND_URL}/country?search=${searchCountry}`);
-// //     let data = await response.json();
-// //     setCountryData(data);
-// //     console.log(data);
-// //   }
-
-// //   let wData = {
-// //     england: {},
-// //     spain: {
-// //       countryName: "Spain",
-// //       entryRestrictions: "No Entry Allowed",
-// //       qurantineRestrictions: "14 day on arrival",
-// //     },
-// //   };
-
-  
-
-//   return (
-//     <div>
-//       <SearchBar
-//         setSearchCountry={setCountry}
-//         searchCountry={country}
-//         placeholderText={"Search Country Here"}
-//       />
-//       {/* searches database and brings back object for country */}
-//       <TravelRestrictionsDisplay data={wData[country]} />
-//       <FlightWidget />
-//       <HotelWidget />
-//       <WorldMap />
-//     </div>
 
   );
 

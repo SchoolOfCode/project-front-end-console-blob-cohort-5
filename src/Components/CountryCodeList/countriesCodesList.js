@@ -241,7 +241,7 @@ return (
 <option	value="GBR">United Kingdom of Great Britain and Northern Ireland (the)	</option>
 <option	value="UMI">United States Minor Outlying Islands (the)	</option>
 <option	value="USA">United States of America (the)	</option>
-<option	value="URY">Uruguay	</option>
+<option	value="URY">Uruguay	</option>           
 <option	value="UZB">Uzbekistan	</option>
 <option	value="VUT">Vanuatu	</option>
 <option	value="VEN">Venezuela (Bolivarian Republic of)	</option>

@@ -6,7 +6,7 @@ function TravelRestrictionsDisplay({data, data2, color}) {
 console.log(data)
 
 
-  if(data?.policyActions && data.stringencyData.country_code != undefined && data.policyActions.length > 1){
+  if(data?.policyActions && data.stringencyData.country_code != undefined && data.policyActions.length > 1 && data2?.policyActions && data2.stringencyData.country_code != undefined && data2.policyActions.length > 1 ){
     return (
       <div >
         <div className={cn(css[color])}>
