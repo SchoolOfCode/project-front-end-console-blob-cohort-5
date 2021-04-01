@@ -29,11 +29,7 @@ function handleDate(e){
   setDate(e.target.value);
 }
 
-{/* ----Potential Search Bar V1----      */}
-        // const [search, setSearch] = useState("England")
-        // console.log(CountriesList)
-        // var filterData = CountriesList.filter(item => item.country.includes(search));
-{/* ----Potential Search Bar V1----      */}
+
 let today = new Date().toISOString().substr(0, 10);
 
 
@@ -47,10 +43,7 @@ return(
     <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input>
     <CountryCodesList handleChange={handleChange}/>
 
-{/* ----Potential Search Bar V1----      */}
-    {/* <input onChange={e=>setSearch(e.target.value)}/>
-    <button onClick={()=>setCountryCode(filterData[0].code)}>Search Country</button> */}
-{/* ----Potential Search Bar V1----      */}
+
 
   </div>
 
@@ -70,42 +63,6 @@ return(
       </div>  
     </div>
     </div>
-
-
-// //     const [searchCountry, setSearchCountry] = useState("");
-// //     const [countryData, setCountryData]= useState(""); 
-
-// //   async function fetchCountriesDB(searchCountry) {
-// //     let response = await fetch(`${BACKEND_URL}/country?search=${searchCountry}`);
-// //     let data = await response.json();
-// //     setCountryData(data);
-// //     console.log(data);
-// //   }
-
-// //   let wData = {
-// //     england: {},
-// //     spain: {
-// //       countryName: "Spain",
-// //       entryRestrictions: "No Entry Allowed",
-// //       qurantineRestrictions: "14 day on arrival",
-// //     },
-// //   };
-
-  
-
-//   return (
-//     <div>
-//       <SearchBar
-//         setSearchCountry={setCountry}
-//         searchCountry={country}
-//         placeholderText={"Search Country Here"}
-//       />
-//       {/* searches database and brings back object for country */}
-//       <TravelRestrictionsDisplay data={wData[country]} />
-//       <FlightWidget />
-//       <HotelWidget />
-//       <WorldMap />
-//     </div>
 
   );
 
