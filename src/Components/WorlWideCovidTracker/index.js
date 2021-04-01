@@ -32,16 +32,18 @@ function WwTracker() {
   const date = new Date(parseInt(latest.updated));
   const lastUpdated = date.toString();
 
-
+//this corrects the search bar
+//regardless of case
   const filterCountry = results.filter(item => {
-    return searchCountry !== "" ? item.country === searchCountry : null;
+    return searchCountry && item.country.toLowerCase().startsWith(searchCountry.toLowerCase());
   })
 
   // reuseable component
   const countries = filterCountry.map((data, i) => {
     return (
       <Card
-        key={i}
+      // changed from i to data.country, because the key would not change when the list is re-rendered because of filter,i it can use old children
+        key={data.country}
         bg="light"
         text="dark"
         className="text-center"
