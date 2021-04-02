@@ -1,15 +1,15 @@
 
 export let colors = {
-    blue:"blueBox",
-    mustard:"mustardBox"
+    blue: "blueBox",
+    mustard: "#FDFFB6"
 }
 
 export let sizes = {
-    small:"smallBox",
-    large:"largeBox"
+    small: "smallBox",
+    large: "largeBox"
 }
 
 export let imgSizes = {
-    small:"smallImg",
-    large:"largeImg"
+    small: "smallImg",
+    large: "largeImg"
 }
