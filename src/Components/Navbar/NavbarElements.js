@@ -8,10 +8,12 @@ height: 80px;
 display: flex;
 justify-content: space-between;
 padding: 0.5rem calc((100vw - 1000px) /2);
-z-index: 10;
-${'' /* opacity: 0.6; */}
+z-index: 1000;
+
 
 min-width: 100%;
+box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+position: fixed;
 
 `
 export const NavLink = styled(Link)`
@@ -23,14 +25,14 @@ padding: 0 1rem;
 height: 100%;
 cursor: pointer; 
 
-&.active {
+&.active{
     color: #15cdfc;
 }
 `
 
 export const Bars = styled(FaBars)`
 display: none;
-color: #fff;
+color: ;
 
 @media screen and (max-width: 768px){
     display:block;
