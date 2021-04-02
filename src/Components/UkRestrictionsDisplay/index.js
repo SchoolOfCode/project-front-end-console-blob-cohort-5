@@ -3,9 +3,18 @@ import css from './ukRestDisplay.module.css';
 import cn from 'classnames'
 
 
-
+url = "/localhost:5001";
 
 function UKRestrictionsDisplay(data, color, size, heading) {
+  const [fetchedData, setFetchedData] = useState(null);
+
+  const webScrapeFetch =async () => {
+  
+      let res = await fetch(url);
+      let data = await res.json();
+      setFetchedData(data);
+      console.log(data);
+  }
 
   let dataUK = {
     country: "England",
