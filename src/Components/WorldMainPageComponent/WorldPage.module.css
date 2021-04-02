@@ -8,11 +8,7 @@
      /* justify-content: space-evenly; */
      flex-direction: row;
      border: 2px solid red;
-<<<<<<< HEAD
-     margin: 10px;
-=======
      margin: 0px 10px;
->>>>>>> d087873cfe53fffe04cc2fa38d69cbbd14c0126d
 }
 
 .inputRow{
