@@ -48,6 +48,7 @@ select.add( new Option( value, i ) );
 }, [results])
 
 function handleSearch(e){
+  console.log(e)
   setSearch(e.target.value)
   // setSearch(inputValue)
 }

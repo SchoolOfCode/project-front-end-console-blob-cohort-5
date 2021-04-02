@@ -26,8 +26,6 @@ function UKRestrictionsDisplay(data, color, size, heading) {
             <br />
             Restrictions: {dataUK.quarantineRestrictions}{" "}
           </p>
-
-
    </div>
   );
 }
