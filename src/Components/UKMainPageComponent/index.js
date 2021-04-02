@@ -1,14 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect} from "react";
 import css from "./UKPage.module.css";
-// import cn from "classnames";
-
 import SearchBar from "../SearchComponent/index.js";
 import UKMap from "../UKMapComponent";
 import UKRestrictionsDisplay from "../UkRestrictionsDisplay";
 import HotelWidget from "../Hotel Widget Component";
+import axios from "axios";
+import UkGovApiDisplay from "../UKGov API Component";
 
 function UKPage() {
-  const [searchCountry, setSearchCountry] = useState("");
+  const [results, setResults] = useState([]);
+  const [searchCountry, setSearchCountry] = useState("") 
+  const [search, setSearch] = useState(0)
+  
+  
+  let DATE = new Date().toISOString().substr(0, 10); //have this display yesterday at all times 
+
+  let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-01&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`
+
+  useEffect(() => {
+    axios
+      .all([
+        axios.get(URL),
+      ])
+      .then(responseArr => {
+        setResults(responseArr[0].data.data);
+        console.log(responseArr[0].data.data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }, []);
+
+
+  let countryArray=[]
+useEffect(() => {
+    results.forEach((value,i)=>{
+        countryArray[i] = value.areaName
+        return countryArray
+    })
+    
+let select = document.getElementById( 'counties' );
+countryArray.forEach((value, i)=> {
+select.add( new Option( value, i ) );
+
+});
+    
+}, [results])
+
+function handleSearch(e){
+  setSearch(e.target.value)
+  // setSearch(inputValue)
+}
+
 
   let dataUK = {
     country: "England",
@@ -19,31 +62,22 @@ function UKPage() {
   return (
     <div className={css.UKpage}>
       <h1>UK Page</h1>
-      <div>
-        <SearchBar
-          searchCountry={searchCountry}
-          setSearchCountry={setSearchCountry}
-          placeholderText="Pick a place in UK..."
-        />
-      </div>
+      
       <div className={css.flexcontainer}>
       
       <div className={css.flexLeft}>
 
 
         <div className={css.WebScrapeInfo}>
-          <p>
-            {/* this section is webScraped */}
-            County:{dataUK.country}
-            <br />
-            covidHeadline: {dataUK.covidHeadline}
-            <br />
-            Restrictions: {dataUK.quarantineRestrictions}{" "}
-          </p>
+          <UKRestrictionsDisplay data={dataUK}/>
+      
         </div>
         <div className={css.UKRestrictionsDisplay}>
           {/* this is the API */}
-          <UKRestrictionsDisplay />
+          <h1>Regional stats</h1>
+          <p>Search for a County, Nation, Region, Town or City</p>
+          <select id="counties" onChange={handleSearch} ></select>
+          <UkGovApiDisplay data={results} search={search}/>
         </div>
 
 </div>

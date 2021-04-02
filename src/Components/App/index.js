@@ -4,7 +4,7 @@ import React from "react";
 import Home from "../HomePage";
 import UKPage from "../UKMainPageComponent";
 import WorldPage from "../WorldMainPageComponent";
-import WwTracker from "../WorlWideCovidTracker"
+import WwTracker from "../WorldWideCovidTracker"
 
 
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";

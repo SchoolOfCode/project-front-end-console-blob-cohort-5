@@ -7,21 +7,25 @@ import cn from 'classnames'
 
 function UKRestrictionsDisplay(data, color, size, heading) {
 
-  const dummyData = {
-    "travelingWithinUKToEngland": "Birmingham",
-    "travelingWithinUKFromEngland": "Case rate",
-    "travelingWithinEnglandParagraph": "case rate change"
+  let dataUK = {
+    country: "England",
+    covidHeadline: "Stay at Home",
+    quarantineRestrictions: "Don't go out, or 14 day quarantine",
   };
 
 
   return (
    <div className={cn(css[color], css[size])}>
 
-     <h2>Region stats</h2>
-     <p>{dummyData.travelingWithinUKToEngland}</p>
-     <p>{dummyData.travelingWithinUKFromEngland}</p>
-     <h2>change since last week</h2>
-     <p>{dummyData.travelingWithinEnglandParagraph}</p>
+     <h2>Current Gov Restrictions for Travel</h2>
+     <p>
+            {/* this section is webScraped */}
+            County:{dataUK.country}
+            <br />
+            covidHeadline: {dataUK.covidHeadline}
+            <br />
+            Restrictions: {dataUK.quarantineRestrictions}{" "}
+          </p>
 
 
    </div>
