@@ -13,7 +13,7 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  let url = "https://localhost:5001/country";
+  let url = "http://localhost:5000/country";
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
 
