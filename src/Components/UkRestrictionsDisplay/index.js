@@ -34,7 +34,10 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 
 function handleClick(){setClick(!click)}
 
-if (fetchedData){
+while (!fetchedData) {
+  return <h1>LOADING</h1>
+} 
+// (fetchedData){
   return (
    <div className={cn(css[color], css[size])}>
 
@@ -93,11 +96,11 @@ if (fetchedData){
    </div>
   );
 }
-return (
-<><h1>Loading...</h1>
-<button onClick={handleClick}>Check UK Gov Restrictions... </button>
-</>)
-}
+// return (
+// <><h1>Loading...</h1>
+// <button onClick={handleClick}>Check UK Gov Restrictions... </button>
+// </>)
+// }
 
 
 export default UKRestrictionsDisplay;
