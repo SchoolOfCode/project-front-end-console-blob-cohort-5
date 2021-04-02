@@ -16,13 +16,14 @@ function UKRestrictionsDisplay(data, color, size, heading) {
   
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
-  const url = "https://web-scraper-backend-blob5.herokuapp.com/country"
+  const url = process.env.REACT_APP_URL
 
 
   useEffect(() => {
     const webScrapeFetch =async () => {
     
         let res = await fetch(url);
+        console.log(url)
         let data = await res.json();
         setFetchedData(data);
         console.log(data);
@@ -94,7 +95,7 @@ if (fetchedData){
 }
 return (
 <><h1>Loading...</h1>
-{/* <button onClick={handleClick}>Check UK Gov Restrictions... </button> */}
+<button onClick={handleClick}>Check UK Gov Restrictions... </button>
 </>)
 }
 
