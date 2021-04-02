@@ -2,8 +2,7 @@ function CountryCodesList({handleChange}){
 
 return (
     <>
-<select id="countries" name="countries" onChange={(e)=>handleChange(e)} style={{width:"50%"}}>
-<option	value={null}>Demo Object</option>
+<select id="countries" name="countries" onChange={(e)=>handleChange(e)} style={{width:"100%", height:"30px", borderRadius:"25px"}}>
 <option	value="GBR">United Kingdom of Great Britain and Northern Ireland (the)	</option>
 <option	value="AFG">Afghanistan</option>
 <option	value="ALB">Albania	</option>
@@ -241,7 +240,7 @@ return (
 <option	value="GBR">United Kingdom of Great Britain and Northern Ireland (the)	</option>
 <option	value="UMI">United States Minor Outlying Islands (the)	</option>
 <option	value="USA">United States of America (the)	</option>
-<option	value="URY">Uruguay	</option>
+<option	value="URY">Uruguay	</option>           
 <option	value="UZB">Uzbekistan	</option>
 <option	value="VUT">Vanuatu	</option>
 <option	value="VEN">Venezuela (Bolivarian Republic of)	</option>

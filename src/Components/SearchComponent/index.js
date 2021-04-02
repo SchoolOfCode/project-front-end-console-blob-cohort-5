@@ -13,6 +13,8 @@ function SearchBar({searchCountry, setSearchCountry, placeholderText, variant}) 
             <Form.Group controlId="formGroupEmail">
                 <Form.Control
                     type="text"
+                    //this turns off auto complete
+                    autoComplete="off"
                     placeholder={placeholderText}
                     onChange={e => setSearchCountry(e.target.value)} 
                     className={cn(css.input, css[variant])}/>

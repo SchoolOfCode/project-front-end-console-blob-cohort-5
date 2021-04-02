@@ -6,9 +6,9 @@ function TravelRestrictionsDisplay({data, data2, color}) {
 console.log(data)
 
 
-  if(data?.policyActions && data.stringencyData.country_code != undefined && data.policyActions.length > 1){
+  if(data?.policyActions && data.stringencyData.country_code != undefined && data.policyActions.length > 1 && data2?.policyActions && data2.stringencyData.country_code != undefined && data2.policyActions.length > 1 ){
     return (
-      <div >
+      <div data-testid="travelrestrictions">
         <div className={cn(css[color])}>
       <p>{`Border Status: ${data.policyActions[7].policy_value_display_field}`}</p>
       <p>{` Border Status Code: ${data.policyActions[7].policyvalue}`}</p>
@@ -43,7 +43,7 @@ console.log(data)
   }
 
   return (
-    <div>
+    <div data-testid="travelrestrictions">
     <h1>There is no data for this date, try an older date please...</h1>
     </div>
   )
