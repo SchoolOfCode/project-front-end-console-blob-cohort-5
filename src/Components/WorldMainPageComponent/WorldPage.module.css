@@ -1,66 +1,60 @@
 .map {
   display: flex;
-  justify-content: center; 
-}
-
-.bottomRow{
-    display: flex;
-     /* justify-content: space-evenly; */
-     flex-direction: row;
-     border: 2px solid red;
-     margin: 0px 10px;
-     margin-top: 10px;
-}
-
-.inputRow{
-    border: 2px solid rgb(72, 209, 101);
-padding-left: 30%;
-padding-right: 30%;
-}
-
-.map{
-  display:flex;
   justify-content: center;
-  z-index:1;
 }
 
-h1{
+.bottomRow {
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: row;
+  border: 1px solid black;
+  margin: 0px 10px;
+  margin-top: 10px;
+}
+
+.inputRow {
+  /* border: 2px solid rgb(72, 209, 101); */
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.map {
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+h1 {
   text-align: center;
 }
-.flexContainer{
-
+.flexContainer {
+  padding-top: 7%;
   display: flex;
   /* justify-content: space-evenly; */
   flex-direction: column;
-  border: 2px solid rgb(59, 85, 199);
-  background-color: #F4F0E1;
+  /* border: 2px solid rgb(59, 85, 199); */
+  background-color: #f4f0e1;
   min-height: 100vh;
-  
-    } 
-
-
-  .TravelRestrictionsDisplay{
-    border: 2px solid rgb(224, 92, 196);
-    width:50%
-  }
-
-  .flightWidget{
-      display:flex;
-  justify-content: center;
-    border: 2px solid rgb(224, 92, 196);
-    width: 50%;
-    padding-left: 5%;
-    display: flex;
-    justify-content: center;
-    
 }
 
+.TravelRestrictionsDisplay {
+  border: 1px solid black;
+  width: 50%;
+}
 
-
+.flightWidget {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  width: 50%;
+  padding-left: 5%;
+  display: flex;
+  justify-content: center;
+}
 
 /* Search Bar Styling - maybe seperate component */
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -68,7 +62,8 @@ h1{
   cursor: pointer;
 }
 
-.dropbtn:hover, .dropbtn:focus {
+.dropbtn:hover,
+.dropbtn:focus {
   background-color: #3e8e41;
 }
 
@@ -83,7 +78,9 @@ h1{
   border-bottom: 1px solid #ddd;
 }
 
-.myInput:focus {outline: 3px solid #ddd;}
+.myInput:focus {
+  outline: 3px solid #ddd;
+}
 
 .dropdown {
   position: relative;
