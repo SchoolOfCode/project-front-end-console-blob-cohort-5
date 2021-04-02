@@ -1,6 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import css from './ukRestDisplay.module.css';
 import cn from 'classnames'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+  Box
+} from "@chakra-ui/react"
 
 
 
@@ -21,20 +29,7 @@ function UKRestrictionsDisplay(data, color, size, heading) {
     webScrapeFetch()
   }, [click])
 
-//   var acc = document.getElementsByClassName("accordion");
-// var i;
 
-// for (i = 0; i < acc.length; i++) {
-//   acc[i].addEventListener("click", function() {
-//     this.classList.toggle("active");
-//     var panel = this.nextElementSibling;
-//     if (panel.style.display === "block") {
-//       panel.style.display = "none";
-//     } else {
-//       panel.style.display = "block";
-//     }
-//   });
-// }
 function handleClick(){setClick(!click)}
 
 if (fetchedData){
@@ -42,21 +37,56 @@ if (fetchedData){
    <div className={cn(css[color], css[size])}>
 
      <h2>Current Gov Restrictions for Travel</h2>
-     <p>
-            {/* this section is webScraped */}
-            <h2>Travelling within England:</h2>
-            <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ',')}</p>
+    
+          <Accordion colorScheme={"facebook"}>
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex="1" textAlign="left">
+        Travelling within England:        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    {fetchedData[1].englandInternal.replace(/&#44;/g, ',')}
+    </AccordionPanel>
+  </AccordionItem>
+
+  
+  <AccordionItem >
+    <h2>
+      <AccordionButton>
+        <Box flex="1" textAlign="left">
+        Travelling within the UK:     </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+      <h3>from England...</h3>
+    {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}<br />
+    <h3>to England...</h3>
+    {fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}
+    </AccordionPanel>
+  </AccordionItem>
+
+ 
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex="1" textAlign="left">
+       International Travel:   </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    <h3>from England...</h3> <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ',')}</p>
             <br />
-           
-            <h2>Travellling within the UK:</h2>
-           <h3>From England:</h3> <p>{fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}</p>
-            <br />
-            <h3>To England:</h3> <p>{fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}</p>
-          </p>
-          {/* <h2>International Travel:</h2>
-          <h3>From England:</h3> <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ',')}</p>
-            <br />
-            <h3>To England:</h3> <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ',')}</p> */}
+            <h3>to England...</h3> <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ',')}</p>
+    </AccordionPanel>
+  </AccordionItem>
+  
+</Accordion>
+   
           
    </div>
   );
