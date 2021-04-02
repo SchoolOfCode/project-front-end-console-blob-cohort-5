@@ -42,7 +42,7 @@ function WorldPage() {
     <TravelRestrictionsDisplay /> */}
 
       <div className={css.inputRow}>
-        <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input>
+        {/* <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input> */}
         <CountryCodesList handleChange={handleChange} />
 
 

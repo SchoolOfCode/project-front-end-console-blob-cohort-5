@@ -1,10 +1,17 @@
 .leaflet-container{
     
-    background-color: #006994;
-    }
-/* 
-.box{
+    background-color: #aae0ef;
     
-    border-style: double;
-    border-radius: 30%;
-} */
+
+    }
+
+    .box{
+        border: 1px solid;
+  padding: 10px;
+  box-shadow: 2px 2px #888888;
+  border-width: 5px;
+  border-radius: 25px;
+  border-color: white;
+  background-color: #1C9AB0;
+
+    }
