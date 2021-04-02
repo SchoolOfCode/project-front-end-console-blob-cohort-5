@@ -10,8 +10,6 @@ display: flex;
 justify-content: center;
 padding: 0.5rem calc((100vw - 1000px) /2);
 z-index: 1000;
-
-
 min-width: 100%;
 box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 position: fixed;
@@ -25,16 +23,16 @@ text-decoration: none;
 font-family: 'Montserrat', sans-serif;
 color: #FFF;
 font-size: 1.7rem;
-
-
 padding: 0 1rem;
 height: 100%;
 cursor: pointer; 
+margin: 19px;
 
 &.active{
     color: #FFF;
     font-size: 1.7rem;
     font-family: 'Montserrat', sans-serif;
+    
 }
 `
 
@@ -51,13 +49,15 @@ color: black;
     font-size: 1.9rem;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
-   
+    m: 80px;
 }
 `
 export const NavMenu = styled.div`
 display: flex;
 align-items: center;
 justify-items: space-between;
+
+
 ${'' /* margin-right: -24px; */}
 
 @media screen and (max-width: 768px){

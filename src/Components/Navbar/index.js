@@ -9,10 +9,9 @@ const Navbar = () => {
     return (
 
         <div>
-            <Nav data-testid="nav">
-                <NavLink to="/">
+            <Nav data-testid="nav">                                   
+                <NavLink to="/" activeStyle>
                     <img src={logo} />
-
                 </NavLink>
                 <Bars />
                 <NavMenu>
