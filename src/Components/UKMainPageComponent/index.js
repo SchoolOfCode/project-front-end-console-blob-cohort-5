@@ -82,6 +82,7 @@ function handleSearch(e){
 
         </div>
 
+      </div>
         <div className={css.flexRight}>
           <div className={css.UKMap}>
             <UKMap width="25%" />
@@ -90,9 +91,9 @@ function handleSearch(e){
             <HotelWidget />
           </div>
         </div>
-      </div>
+    </div>
     </div>
   );
-}
 
+}
 export default UKPage;
