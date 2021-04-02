@@ -1,14 +1,13 @@
 import React from 'react';
 import { Nav, NavLink, Bars, NavMenu, } from './NavbarElements.js';
-
-import logo from "./logofinal.png";
+import logo from "./TravelSafe.png";
 
 
 const Navbar = () => {
     return (
 
         <div>
-            <Nav>
+            <Nav data-testid="nav">
                 <NavLink to="/">
                     <img src={logo} />
 

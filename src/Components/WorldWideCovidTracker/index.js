@@ -7,6 +7,7 @@ import axios from "axios";
 import Columns from "react-columns";
 import SearchBar from "../SearchComponent";
 
+
 function WwTracker() {
   const [latest, setLatest] = useState([]);
   const [results, setResults] = useState([]);
@@ -43,12 +44,13 @@ function WwTracker() {
   const countries = filterCountry.map((data, i) => {
     return (
       <Card
-      // changed from i to data.country, because the key would not change when the list is re-rendered because of filter,i it can use old children
+        // changed from i to data.country, because the key would not change when the list is re-rendered because of filter,i it can use old children
         key={data.country}
         bg="light"
         text="dark"
         className="text-center"
         style={{ margin: "10px" }}
+      
       >
         <Card.Img variant="top" src={data.countryInfo.flag} />
         <Card.Body>

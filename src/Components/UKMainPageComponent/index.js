@@ -64,6 +64,7 @@ function handleSearch(e){
       <h1>UK Page</h1>
       
       <div className={css.flexcontainer}>
+
       
       <div className={css.flexLeft}>
 
@@ -78,27 +79,18 @@ function handleSearch(e){
           <p>Search for a County, Nation, Region, Town or City</p>
           <select id="counties" onChange={handleSearch} ></select>
           <UkGovApiDisplay data={results} search={search}/>
+
         </div>
 
-</div>
-
-
-<div className={css.flexRight}>
-
-        <div className={css.UKMap}>
-          <UKMap width="40%" />
-          <p>Map goes here</p>
-        </div>
-        <div className={css.HotelWidget}>
-          <HotelWidget />
-          <p>Widget goes here</p>
+        <div className={css.flexRight}>
+          <div className={css.UKMap}>
+            <UKMap width="25%" />
+          </div>
+          <div className={css.HotelWidget}>
+            <HotelWidget />
+          </div>
         </div>
       </div>
-
-
-    </div>
-
-
     </div>
   );
 }
