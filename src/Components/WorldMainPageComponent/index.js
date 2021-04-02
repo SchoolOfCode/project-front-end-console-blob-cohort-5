@@ -5,8 +5,10 @@ import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
 import FlightWidget from '../Fligh Widget Component';
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
-import useFetch from "../../CustomHooks/useFetch";
-import MyMap from "../World Map Component/MyMap.jsx";
+
+import useFetch  from "../../CustomHooks/useFetch";
+import MyMap from "../World Map Component/index.js";
+
 import CountriesList from "../CountryCodeList/CountryListObject"
 
 
