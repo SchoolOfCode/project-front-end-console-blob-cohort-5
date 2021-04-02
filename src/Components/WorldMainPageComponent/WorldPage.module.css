@@ -1,8 +1,14 @@
+.map {
+  display: flex;
+  justify-content: center; 
+}
+
 .bottomRow{
     display: flex;
      /* justify-content: space-evenly; */
      flex-direction: row;
      border: 2px solid red;
+     margin: 0px 10px;
 }
 
 .inputRow{
@@ -13,11 +19,11 @@ padding-right: 30%;
 
 .flexContainer{
 
-    display: flex;
-     /* justify-content: space-evenly; */
-     flex-direction: column;
-     border: 2px solid rgb(59, 85, 199);
-      background-color: #F4F0E1;
+  display: flex;
+  /* justify-content: space-evenly; */
+  flex-direction: column;
+  border: 2px solid rgb(59, 85, 199);
+  background-color: #F4F0E1;
   min-height: 100vh;
   
     } 
@@ -32,6 +38,9 @@ padding-right: 30%;
     border: 2px solid rgb(224, 92, 196);
     width: 60%;
     padding-left: 5%;
+    display: flex;
+    justify-content: center;
+    
 }
 
 
