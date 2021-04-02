@@ -34,8 +34,8 @@ function MyMap({handleCountryChange})  {
 
   const onCountryClick = (event) => {
     event.target.setStyle({
-      color: "red",
-      fillColor: "black",
+      color: "blue",
+      fillColor: "white",
       fillOpacity: 0.5,
     });
 
@@ -76,6 +76,7 @@ function MyMap({handleCountryChange})  {
     <div className="box">
       
       <MapContainer
+        scrollWheelZoom={false}
         style={{ height: "50vh", width: "78vh" }}
         zoom={1}
         center={[20, 10]}
