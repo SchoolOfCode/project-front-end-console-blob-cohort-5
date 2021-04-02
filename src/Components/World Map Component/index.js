@@ -74,9 +74,9 @@ function MyMap({handleCountryChange})  {
 
   return (
     <div className="box">
-      <h1>Map</h1>
+      
       <MapContainer
-        style={{ height: "40vh", width: "80vw" }}
+        style={{ height: "50vh", width: "78vh" }}
         zoom={1}
         center={[20, 10]}
       >
