@@ -64,7 +64,6 @@ function handleSearch(e){
 
   return (
     <div className={css.UKpage}>
-      <h1>UK Page</h1>
       
       <div className={css.flexcontainer}>
 

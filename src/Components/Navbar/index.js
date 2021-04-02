@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, NavLink, Bars, NavMenu, } from './NavbarElements.js';
-import logo from "./TravelSafe.png"
+import logo from "./TS.png"
 
 
 
@@ -11,7 +11,7 @@ const Navbar = () => {
         <div>
             <Nav data-testid="nav">
                 <NavLink to="/">
-                    <img src={logo} />
+                    <img src={logo} style={{height:"100%"}} />
 
                 </NavLink>
                 <Bars />

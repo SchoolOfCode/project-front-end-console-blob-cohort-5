@@ -42,7 +42,7 @@ while (!fetchedData) {
   return (
    <div className={cn(css[color], css[size])}>
 
-     <h2>Current Gov Restrictions for Travel</h2>
+     <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
     
           <Accordion colorScheme={"facebook"}>
   <AccordionItem>
@@ -50,11 +50,11 @@ while (!fetchedData) {
       <AccordionButton>
         <Box flex="1" textAlign="left">
         Travelling within England:        </Box>
-        <AccordionIcon />
+        <AccordionIcon  />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-    {fetchedData[1].englandInternal.replace(/&#44;/g, ',')}
+    <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ',')}</p>
     </AccordionPanel>
   </AccordionItem>
 
@@ -62,16 +62,16 @@ while (!fetchedData) {
   <AccordionItem >
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex="1" textAlign="center">
         Travelling within the UK:     </Box>
         <AccordionIcon />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
       <h3>from England...</h3>
-    {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}<br />
+   <p> {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}</p><br />
     <h3>to England...</h3>
-    {fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}
+    <p>{fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}</p>
     </AccordionPanel>
   </AccordionItem>
 
@@ -79,7 +79,7 @@ while (!fetchedData) {
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex="1" textAlign="right">
        International Travel:   </Box>
         <AccordionIcon />
       </AccordionButton>
