@@ -13,9 +13,10 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  let url = "http://localhost:5000/country";
+  
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
+  const url = "https://web-scraper-backend-blob5.herokuapp.com/country"
 
 
   useEffect(() => {
