@@ -17,6 +17,7 @@ function UKRestrictionsDisplay(data, color, size, heading) {
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
   const url = process.env.REACT_APP_URL
+  console.log(url)
 
 
   useEffect(() => {
