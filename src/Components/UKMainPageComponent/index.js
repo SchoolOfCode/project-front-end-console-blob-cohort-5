@@ -13,7 +13,7 @@ function UKPage() {
   const [search, setSearch] = useState(0)
   
   
-  let DATE = new Date().toISOString().substr(0, 10); //have this display yesterday at all times 
+  let DATE = new Date().toISOString().substr(0, 10); // can we have this display yesterday at all times 
 
   let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-01&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`
 
@@ -41,6 +41,7 @@ useEffect(() => {
     
 let select = document.getElementById( 'counties' );
 countryArray.forEach((value, i)=> {
+  console.log(`${value} and ${i} `)
 select.add( new Option( value, i ) );
 
 });
@@ -48,6 +49,8 @@ select.add( new Option( value, i ) );
 }, [results])
 
 function handleSearch(e){
+  console.log(e)
+  console.log(e.target)
   setSearch(e.target.value)
   // setSearch(inputValue)
 }
@@ -77,6 +80,8 @@ function handleSearch(e){
           {/* this is the API */}
           <h1>Regional stats</h1>
           <p>Search for a County, Nation, Region, Town or City</p>
+
+{/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
           <select id="counties" onChange={handleSearch} ></select>
           <UkGovApiDisplay data={results} search={search}/>
 

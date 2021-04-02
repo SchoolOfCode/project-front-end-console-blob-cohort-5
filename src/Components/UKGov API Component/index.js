@@ -16,6 +16,8 @@ let color = ""
    <div>
      <p>Cumulative Cases: {data[search]?.cases.cumulative}</p>
      <p style={{color:color}}>Covid Rate per 100k of Population: {data[search]?.Rate.PublishDate}</p>
+     <p><span style={{color:"blue"}}>Low  </span><span style={{color:"orange"}}>Medium </span><span style={{color:"red"}}>High</span></p>
+     
      <p>Last Updated on: {data[search]?.date}</p>
      <h2>{data[search]?.areaName}</h2>
 
