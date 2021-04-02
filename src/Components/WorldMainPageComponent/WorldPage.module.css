@@ -17,6 +17,14 @@ padding-left: 30%;
 padding-right: 30%;
 }
 
+.map{
+  display:flex;
+  justify-content: center;
+}
+
+h1{
+  text-align: center;
+}
 .flexContainer{
 
   display: flex;
@@ -35,6 +43,8 @@ padding-right: 30%;
   }
 
   .flightWidget{
+      display:flex;
+  justify-content: center;
     border: 2px solid rgb(224, 92, 196);
     width: 60%;
     padding-left: 5%;
@@ -42,6 +52,7 @@ padding-right: 30%;
     justify-content: center;
     
 }
+
 
 
 
