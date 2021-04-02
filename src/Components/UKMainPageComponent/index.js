@@ -27,44 +27,32 @@ function UKPage() {
         />
       </div>
       <div className={css.flexcontainer}>
-      
-      <div className={css.flexLeft}>
-
-
-        <div className={css.WebScrapeInfo}>
-          <p>
-            {/* this section is webScraped */}
-            County:{dataUK.country}
-            <br />
-            covidHeadline: {dataUK.covidHeadline}
-            <br />
-            Restrictions: {dataUK.quarantineRestrictions}{" "}
-          </p>
-        </div>
-        <div className={css.UKRestrictionsDisplay}>
-          {/* this is the API */}
-          <UKRestrictionsDisplay />
+        <div className={css.flexLeft}>
+          <div className={css.WebScrapeInfo}>
+            <p>
+              {/* this section is webScraped */}
+              County:{dataUK.country}
+              <br />
+              covidHeadline: {dataUK.covidHeadline}
+              <br />
+              Restrictions: {dataUK.quarantineRestrictions}{" "}
+            </p>
+          </div>
+          <div className={css.UKRestrictionsDisplay}>
+            {/* this is the API */}
+            <UKRestrictionsDisplay />
+          </div>
         </div>
 
-</div>
-
-
-<div className={css.flexRight}>
-
-        <div className={css.UKMap}>
-          <UKMap width="40%" />
-          <p>Map goes here</p>
-        </div>
-        <div className={css.HotelWidget}>
-          <HotelWidget />
-          <p>Widget goes here</p>
+        <div className={css.flexRight}>
+          <div className={css.UKMap}>
+            <UKMap width="25%" />
+          </div>
+          <div className={css.HotelWidget}>
+            <HotelWidget />
+          </div>
         </div>
       </div>
-
-
-    </div>
-
-
     </div>
   );
 }
