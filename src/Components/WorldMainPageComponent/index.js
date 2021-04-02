@@ -19,7 +19,6 @@ function WorldPage() {
   let date2 = `2021-03-01`
 
   const [countryCode, setCountryCode] = useState("GBR")
-  //WHILE countryObj array less than 2 keep fetching
   const countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, [countryCode, date]);
   const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`, [countryCode]);
   function handleChange(e) {
@@ -40,7 +39,7 @@ function WorldPage() {
     <TravelRestrictionsDisplay /> */}
 
       <div className={css.inputRow}>
-        <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input>
+        {/* <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input> */}
         <CountryCodesList handleChange={handleChange} />
 
 

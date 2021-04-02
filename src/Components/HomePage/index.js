@@ -3,7 +3,6 @@ import Button from "../ButtonComponent/index";
 import css from "./HomePage.module.css";
 import { useHistory } from 'react-router-dom';
 import logo from './animatedlogo.gif';
-import ComboBox from "../SerchTest"
 
 
 
