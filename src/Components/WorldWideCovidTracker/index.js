@@ -38,6 +38,7 @@ function WwTracker() {
   const filterCountry = results.filter(item => {
     return searchCountry && item.country.toLowerCase().startsWith(searchCountry.toLowerCase());
   })
+  
 
   // reuseable component
   const countries = filterCountry.map((data, i) => {
@@ -70,10 +71,7 @@ function WwTracker() {
     query: 'min-width: 1000px'
   }];
 
-  //function for button component
-  function testClick() {
-    console.log("component works");
-  }
+
 
   return (
     <div>

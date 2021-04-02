@@ -4,11 +4,12 @@ import logo from "./TravelSafe.png"
 
 
 
+
 const Navbar = () => {
     return (
 
         <div>
-            <Nav>
+            <Nav data-testid="nav">
                 <NavLink to="/">
                     <img src={logo} />
 

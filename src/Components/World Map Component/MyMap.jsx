@@ -32,8 +32,8 @@ function MyMap({handleCountryChange})  {
   
   const onCountryClick = (event) => {
     event.target.setStyle({
-      color: "orange",
-      fillColor: "yellow",
+      color: "red",
+      fillColor: "black",
       fillOpacity: 0.5,
     });
     console.log(event.sourceTarget.feature.properties.ISO_A3);
