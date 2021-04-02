@@ -11,17 +11,17 @@ import "./MyMap.css";
 //converted to new React
 
 
-function MyMap()  {
 
-//this colors can be depending on travel ban for each country
-  let color = ['green', 'orange', 'red']; 
+function MyMap({handleCountryChange})  {
 
-  const [countryCode, setCountryCode] = useState("");
+
+  //this colors can be depending on travel ban for each country
+  let color = ['green', 'orange', 'red'];
 
   useEffect(() => {
     // console.log(mapData)
     //big object slowing down computer
-    
+
   }, [])
 
   let countryStyle = {
@@ -31,57 +31,63 @@ function MyMap()  {
     weight: 1, // border
     // dashArray: 5,
   };
-  
-  const onCountryClick = (event) => {
 
+  const onCountryClick = (event) => {
     event.target.setStyle({
-      color: "orange",
-      fillColor: "yellow",
+      color: "red",
+      fillColor: "black",
       fillOpacity: 0.5,
     });
-    
-    console.log("Doh");
-    console.log(countryCode);
+
+    console.log(event.sourceTarget.feature.properties.ISO_A3);
+    handleCountryChange(event.sourceTarget.feature.properties.ISO_A3);
+
     //we might want to add a function tu display som data or to take us to the country stats :)
   };
 
   const onEachCountry = (country, layer) => {
 
-    const countryISOCode = country.properties.ISO_A3;
+    const countryCode = country.properties.ISO_A3;
+
     const countryName = country.properties.ADMIN;
-    console.log(`${countryName},${countryISOCode}`);
+
+
+    // console.log(`${countryName},${countryCode}`);
+
     layer.bindPopup(countryName); 
 
 
+
+
     const colorIndex = 1; //we need to create a function that depending on travel ban status, a different color will be selected  
-    layer.options.fillColor = color[colorIndex]; 
+    layer.options.fillColor = color[colorIndex];
 
     layer.on({
       click: onCountryClick,
     });
 
-    return 
+    return
 
   };
 
-  
 
-    return (
-      <div className="box">
-        <h1>Map</h1>
-        <MapContainer
-          style={{ height: "40vh", width: "60vh" }}
-          zoom={1}
-          center={[20, 10]}
-        >
-          <GeoJSON
-            style={countryStyle}
-            data={mapData.features}
-            onEachFeature={onEachCountry}
-          />
-        </MapContainer>
-      </div>
-    );
+
+  return (
+    <div className="box">
+      <h1>Map</h1>
+      <MapContainer
+        style={{ height: "40vh", width: "80vw" }}
+        zoom={1}
+        center={[20, 10]}
+      >
+        <GeoJSON
+          style={countryStyle}
+          data={mapData.features}
+          onEachFeature={onEachCountry}
+        />
+      </MapContainer>
+    </div>
+  );
 
 }
 

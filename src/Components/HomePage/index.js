@@ -5,11 +5,27 @@ import { useHistory } from 'react-router-dom';
 import logo from './animatedlogo.gif';
 
 
+
+
 function HomePage() {
+
+  let url= "https://localhost:5001/country";
+  
+   
+      const getData = async () => {
+        let res = await fetch(url);
+        let data = await res.json();
+        
+        console.log(data);
+      };
+      
+
+
 
   const history = useHistory();
 
   return (
+
 
     <div className={css.main}>
 
@@ -24,6 +40,7 @@ function HomePage() {
         <Button size="medium" text="Traveling Abroad" handleclick={() => history.push('../WorldPage')} />
       </div>
     </div>
+
   );
 }
 
