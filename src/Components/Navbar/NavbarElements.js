@@ -8,10 +8,12 @@ height: 80px;
 display: flex;
 justify-content: space-between;
 padding: 0.5rem calc((100vw - 1000px) /2);
-z-index: 10;
+z-index: 1000;
 ${'' /* opacity: 0.6; */}
 
 min-width: 100%;
+box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+position: fixed;
 
 `
 export const NavLink = styled(Link)`

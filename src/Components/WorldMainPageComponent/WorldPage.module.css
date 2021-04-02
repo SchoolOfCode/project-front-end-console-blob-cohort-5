@@ -9,6 +9,7 @@
      flex-direction: row;
      border: 2px solid red;
      margin: 0px 10px;
+     margin-top: 10px;
 }
 
 .inputRow{
@@ -39,14 +40,14 @@ h1{
 
   .TravelRestrictionsDisplay{
     border: 2px solid rgb(224, 92, 196);
-    width:40%
+    width:50%
   }
 
   .flightWidget{
       display:flex;
   justify-content: center;
     border: 2px solid rgb(224, 92, 196);
-    width: 60%;
+    width: 50%;
     padding-left: 5%;
     display: flex;
     justify-content: center;

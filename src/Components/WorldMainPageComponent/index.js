@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import css from './WorldPage.module.css';
-import cn from 'classnames';
-import SearchBar from '../SearchComponent/index.js';
 import TravelRestrictionsDisplay from '../TravelRestrictionsDisplayComponent';
 import FlightWidget from '../Fligh Widget Component';
 import CountryCodesList from "../CountryCodeList/countriesCodesList";
-
-import useFetch  from "../../CustomHooks/useFetch";
+import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 
-import CountriesList from "../CountryCodeList/CountryListObject"
+
 
 
 
