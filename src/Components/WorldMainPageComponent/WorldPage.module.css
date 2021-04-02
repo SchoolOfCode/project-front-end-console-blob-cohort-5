@@ -21,6 +21,7 @@ padding-right: 30%;
 .map{
   display:flex;
   justify-content: center;
+  z-index:1;
 }
 
 h1{
