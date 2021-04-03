@@ -1,0 +1,11 @@
+/* .govText{
+    align-content: center;
+    padding-left: 10%;
+} */
+
+.stats{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+

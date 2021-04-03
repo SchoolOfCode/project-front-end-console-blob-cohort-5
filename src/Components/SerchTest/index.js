@@ -2,21 +2,18 @@
 // import React from 'react';
 // import TextField from '@material-ui/core/TextField';
 
-<<<<<<< HEAD
-function ComboBox() {
-  return (
-    <Autocomplete
-      id="combo-box-demo"
-      options={top100Films}
-      getOptionLabel={(option) => option.title}
-      style={{ width: 300 }}
-      onChange={(value) => value.year}
-      renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
-    />
-  );
-}
-=======
->>>>>>> mafewk
+// function ComboBox() {
+//   return (
+//     <Autocomplete
+//       id="combo-box-demo"
+//       options={top100Films}
+//       getOptionLabel={(option) => option.title}
+//       style={{ width: 300 }}
+//       onChange={(value) => value.year}
+//       renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+//     />
+//   );
+// }
 
 // function ComboBox() {
 //   return (
