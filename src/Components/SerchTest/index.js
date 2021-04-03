@@ -10,6 +10,7 @@ function ComboBox() {
       options={top100Films}
       getOptionLabel={(option) => option.title}
       style={{ width: 300 }}
+      onChange={(value) => value.year}
       renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
     />
   );
