@@ -38,20 +38,23 @@
   .large {
     
     border: 1px solid ;
-    border-color: ivory;
+    border-color: rgb(233, 174, 74);
     border-width: 5px;    
-    color: rgb(235, 235, 235);
+    color: rgb(149, 119, 69);
     font-weight: bold;
     font-size: 26px;
     padding: 1em;
-    width: 40%;
+    width: 60%;
   }
   .large:hover {
-    background-color: transparent;
-    border: 1px solid lightgreen;
+    background-color: rgba(29, 144, 190, 0.7);
+    width: 90%;
+    /* border: 1px solid rgb(17, 236, 17);
     color: lightgreen;
-    color: ghostwhite;
+    color: ghostwhite; */
   }
+
+
 
   .medium {
       border: 0 solid;

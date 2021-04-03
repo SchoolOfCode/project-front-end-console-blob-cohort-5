@@ -13,15 +13,18 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  let url = "http://localhost:5000/country";
+  
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
+  const url = process.env.REACT_APP_URL
+  console.log(url)
 
 
   useEffect(() => {
     const webScrapeFetch =async () => {
     
         let res = await fetch(url);
+        console.log(url)
         let data = await res.json();
         setFetchedData(data);
         console.log(data);
@@ -32,11 +35,14 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 
 function handleClick(){setClick(!click)}
 
-if (fetchedData){
+while (!fetchedData) {
+  return <h1>LOADING</h1>
+} 
+// (fetchedData){
   return (
    <div className={cn(css[color], css[size])}>
 
-     <h2>Current Gov Restrictions for Travel</h2>
+     <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
     
           <Accordion colorScheme={"facebook"}>
   <AccordionItem>
@@ -44,11 +50,11 @@ if (fetchedData){
       <AccordionButton>
         <Box flex="1" textAlign="left">
         Travelling within England:        </Box>
-        <AccordionIcon />
+        <AccordionIcon  />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-    {fetchedData[1].englandInternal.replace(/&#44;/g, ',')}
+    <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ',')}</p>
     </AccordionPanel>
   </AccordionItem>
 
@@ -56,16 +62,16 @@ if (fetchedData){
   <AccordionItem >
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex="1" textAlign="center">
         Travelling within the UK:     </Box>
         <AccordionIcon />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
       <h3>from England...</h3>
-    {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}<br />
+   <p> {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}</p><br />
     <h3>to England...</h3>
-    {fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}
+    <p>{fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}</p>
     </AccordionPanel>
   </AccordionItem>
 
@@ -73,7 +79,7 @@ if (fetchedData){
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex="1" textAlign="right">
        International Travel:   </Box>
         <AccordionIcon />
       </AccordionButton>
@@ -91,11 +97,11 @@ if (fetchedData){
    </div>
   );
 }
-return (
-<><h1>Loading...</h1>
-{/* <button onClick={handleClick}>Check UK Gov Restrictions... </button> */}
-</>)
-}
+// return (
+// <><h1>Loading...</h1>
+// <button onClick={handleClick}>Check UK Gov Restrictions... </button>
+// </>)
+// }
 
 
 export default UKRestrictionsDisplay;

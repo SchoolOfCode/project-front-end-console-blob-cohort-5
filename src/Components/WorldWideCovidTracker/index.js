@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from "axios";
 import Columns from "react-columns";
 import SearchBar from "../SearchComponent";
+import { css } from '@chakra-ui/styled-system';
 
 
 function WwTracker() {
@@ -74,13 +75,12 @@ function WwTracker() {
 
 
   return (
-    <div>
-      <br />
-      <h2 style={{ textAlign: "center" }}>Covid-19 Live Stats</h2>
-      <br />
+    <div className={css.main}>
+      <br /><br /><br /><br />
+      {/* <h2 style={{ textAlign: "center" }}>Covid-19 Live Stats</h2> */}
       <CardDeck>
         <Card
-          bg="secondary"
+          bg="info"
           text="white"
           className="text-center"
           style={{ margin: "10px" }}
@@ -95,7 +95,7 @@ function WwTracker() {
         </Card>
 
         <Card
-          bg="danger"
+          bg="dark"
           text="white"
           className="text-center"
           style={{ margin: "10px" }}
@@ -110,8 +110,8 @@ function WwTracker() {
         </Card>
 
         <Card
-          bg="success"
-          text="white"
+          bg="light"
+          text="dark"
           className="text-center"
           style={{ margin: "10px" }}
         >

@@ -10,6 +10,7 @@ console.log(data)
     return (
       <div data-testid="travelrestrictions">
         <div className={cn(css[color])}>
+          <p>{`${data.stringencyData.country_code}`}</p>
       <p>{`Border Status: ${data.policyActions[7].policy_value_display_field}`}</p>
       <p>{` Border Status Code: ${data.policyActions[7].policyvalue}`}</p>
 

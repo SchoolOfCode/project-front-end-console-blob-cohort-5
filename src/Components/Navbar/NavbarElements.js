@@ -5,6 +5,7 @@ import { FaBars } from 'react-icons/fa';
 export const Nav = styled.nav`
 background: linear-gradient(15deg, #b3fbdf, #1C9AB0);
 ${'' /* background: linear-gradient(15deg, #fb7ba2, #fce043); */}
+
 height: 80px;
 display: flex;
 justify-content: center;
@@ -16,6 +17,7 @@ position: fixed;
 
 `
 export const NavLink = styled(Link)`
+
 display: flex;
 align-items: center;
 justify-items: space-between;
@@ -25,6 +27,7 @@ color: #FFF;
 font-size: 1.7rem;
 padding: 0 1rem;
 height: 100%;
+font-size: 1.7rem;
 cursor: pointer; 
 margin: 19px;
 
@@ -32,22 +35,15 @@ margin: 19px;
     color: #FFF;
     font-size: 1.7rem;
     font-family: 'Montserrat', sans-serif;
-
-
- 
-
 }
+
 &:hover{
     color:white;
     text-transform: lowercase;
     border : 1px solid white;
     border-radius: 25px;
     background: lightblue;
-}
-
-
-`
-
+}`
 
 
 
@@ -70,10 +66,12 @@ color: black;
 export const NavMenu = styled.div`
 display: flex;
 align-items: center;
+
 justify-items: space-between;
 
 
 ${'' /* margin-right: -24px; */}
+
 
 @media screen and (max-width: 768px){
     display: none;

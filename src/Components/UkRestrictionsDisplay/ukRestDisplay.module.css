@@ -21,3 +21,22 @@
     background-color: white;
     overflow: hidden;
   }
+  
+.heading{
+color: rgb(45, 192, 175);
+}
+  button{
+    color:white;
+    background-color: rgb(45, 192, 175);
+    border-radius: 25px;
+  }
+
+  p{
+    color:lightslategray;
+  }
+
+  .chakra-accordion__item{
+    border-radius: 25px;}
+
+  
+  
