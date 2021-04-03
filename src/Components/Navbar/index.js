@@ -1,6 +1,6 @@
 import React from 'react';
 import { Nav, NavLink, Bars, NavMenu, } from './NavbarElements.js';
-import logo from "./TS.png"
+import logo from "./travelsafev2.png";
 
 
 
@@ -9,12 +9,13 @@ const Navbar = () => {
     return (
 
         <div>
-
+            
             <Nav data-testid="nav">                                   
-                <NavLink to="/" activeStyle>
+                {/* <NavLink to="/" >
                     <img src={logo} />
 
-                </NavLink>
+                </NavLink> */}
+                <div><img src={logo} /></div>
                 <Bars />
                 <NavMenu>
                     <NavLink to="/" activeStyle>

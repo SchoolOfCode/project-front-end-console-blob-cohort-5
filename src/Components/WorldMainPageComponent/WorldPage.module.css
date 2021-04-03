@@ -1,7 +1,7 @@
-.flexContainer {
+.container {
   
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  
   /* border: 2px solid rgb(59, 85, 199); */
   background-color: #f4f0e1;
   padding-top: 7%;
@@ -12,6 +12,7 @@
 
   
 }
+
 
 .child{
 order: 2;

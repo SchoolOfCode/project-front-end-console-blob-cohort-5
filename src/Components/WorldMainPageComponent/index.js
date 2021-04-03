@@ -36,7 +36,7 @@ function WorldPage() {
   return (
 <>
  
-    <div className={css.flexContainer}>
+    <div className={css.container}>
 
       {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
