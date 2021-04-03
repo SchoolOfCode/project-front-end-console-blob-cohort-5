@@ -1,16 +1,65 @@
-.UKpage {
+/* .UKpage {
   padding-top: 7%;
   align-content: center;
   background-color: rgba(253, 251, 244, 0.5);
   min-height: 100vh;
+} */
+
+.container {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 50px 50px;
+  grid-template-areas:
+    ". .";
+  background-color: #fff;
+  padding: 10% 6%;
+  width: 100%;
+  min-height: 100vh;
+  justify-items: center;
+  font-family: 'Montserrat', sans-serif;
+  
+
+  
 }
 
-.flexcontainer {
+.columnone{
+  justify-content: center;
+  align-content: center;
+  
+  }
+
+.columntwo{
+  justify-content: center;
+  align-content: center;
+  
+  }
+  
+  .map{
+    padding-left: 40%;
+    padding-bottom: 30px;
+  }
+  
+  
+  .Widget { 
+    padding-top: 30px;
+    padding-left: 100px;
+    border-top: #000 2px ridge;
+    
+  } 
+
+h2{
+  padding-top: 10%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* .flexcontainer {
   display: flex;
   flex-direction: row;
-}
+} */
 
-.flexLeft {
+/* .flexLeft {
   width: 50%;
   height: 100vh;
   margin: 5px;
@@ -19,9 +68,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-}
+} */
 
-.WebScrapeInfo {
+/* .WebScrapeInfo {
   border: 1px solid black;
 }
 
@@ -38,7 +87,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
+} */
 
 .HotelWidget {
   display: flex;

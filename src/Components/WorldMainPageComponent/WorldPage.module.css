@@ -31,7 +31,7 @@ align-content: center;
 .flightWidget { 
   padding-top: 30px;
   padding-left: 100px;
-  border-top: #000 2px solid;
+  border-top: #000 2px ridge;
   
 } 
 

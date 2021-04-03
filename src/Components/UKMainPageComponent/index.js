@@ -63,40 +63,37 @@ function handleSearch(e){
   };
 
   return (
-    <div className={css.UKpage}>
-      
-      <div className={css.flexcontainer}>
-
-      
-      <div className={css.flexLeft}>
-
-
-        <div className={css.WebScrapeInfo}>
+    <div className={css.container}>
+       <div className={css.columnone}>
+          <div className={css.WebScrapeInfo}>
           <UKRestrictionsDisplay data={dataUK}/>
+          </div>
       
-        </div>
+        {/* </div> */}
         <div className={css.UKRestrictionsDisplay}>
-          {/* this is the API */}
-          <h1>Regional stats</h1>
+          {/* this is the API */}</div>
+          <div>
+          <h2>Regional stats</h2>
           <p>Search for a County, Nation, Region, Town or City</p>
+          </div>
 
 {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
           <select id="counties" onChange={handleSearch} ></select>
-          <UkGovApiDisplay data={results} search={search}/>
+          <div><UkGovApiDisplay data={results} search={search}/></div>
 
-        </div>
+        
 
       </div>
-        <div className={css.flexRight}>
-          <div className={css.UKMap}>
+        <div className={css.columntwo}>
+          <div className={css.map}>
             <UKMap width="25%" />
           </div>
-          <div className={css.HotelWidget}>
+          <div className={css.Widget}>
             <HotelWidget />
           </div>
         </div>
     </div>
-    </div>
+    
   );
 
 }
