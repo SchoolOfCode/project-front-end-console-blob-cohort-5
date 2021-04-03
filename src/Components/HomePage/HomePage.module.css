@@ -14,7 +14,11 @@
   display: flex;
   justify-content: space-between;
   width: 50vw;
-  border: 1px solid black;
+  border: 2px solid black;
+  font-family: 'Montserrat', sans-serif;
+  color: black;
+  padding: 10%;
+  opacity: 0.5;
   }
 
 

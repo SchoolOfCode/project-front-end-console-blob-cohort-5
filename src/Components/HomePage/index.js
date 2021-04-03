@@ -30,8 +30,8 @@ function HomePage() {
     <div className={css.main}>
 
       <div className={css.slogan}>
-        <p>Text</p>
-        <img src={logo} />
+        <h1>We are your guide to travel safely.</h1>
+        
       </div>
 
       <div className={css.buttons}>

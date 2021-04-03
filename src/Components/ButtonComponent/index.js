@@ -9,7 +9,7 @@ function Button ({text,handleclick, size}) {
   
 
   return (
-   <button onClick= {handleclick}  className={cn(css.base, css[size])} data-testid="button">{text}
+   <button clasonClick= {handleclick}  className={cn(css.base, css[size])} data-testid="button">{text}
    </button> 
   )
 };
