@@ -32,9 +32,24 @@ margin: 19px;
     color: #FFF;
     font-size: 1.7rem;
     font-family: 'Montserrat', sans-serif;
-    
+
+
+ 
+
 }
+&:hover{
+    color:white;
+    text-transform: lowercase;
+    border : 1px solid white;
+    border-radius: 25px;
+    background: lightblue;
+}
+
+
 `
+
+
+
 
 export const Bars = styled(FaBars)`
 display: none;

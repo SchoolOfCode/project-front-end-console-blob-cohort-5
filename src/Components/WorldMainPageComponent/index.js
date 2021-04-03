@@ -33,36 +33,36 @@ function WorldPage() {
 
 
   return (
+<>
+ 
     <div className={css.flexContainer}>
 
       {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
 
-      <div className={css.inputRow}>
-        {/* <input id="date" type={"date"} min="2020-01-01" max={today} onChange={handleDate}></input> */}
-        <CountryCodesList handleChange={handleChange} />
+         
+      <div className={css.child}>
 
+      <div><CountryCodesList handleChange={handleChange} />
+</div>
 
-
-      </div>
-
-      <div className={css.map}>
-        <MyMap handleCountryChange={setCountryCode} />
-        <div className={css.flightWidget}>
-          <FlightWidget />
-        </div>
-      </div>
-
-
-
-      <div className={css.bottomRow}>
+      
         <div className={css.TravelRestrictionsDisplay}>
 
           <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"#FDFFB6"} />
         </div>
         
       </div>
+
+      <div className={css.child}>
+        <MyMap handleCountryChange={setCountryCode} />
+        <div className={css.flightWidget}>
+          <FlightWidget />
+        </div>
+      </div>
     </div>
+    </>
+
 
   );
 
