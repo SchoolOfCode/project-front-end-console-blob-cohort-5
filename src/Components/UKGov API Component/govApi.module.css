@@ -1,11 +1,11 @@
 .govText{
 display: grid;    
-place-items: center;
+/* place-items: left; */
 }
 
 .stats{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .blue{
@@ -14,6 +14,9 @@ place-items: center;
     place-items: center;
     font-size:1rem;
     padding: 5%;
+    margin-inline:5%;
+    margin-bottom: 2%;
+
 border-radius: 25px;}
 
 .keyButton{
@@ -23,7 +26,7 @@ border-radius: 25px;}
     font-size:1rem;
     max-width: 30%;
     color:white;
-    margin: 5%;
+    margin-inline: 5%;
 border-radius: 25px;
 }
 
@@ -39,7 +42,19 @@ border-radius: 25px;
     place-items: center;
     font-size:1rem;
     padding: 5%;
+    margin-inline:20%;
+    margin-bottom: 2%;
 border-radius: 25px;}
+
+.rowOne{
+    display: grid;
+    justify-content: right;
+    justify-self: right;
+}
+.rowTwo{
+    display:grid;
+    grid-template-columns: 3fr 1fr;
+}
 
 .orange{
     background-color: rgb(192, 147, 63);
@@ -47,4 +62,38 @@ border-radius: 25px;}
     place-items: center;
     font-size:1rem;
     padding: 5%;
+    margin-bottom: 2%;
+    margin:20%;
+
 border-radius: 25px;}
+
+.redRate{
+    background-color: rgb(206, 95, 95);
+    display: grid;
+    place-items: right;
+    place-self: right;
+    justify-items: right;
+    /* padding: 5%; */
+border-radius: 25px;
+
+/* height:25px */
+}
+
+.greenRate{
+    background-color: rgb(66, 190, 103);
+    display: grid;
+    place-items: center;
+    font-size:1rem;
+    padding: 5%;
+border-radius: 25px;}
+
+.update{
+    display: grid;
+    font-size: small;
+    justify-content: right;
+}
+.popoverButton{
+    display: grid;
+    place-items: right;
+    /* place-self: right; */
+}
