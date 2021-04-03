@@ -48,6 +48,9 @@ function WorldPage() {
 
       <div className={css.map}>
         <MyMap handleCountryChange={setCountryCode} />
+        <div className={css.flightWidget}>
+          <FlightWidget />
+        </div>
       </div>
 
 
@@ -57,9 +60,7 @@ function WorldPage() {
 
           <TravelRestrictionsDisplay data={countryObj} data2={countryObj2} color={"#FDFFB6"} />
         </div>
-        <div className={css.flightWidget}>
-          <FlightWidget />
-        </div>
+        
       </div>
     </div>
 
