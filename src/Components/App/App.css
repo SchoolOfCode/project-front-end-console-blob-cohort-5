@@ -2,5 +2,6 @@
 .App{
    overflow: scroll;
   justify-content: center; 
+  font-family: 'Montserrat', sans-serif;
  } 
 

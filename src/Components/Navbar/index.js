@@ -9,9 +9,10 @@ const Navbar = () => {
     return (
 
         <div>
-            <Nav data-testid="nav">
-                <NavLink to="/">
-                    <img src={logo} style={{height:"100%"}} />
+
+            <Nav data-testid="nav">                                   
+                <NavLink to="/" activeStyle>
+                    <img src={logo} />
 
                 </NavLink>
                 <Bars />
