@@ -20,6 +20,16 @@
     
 }
 
+h1{
+    font-size: 3rem;
+}
+
+span{
+    font-size: 1.7rem;
+}
+
 .title{
     padding-left: 9%;
+    display: grid;
+    gap:20px;
 }
