@@ -80,10 +80,10 @@ function WwTracker() {
       {/* <h2 style={{ textAlign: "center" }}>Covid-19 Live Stats</h2> */}
       <CardDeck>
         <Card
-          bg="info"
-          text="white"
+          
+          text="black"
           className="text-center"
-          style={{ margin: "10px" }}
+          style={{ margin: "10px", backgroundColor: "#ffadad" }}
         >
           <Card.Body>
             <Card.Title>Cases</Card.Title>
@@ -95,10 +95,9 @@ function WwTracker() {
         </Card>
 
         <Card
-          bg="dark"
-          text="white"
+          text="black"
           className="text-center"
-          style={{ margin: "10px" }}
+          style={{ margin: "10px", backgroundColor: "#ffc2a9" }}
         >
           <Card.Body>
             <Card.Title>Deaths</Card.Title>
@@ -110,10 +109,9 @@ function WwTracker() {
         </Card>
 
         <Card
-          bg="light"
           text="dark"
           className="text-center"
-          style={{ margin: "10px" }}
+          style={{ margin: "10px", backgroundColor: "#fdffb6" }}
         >
           <Card.Body>
             <Card.Title>Recovered</Card.Title>
@@ -126,7 +124,7 @@ function WwTracker() {
 
       </CardDeck>
 
-      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry} placeholderText="Search for a country, to see COVID-19 stats..." />
+      <SearchBar searchCountry={searchCountry} setSearchCountry={setSearchCountry} placeholderText="Search for a country to see COVID-19 stats..." />
 
       <Columns queries={queries}>{countries}</Columns>
 
