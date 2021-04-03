@@ -15,10 +15,13 @@ function WorldTrackerPage() {
 
   return (
       <div className={css.page}>
-
+      <div className={css.title}>
+     <h1>World Tracker</h1> 
+     <h3>Find the latest Covid-19 statistics</h3>
+     </div>
     <div className={css.container}>
 <WwTracker/>
-    <h1>Search here for up to data covid dase and death rates</h1>
+    
     </div>
       </div>
 
