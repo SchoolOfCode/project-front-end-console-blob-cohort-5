@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
 import FlightWidget from "../Fligh Widget Component";
-import CountryCodesList from "../CountryCodeList/countriesCodesList";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
+import CountrySelect from "../CountrySelect/CountrySelect";
 
 function WorldPage() {
   const [date, setDate] = useState("2021-03-28");
@@ -21,9 +21,11 @@ function WorldPage() {
   const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`, [
     countryCode,
   ]);
+
   function handleChange(e) {
-    setCountryCode(e.target.value);
+    setCountryCode(e);
   }
+  
   function handleDate(e) {
     setDate(e.target.value);
   }
@@ -37,6 +39,9 @@ function WorldPage() {
     <TravelRestrictionsDisplay /> */}
 
         <div className={css.columnone}>
+
+         
+            <CountrySelect handleChange={handleChange} />
           <input
             id="date"
             type={"date"}
@@ -44,10 +49,7 @@ function WorldPage() {
             max={today}
             onChange={handleDate}
           ></input>
-
-          <div>
-            <CountryCodesList handleChange={handleChange} />
-          </div>
+      
 
           <div className={css.TravelRestrictionsDisplay}>
             <TravelRestrictionsDisplay
