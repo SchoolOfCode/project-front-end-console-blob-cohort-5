@@ -6,12 +6,16 @@ import UKRestrictionsDisplay from "../UkRestrictionsDisplay";
 import HotelWidget from "../Hotel Widget Component";
 import axios from "axios";
 import UkGovApiDisplay from "../UKGov API Component";
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 
 
 function UKPage() {
   const [results, setResults] = useState([]);
   const [resultsPrev, setResultsPrev] = useState([]) 
   const [search, setSearch] = useState(0)
+  const [selectRange, setSelectRange] = useState([]) 
+
   
   
   let DATE = new Date().toISOString().substr(0, 10); // can we have this display yesterday at all times 
@@ -39,25 +43,21 @@ function UKPage() {
 
 
   let countryArray=[]
-useEffect(() => {
+  useEffect(() => {
     results.forEach((value,i)=>{
-        countryArray[i] = value.areaName
+        countryArray[i] = {"County":value.areaName, "number":i, "group":value.areaType}
+        // console.log(countryArray)
+        // setSelectRange(countryArray)
         return countryArray
     })
-    
-let select = document.getElementById( 'counties' );
-countryArray.forEach((value, i)=> {
-  // console.log(`${value} and ${i} `)
-select.add( new Option( value, i ) );
-
-});
-    
+    setSelectRange(countryArray) 
+    console.log(countryArray)
 }, [results])
 
-function handleSearch(e){
-  console.log(e)
-  console.log(e.target)
-  setSearch(e.target.value)
+function handleSearch(num){
+  console.log(num)
+  
+  setSearch(num)
   // setSearch(inputValue)
 }
 
@@ -84,7 +84,16 @@ function handleSearch(e){
 
 {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
           <div >
-          <select id="counties" onChange={handleSearch}></select>
+          <Autocomplete
+      id="combo-box-demo"
+      options={selectRange}
+      getOptionLabel={(option) => option.County}
+      
+      groupBy={(option) => (option.group)}
+      style={{ width: 300 }}
+      onChange={(event,value) => handleSearch((value === null) ? 0 : value.number )}
+      renderInput={(params) => <TextField {...params} label="Area Search" variant="outlined" placeholder="Search an Area" />}
+    />
           </div>
           <UkGovApiDisplay data={results} data2={resultsPrev} search={search}/>
 
