@@ -1,7 +1,7 @@
 .container{
     font-family: 'Montserrat', sans-serif;
     text-align: justify;
-    padding: 10%;
+    padding: 10% 10% 0% 10%;
     display: grid;
   grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr;
@@ -26,4 +26,8 @@
 .columntwo{
     
     padding: 40% 23%;
+}
+
+h3{
+    font-size: 1.6rem;
 }
