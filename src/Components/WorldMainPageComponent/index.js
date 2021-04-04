@@ -15,10 +15,13 @@ function WorldPage() {
 
   const [countryCode, setCountryCode] = useState("GBR");
   //WHILE countryObj array less than 2 keep fetching
-  const countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, [
+  
+  let  countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, 
+  [
     countryCode,
     date,
   ]);
+  
   const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`, [
     countryCode,
   ]);
