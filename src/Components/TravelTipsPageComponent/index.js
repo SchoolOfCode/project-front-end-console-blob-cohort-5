@@ -8,9 +8,11 @@ return(
 
 <div className={css.container}>
 
-<div className={css.columnone}><h1>Travel Safely</h1>
-<div>
-<span>Check out our tips for travelling safe.</span></div>
+<div className={css.columnone}>
+<div className={css.title}>
+<h1>Travel Safely</h1>
+<span>Check out our tips for travelling safe.</span>
+</div>
 
 <div className={css.text}>
 <h3>Domestic Trip</h3>

@@ -3,7 +3,7 @@
     text-align: justify;
     padding: 10%;
     display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 4fr 1fr;
   grid-template-rows: 1fr;
   gap: 0px 0px;
   grid-template-areas:
@@ -14,7 +14,16 @@
     padding-top: 4%;
 }
 
+.columnone{
+    padding-right: 5%;
+}
+
+.title{
+    border-bottom: 1px black solid;
+    
+}
+
 .columntwo{
     
-    padding: 12% 50%;
+    padding: 40% 23%;
 }
