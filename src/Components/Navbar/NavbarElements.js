@@ -21,12 +21,12 @@ export const NavLink = styled(Link)`
 
 display: flex;
 align-items: center;
-justify-items: space-evenly;
+justify-items: center;
 text-decoration: none;
 font-family: 'Montserrat', sans-serif;
 color: #FFF;
-font-size: 1.6rem;
-padding: 0 1rem;
+font-size: 1.5rem;
+padding: 0 ;
 height: 100%;
 font-size: 1.7rem;
 cursor: pointer; 
