@@ -35,21 +35,20 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
 } else if (covidRate<=5000){
     color="blue"}
   
-    let colorRate = (covidRatePrev >= 0) ? "red" : "green";
+    let colorRate = (covidRatePrev >= 0) ? "redRate" : "greenRate";
    
     // console.log(data)
   return (
     <>
-   <div className={css.govText}>
-     <div className={css.rowOne}><h4>Cumulative Cases: {data[search]?.cases.cumulative ? data[search]?.cases.cumulative : "No Data for this Area"}</h4>
-  
-                    {/* <p><span style={{color:"blue"}}>Low  </span><span style={{color:"orange"}}>Medium </span><span style={{color:"red"}}>High</span></p> */}
-                  </div>
+   
+       <br/><h4>Cumulative Cases: {data[search]?.cases.cumulative ? data[search]?.cases.cumulative : "No Data for this Area"}</h4> 
+    
 
-       <div className={css.rowTwo}> 
-       <h2>Covid Rates:</h2>
-       <div className={css.popoverButton}>
-                    <Popover width="40%">
+     <div className={css.stats}>
+       
+                  <h2>Covid Rates:</h2>
+
+                  <Popover width="40%">
                   <PopoverTrigger>
                     <div className={css.keyButton} style={{fontWeight:"bolder"}}>?</div>
                   </PopoverTrigger>
@@ -64,30 +63,37 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
                       <li><span style={{color:"rgb(192, 147, 63)"}}>Medium = 5001 to 8000</span></li> <br/>
                      <li><span style={{color:" rgb(206, 95, 95)"}}> High = 8001 and Over</span></li> <br/> 
                       <div style={{fontWeight:'bold'}}><span style={{textDecoration:"underline"
-}}>{data[search]?.areaName}</span>  currently has a Rate of...   <span style={{color:color}}>{covidRate}</span> per 100,000 people</div>
+                      }}>{data[search]?.areaName}</span>  currently has a Rate of...   <span style={{color:color}}>{covidRate}</span> per 100,000 people</div>
                       </ul>
                       </PopoverBody>
                   </PopoverContent>
                 </Popover>
-                </div>
-                </div>
+              
+      </div>
+
+      
+      <div className={css.stats}>
+                
+              <div className={css[colorRate]}>
+                  <h4>Change since last Month</h4>  <br/> 
+                  <h5 >{`${covidChange}%`} <img src={covidChangeSign}></img> </h5>
+               </div>
+
+      
 
 
-     <div className={css.stats}>
-            <div className={css[color]}>
-                <p style={{color:'white'}}>Last Month: {covidRatePrev}</p>
-              </div>
+              <div className={css.rates} >
+                  <div className={css[color]}>
+                       <h4 style={{color:'white'}}>Last Month <br/> {covidRatePrev}</h4>
+                   </div>
      
-            <div className={css[color]}>
-                <p style={{color:'white'}}>Today: {covidRate}</p>
+                  <div className={css[color]}>
+                         <h4 style={{color:'white'}}>Today: <br/>{covidRate}</h4>
+                  </div>  
               </div>
-     
-           
-     </div>
-   </div>
-     <div className={css[colorRate]}>
-              <p style={{color:'white'}}>Change since last Month:  {`${covidChange}%`}    <img src={covidChangeSign}></img></p>
-              </div>
+
+
+        </div>
 
      <div className={css.update}>Last Updated on: {data[search]?.date}</div>
      {/* <h2>{data[search]?.areaName}</h2> */}

@@ -83,13 +83,12 @@ function handleSearch(e){
           <p>Search for a County, Nation, Region, Town or City</p>
 
 {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
-          <select id="counties" onChange={handleSearch} ></select>
+          <div >
+          <select id="counties" onChange={handleSearch}></select>
+          </div>
           <UkGovApiDisplay data={results} data2={resultsPrev} search={search}/>
 
         </div>
-        <div className={css.HotelWidget}>
-            <HotelWidget />
-          </div>
         
       </div>
         <div className={css.flexRight}>
@@ -100,6 +99,9 @@ function handleSearch(e){
           <UKRestrictionsDisplay data={dataUK}/>
       
         </div>
+          <div className={css.HotelWidget}>
+              <HotelWidget />
+            </div>
 
         </div>
     </div>
