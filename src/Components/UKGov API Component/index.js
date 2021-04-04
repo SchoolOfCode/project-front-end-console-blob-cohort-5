@@ -22,7 +22,7 @@ function UkGovApiDisplay({data, data2, search=0}) {
 
   let color = "blue"
 let covidRate = data[search]?.Rate.PublishDate;
-let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-300).toFixed(1)
+let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
 let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
 let covidChangeSign = (covidRate>= 0 ? increase : decrease )
 
@@ -35,7 +35,7 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
 } else if (covidRate<=5000){
     color="blue"}
   
-    let colorRate = (covidRatePrev >= 0) ? "redRate" : "greenRate";
+    let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
    
     // console.log(data)
   return (
