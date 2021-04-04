@@ -1,30 +1,19 @@
 import CountriesList from './CountryList';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import {useState} from 'react'
+import CountryA3List from "./CountryJSON";
 
 
 function CountrySelect({handleChange}){
-    // const [selectCountry, setSelectCountry] = useState("GBR") 
-
-    // function handleSearch(num){
-    //     console.log(num)
-        
-    //     setSearch(num)
-    //     // setSearch(inputValue)
-    //   }
-
-
 return (
     <>
   <Autocomplete
       id="combo-box-demo"
-      options={CountriesList}
-      getOptionLabel={(option) => option.country}
-      
-    //   groupBy={(option) => (option.group)}
+      options={CountryA3List}
+      getOptionLabel={(option) => `${option["Country Name"]} (${option.ISO3})`}
+      groupBy={(option) => (option["Continent Name"])}
       style={{ width: 300 }}
-      onChange={(event,value) => handleChange((value === null) ? "GBR" : value.code )}
+      onChange={(event,value) => handleChange(value)}
       renderInput={(params) => <TextField {...params} label="Country Search" variant="outlined" placeholder="Search for a Country" />}
     />
 </>

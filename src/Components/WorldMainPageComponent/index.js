@@ -8,6 +8,7 @@ import CountrySelect from "../CountrySelect/CountrySelect";
 
 function WorldPage() {
   const [date, setDate] = useState("2021-03-28");
+  const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
   let date2 = `2021-03-01`;
@@ -22,8 +23,9 @@ function WorldPage() {
     countryCode,
   ]);
 
-  function handleChange(e) {
-    setCountryCode(e);
+  function handleChange(value) {
+    setCountryCode((value === null) ? "GBR" : value.ISO3 );
+    setCapital(value.Capital)
   }
   
   function handleDate(e) {
@@ -56,6 +58,7 @@ function WorldPage() {
               data={countryObj}
               data2={countryObj2}
               color={"#FDFFB6"}
+              capital={capital}
             />
           </div>
         </div>
