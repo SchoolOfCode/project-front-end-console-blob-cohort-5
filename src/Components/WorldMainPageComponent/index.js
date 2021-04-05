@@ -5,10 +5,12 @@ import FlightWidget from "../Fligh Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
-import TransitionExample from "../Alert";
+import Alert from "../Alert";
 
 
 function WorldPage() {
+  
+
   const [date, setDate] = useState("2021-03-28");
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
@@ -40,7 +42,7 @@ function WorldPage() {
   let today = new Date().toISOString().substr(0, 10);
 
   return (
-    <>
+    <><Alert/>
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
@@ -49,7 +51,7 @@ function WorldPage() {
 
          
             <CountrySelect handleChange={handleChange} />
-            <TransitionExample/>
+            
           <input
             id="date"
             type={"date"}
