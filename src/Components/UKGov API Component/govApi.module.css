@@ -97,7 +97,8 @@ display: grid;
 .update{
     display: grid;
     font-size: small;
-    justify-self: right;
+
+justify-items: right;
 }
 .popoverButton{
     display: grid;
