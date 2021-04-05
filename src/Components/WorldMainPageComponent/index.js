@@ -5,7 +5,7 @@ import FlightWidget from "../Fligh Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
-import TransitionExample from "../Alert ";
+import TransitionExample from "../Alert";
 
 
 function WorldPage() {
