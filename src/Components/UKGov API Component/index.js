@@ -37,7 +37,7 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
   
     let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
    
-    // console.log(data)
+    console.log(data)
   return (
     <>
    
