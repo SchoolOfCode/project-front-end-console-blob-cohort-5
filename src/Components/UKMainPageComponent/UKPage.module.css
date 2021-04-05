@@ -26,11 +26,13 @@
   }
 
 .columntwo{
+  display: grid;
+  place-items: center;
   justify-content: center;
   align-content: center;
-  width: 80%;
+  width: 90%;
   /* padding-top: 11%; */
-  max-height: 15%;
+  /* max-height: 15%; */
   }
   
   
