@@ -12,6 +12,10 @@ function WwTracker() {
   const [results, setResults] = useState([]);
   const [searchCountry, setSearchCountry] = useState(""); // May need to move to App level
 
+  function formatNumber(num = 100) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
   useEffect(() => {
     axios
       .all([
@@ -53,9 +57,9 @@ function WwTracker() {
       >
         <Card.Body>
           <Card.Title>{data.country}</Card.Title>
-          <Card.Text>Cases: {data.cases}</Card.Text>
-          <Card.Text>Deaths: {data.deaths}</Card.Text>
-          <Card.Text>Recovered: {data.recovered}</Card.Text>
+          <Card.Text>Cases: {formatNumber(data.cases)}</Card.Text>
+          <Card.Text>Deaths: {formatNumber(data.deaths)}</Card.Text>
+          <Card.Text>Recovered: {formatNumber(data.recovered)}</Card.Text>
         </Card.Body>
         <Card.Img variant="top" src={data.countryInfo.flag} />
       </Card>
@@ -88,7 +92,7 @@ function WwTracker() {
         >
           <Card.Body>
             <Card.Title>Cases</Card.Title>
-            <Card.Text>{latest.cases}</Card.Text>
+            <Card.Text>{formatNumber(latest.cases)}</Card.Text>
           </Card.Body>
           {/* <Card.Footer> */}
           {/* <small>Last updated {lastUpdated}</small> */}
@@ -102,7 +106,7 @@ function WwTracker() {
         >
           <Card.Body>
             <Card.Title>Deaths</Card.Title>
-            <Card.Text>{latest.deaths}</Card.Text>
+            <Card.Text>{formatNumber(latest.deaths)}</Card.Text>
           </Card.Body>
           {/* <Card.Footer> */}
           {/* <small>Last updated {lastUpdated}</small> */}
@@ -116,7 +120,7 @@ function WwTracker() {
         >
           <Card.Body>
             <Card.Title>Recovered</Card.Title>
-            <Card.Text>{latest.recovered}</Card.Text>
+            <Card.Text>{formatNumber(latest.recovered)}</Card.Text>
           </Card.Body>
           {/* <Card.Footer> */}
           {/* <small>Last updated {lastUpdated}</small> */}
