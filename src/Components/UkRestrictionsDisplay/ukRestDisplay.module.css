@@ -32,13 +32,19 @@
     border-radius: 25px;
     
   }
-
+.customHeading {
+  padding-top: 0 !important;
+}
   p{
     color:lightslategray;
   }
 
   .chakra-accordion__item{
     border-radius: 25px;
+  }
+
+  .customDiv{
+    width: 500px;
   }
 
 
