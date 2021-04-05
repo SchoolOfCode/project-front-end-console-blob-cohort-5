@@ -36,11 +36,11 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 function handleClick(){setClick(!click)}
 
 while (!fetchedData) {
-  return <h1>LOADING</h1>
+  return <h1>Loading...</h1>
 } 
 // (fetchedData){
   return (
-   <div className={cn(css[color], css[size])}>
+   <div>
 
      <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
     
@@ -48,7 +48,7 @@ while (!fetchedData) {
   <AccordionItem className={css.item}>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex="4" textAlign="left">
         Travelling within England:        </Box>
         <AccordionIcon  />
       </AccordionButton>

@@ -10,13 +10,13 @@
     transition: 0.4s;
   } */
 .item{
-  margin: 1px;
+  margin-top: -60px;
 }
   
   
-  .active, .accordion:hover {
+  /* .active, .accordion:hover {
     background-color: #ccc; 
-  }
+  } */
   
   .panel {
     padding: 0 18px;
