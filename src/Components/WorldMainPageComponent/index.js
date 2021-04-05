@@ -5,6 +5,8 @@ import FlightWidget from "../Fligh Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
+import TransitionExample from "../Alert";
+
 
 function WorldPage() {
   const [date, setDate] = useState("2021-03-28");
@@ -47,6 +49,7 @@ function WorldPage() {
 
          
             <CountrySelect handleChange={handleChange} />
+            <TransitionExample/>
           <input
             id="date"
             type={"date"}
@@ -72,6 +75,7 @@ function WorldPage() {
           <div className={css.flightWidget}>
             <FlightWidget  />
           </div>
+         
         </div>
       </div>
     </>

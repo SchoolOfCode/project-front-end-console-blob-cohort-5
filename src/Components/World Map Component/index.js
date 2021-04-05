@@ -80,11 +80,13 @@ function MyMap({handleCountryChange})  {
         style={{ height: "50vh", width: "78vh" }}
         zoom={1}
         center={[20, 10]}
+        mapPane={1}
       >
         <GeoJSON
           style={countryStyle}
           data={mapData.features}
           onEachFeature={onEachCountry}
+          mapPane={1}
         />
       </MapContainer>
     </div>
