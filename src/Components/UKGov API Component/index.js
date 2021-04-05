@@ -75,7 +75,7 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
       <div className={css.stats}>
                 
               <div className={css[colorRate]}>
-                  <h4>Change since last Month</h4>  <br/> 
+                 <p style={{color:'white'}}> <h4 >Rate Change</h4> since last Month</p> 
                   <h5 >{`${covidChange}%`} <img src={((covidChange >= 0) ? increase : decrease )}></img> </h5>
                </div>
 
