@@ -6,10 +6,28 @@ import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import TransitionExample from "../Alert";
-
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 function WorldPage() {
-  const [date, setDate] = useState("2021-03-28");
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
+
+
+  const classes = useStyles();
+
+
+  let DATE = new Date();
+  const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
@@ -33,8 +51,8 @@ function WorldPage() {
   // handle change on search bar 
   function handleChange(value) { 
     setCountryCode((value === null) ? "GBR" : value.ISO3 );
-    setCapital(value.Capital)
-    console.log(value["Country Name"])
+    // setCapital(value.Capital)
+    // console.log(value["Country Name"])
   }
 
 // handle map country change
@@ -44,6 +62,7 @@ function WorldPage() {
   }
   
   function handleDate(e) {
+    console.log(e.target.value)
     setDate(e.target.value);
   }
 
@@ -56,17 +75,31 @@ function WorldPage() {
     <TravelRestrictionsDisplay /> */}
 
         <div className={css.columnone}>
+      
 
          <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
             {/* <TransitionExample/> */}
-          <input
+          {/* <input
             id="date"
             type={"date"}
             min="2020-01-01"
             max={today}
             onChange={handleDate}
-          ></input>
+          ></input> */}
+            <form className={classes.container} noValidate>
+  <TextField
+    id="date"
+    label="Change Date"
+    type="date"
+    defaultValue={DATE.toISOString().substr(0, 10)}
+    className={classes.textField}
+    InputLabelProps={{
+      shrink: true,
+    }}
+    onChangeCapture={handleDate}
+  />
+</form>
       </div>
 
           <div className={css.TravelRestrictionsDisplay}>
