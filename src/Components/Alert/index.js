@@ -27,9 +27,9 @@ function Alert(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Foreign & Commonwealth Office and Foreign, Commonwealth & Development Office</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>It is illegal to travel abroad for holidays. Follow current COVID-19 rules where you live: England, Scotland, Wales and Northern Ireland. In England, you must have a permitted reason to travel abroad and complete a declaration form.</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
