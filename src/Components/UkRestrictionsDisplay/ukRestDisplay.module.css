@@ -10,7 +10,6 @@
     transition: 0.4s;
   } */
 .item{
-  margin-top: -60px;
 }
   
   
@@ -46,6 +45,7 @@
 
   .customDiv{
     width: 500px;
+  
   }
 
 

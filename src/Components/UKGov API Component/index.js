@@ -48,7 +48,7 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
        
                   <h2>Covid Rates:</h2>
 
-                  <Popover width="40%">
+                  <Popover width="40%" placement="right">
                   <PopoverTrigger>
                     <div className={css.keyButton} style={{fontWeight:"bolder"}}>?</div>
                   </PopoverTrigger>
