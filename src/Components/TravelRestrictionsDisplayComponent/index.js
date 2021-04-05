@@ -69,14 +69,14 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                 </Popover></p>
       
 <br/>
-      <h3>What about FaceMasks?</h3>
+      <h3 className={css.headerthree}>What about FaceMasks?</h3>
         <p>{data.policyActions[17].policy_value_display_field}</p>
 
 
-      <h3>Public Events</h3>
+      <h3 className={css.headerthree}>Public Events</h3>
       <p>{data.policyActions[3].policy_value_display_field}</p>
 
-      <h3>Stringency Index</h3>
+      <h3 className={css.headerthree}className={css.headerthree}>Stringency Index</h3>
       <p>{data.stringencyData.stringency}
       
       <Popover>
@@ -94,7 +94,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                 </Popover></p>
 
 
-      <p><h3>Covid Cases:</h3>{formatNumber(data.stringencyData.confirmed)}</p>
+      <p><h3 className={css.headerthree}>Covid Cases:</h3>{formatNumber(data.stringencyData.confirmed)}</p>
 </div>
 
 <div className={css.blueBox}>
