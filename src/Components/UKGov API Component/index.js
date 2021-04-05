@@ -60,7 +60,7 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
                       Covid Rate is the number of current cases per 100,000 of the area's population.<br/> <br/>
                       <ul>
                         <li><span style={{color:"rgb(59, 112, 182)"}}>Low = 5000 and below</span></li> <br/>
-                      <li><span style={{color:"rgb(192, 147, 63)"}}>Medium = 5001 to 8000</span></li> <br/>
+                      <li><span style={{color:"#eed202"}}>Medium = 5001 to 8000</span></li> <br/>
                      <li><span style={{color:" rgb(206, 95, 95)"}}> High = 8001 and Over</span></li> <br/>
                      <li>For the Rate Change we have: <span style={{color:" rgb(206, 95, 95)", fontWeight:'bold'}}> RISE</span> and <span style={{color:" rgb(66, 190, 103)", fontWeight:'bold'}}>FALL</span> in the retrospective Covid Rate</li> <br/> 
                       <div style={{fontWeight:'bold'}}><span style={{textDecoration:"underline"
