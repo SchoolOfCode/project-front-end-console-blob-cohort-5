@@ -27,6 +27,9 @@ const useStyles = makeStyles((theme) => ({
 
 
   let DATE = new Date();
+  DATE.setUTCDate(DATE.getUTCDate()-8)
+  console.log(DATE)
+
   const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
