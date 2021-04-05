@@ -32,7 +32,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
       <div data-testid="travelrestrictions">
         <div className={cn(css[color])}>
 
-          <h5>Capital: {capital}</h5>
+          {/* <h5>Capital: {capital}</h5> */}
 
 
           <div className={css.twoColumns}>

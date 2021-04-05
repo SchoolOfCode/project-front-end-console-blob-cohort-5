@@ -28,6 +28,10 @@ align-content: center;
 
 }
 
+.twoColumns{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
 .map{
   padding-bottom: 30px;
   z-index: 0;

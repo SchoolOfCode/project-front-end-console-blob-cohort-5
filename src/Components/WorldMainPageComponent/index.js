@@ -30,9 +30,17 @@ function WorldPage() {
     countryCode,
   ]);
 
-  function handleChange(value) {
+  // handle change on search bar 
+  function handleChange(value) { 
     setCountryCode((value === null) ? "GBR" : value.ISO3 );
     setCapital(value.Capital)
+    console.log(value["Country Name"])
+  }
+
+// handle map country change
+  function handleCountryChange(value){
+    setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
+    console.log(value.sourceTarget.feature.properties.ADMIN)
   }
   
   function handleDate(e) {
@@ -49,9 +57,9 @@ function WorldPage() {
 
         <div className={css.columnone}>
 
-         
+         <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
-            <TransitionExample/>
+            {/* <TransitionExample/> */}
           <input
             id="date"
             type={"date"}
@@ -59,7 +67,7 @@ function WorldPage() {
             max={today}
             onChange={handleDate}
           ></input>
-      
+      </div>
 
           <div className={css.TravelRestrictionsDisplay}>
             <TravelRestrictionsDisplay
@@ -72,7 +80,7 @@ function WorldPage() {
         </div>
 
         <div className={css.columntwo}>
-        <div className={css.map}><MyMap handleCountryChange={setCountryCode} /></div>
+        <div className={css.map}><MyMap handleCountryChange={handleCountryChange} /></div>
           
           <div className={css.flightWidget}>
             <FlightWidget  />
