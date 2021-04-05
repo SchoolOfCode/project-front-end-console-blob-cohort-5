@@ -92,15 +92,17 @@ function UKPage() {
         <div>
           <UkGovApiDisplay data={results} data2={resultsPrev} search={search} />
         </div>
+        <div className={css.HotelWidget}>
+          <HotelWidget />
+        </div>
+
       </div>
 
       <div className={css.columntwo}>
         <div className={css.WebScrapeInfo}>
           <UKRestrictionsDisplay data={dataUK} />
         </div>
-        <div className={css.HotelWidget}>
-          <HotelWidget />
-        </div>
+        
         {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
       </div>
     </div>
