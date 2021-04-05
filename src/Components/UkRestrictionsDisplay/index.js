@@ -45,7 +45,7 @@ while (!fetchedData) {
      <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
     
           <Accordion colorScheme={"facebook"} allowToggle>
-  <AccordionItem>
+  <AccordionItem className={css.item}>
     <h2>
       <AccordionButton>
         <Box flex="1" textAlign="left">
@@ -59,10 +59,10 @@ while (!fetchedData) {
   </AccordionItem>
 
   
-  <AccordionItem >
+  <AccordionItem className={css.item}>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="center">
+        <Box flex="1" textAlign="left">
         Travelling within the UK:     </Box>
         <AccordionIcon />
       </AccordionButton>
@@ -76,10 +76,10 @@ while (!fetchedData) {
   </AccordionItem>
 
  
-  <AccordionItem>
+  <AccordionItem className={css.item}>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="right">
+        <Box flex="1" textAlign="left">
        International Travel:   </Box>
         <AccordionIcon />
       </AccordionButton>

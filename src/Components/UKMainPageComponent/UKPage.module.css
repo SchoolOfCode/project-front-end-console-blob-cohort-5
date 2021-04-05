@@ -1,10 +1,3 @@
-/* .UKpage {
-  padding-top: 7%;
-  align-content: center;
-  background-color: rgba(253, 251, 244, 0.5);
-  min-height: 100vh;
-} */
-
 .container {
   
   display: grid;
@@ -14,14 +7,16 @@
   grid-template-areas:
     ". .";
   background-color: #fff;
-  padding: 10% 6%;
+  padding: 10% 10%;
   width: 100%;
   min-height: 100vh;
   justify-items: center;
   font-family: 'Montserrat', sans-serif;
-  
 
-  
+}
+
+.title{
+  border-bottom: 1px solid #000;
 }
 
 .columnone{
@@ -31,84 +26,37 @@
   }
 
 .columntwo{
-  justify-content: center;
-  align-content: center;
+  /* justify-content: center; */
+  /* align-content: center; */
+  /* padding-top: 11%; */
   
   }
   
-  .map{
-    padding-left: 40%;
-    padding-bottom: 30px;
-  }
   
-  
-  .Widget { 
-    padding-top: 30px;
-    padding-left: 100px;
-    border-top: #000 2px ridge;
-    
-  } 
 
 h2{
   padding-top: 10%;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* .flexcontainer {
-  display: flex;
-  flex-direction: row;
-} */
 
-/* .flexLeft {
-  width: 50%;
-  height: 100vh;
-  margin: 2px;
-  padding: 2px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
+.content{
+  padding-top: 8%;
 }
+
 
 .WebScrapeInfo {
-  justify-content: space-evenly;
-/*   border: 1px solid black; */
-/* } */
-
-
-
-.UKGovDisplay {
-  /* border: 2px solid rgb(45, 192, 175); */
-  display: grid;
-  place-items: center;
-  border-radius: 25px;
-  padding:2%;
-  padding-left: 10%;
+ padding: 5%; 
 }
-
-.flexRight {
-  height: 100vh;
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content:first baseline;
-}
-
 
 
 .HotelWidget {
-  display: flex;
+  
   justify-content: center;
   align-self: center;
-  /* border: 2px solid rebeccapurple; */
-  height: 50vh;
-}
+  border-top: 1px solid #000;
+  padding-top: 5%;
+  padding-left: 15%;
+  margin-top: 10%;
 
-.UKMap {
-  /* added this in to center the map */
-  display: flex;
-  justify-content: center;
-  /* border: 2px solid chartreuse; */
 }
