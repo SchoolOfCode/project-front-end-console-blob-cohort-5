@@ -16,7 +16,6 @@ import css from "./Alert.module.css"
 function TransitionExample() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = React.useRef()
-
   
     return (
       <div className={css.container}>
@@ -26,14 +25,14 @@ function TransitionExample() {
           leastDestructiveRef={cancelRef}
           onClose={onClose}
           isOpen={isOpen}
-          isCentered
+          isCentered="true"
         >
           <AlertDialogOverlay />
   
-          <AlertDialogContent bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px">
+          <AlertDialogContent bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px" marginTop="50vh">
             <AlertDialogHeader>Discard Changes?</AlertDialogHeader>
             <AlertDialogCloseButton />
-            <AlertDialogBody>
+            <AlertDialogBody bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px" marginTop="50px">
               Are you sure you want to discard all of your notes? 44 words will be
               deleted.
             </AlertDialogBody>
