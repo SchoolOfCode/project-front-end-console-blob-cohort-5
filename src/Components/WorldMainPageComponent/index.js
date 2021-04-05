@@ -15,7 +15,9 @@ function WorldPage() {
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
-  let date2 = `2021-03-01`;
+  let DATE2 = new Date();
+  DATE2.setMonth(DATE2.getMonth() - 1); //minus mmonth from secodn instance of new date()
+  // console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
 
   const [countryCode, setCountryCode] = useState("GBR");
   //WHILE countryObj array less than 2 keep fetching
@@ -26,7 +28,7 @@ function WorldPage() {
     date,
   ]);
   
-  const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${date2}`, [
+  const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${DATE2.toISOString().substr(0, 10)}`, [
     countryCode,
   ]);
 
