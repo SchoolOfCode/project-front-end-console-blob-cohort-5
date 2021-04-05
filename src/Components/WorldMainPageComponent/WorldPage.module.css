@@ -19,6 +19,7 @@
 .columnone{
   /* display: grid;
   grid-template-columns: 2fr 1fr; */
+  padding-left: 3%;
 }
 
 .columntwo{

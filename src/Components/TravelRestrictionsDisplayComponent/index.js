@@ -39,7 +39,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                   <PopoverTrigger>
                     <button>Border Key</button>
                   </PopoverTrigger>
-                  <PopoverContent  bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px">
+                  <PopoverContent  bg="white" border="1px solid black" padding="20px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2>Border Key</h2></PopoverHeader>
@@ -57,7 +57,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                   <PopoverTrigger>
                     <button>Workplace Status Key</button>
                   </PopoverTrigger>
-                  <PopoverContent  bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px">
+                  <PopoverContent  bg="white" border="1px solid black" padding="20px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2>WorkPlace Status Key</h2></PopoverHeader>
@@ -83,7 +83,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                   <PopoverTrigger>
                     <button>Stringency?</button>
                   </PopoverTrigger>
-                  <PopoverContent  bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px">
+                  <PopoverContent  bg="white" border="1px solid black" padding="20px"  width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2>Stringency Index Explained</h2></PopoverHeader>
