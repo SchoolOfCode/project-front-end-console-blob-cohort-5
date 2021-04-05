@@ -5,11 +5,11 @@ import cn from 'classnames';
 
 
 
-function Button ({text,handleclick, size}) {
+function Button ({text,onClick, size}) {
   
 
   return (
-   <button clasonClick= {handleclick}  className={cn(css.base, css[size])} data-testid="button">{text}
+   <button onClick={onClick}  className={cn(css.base, css[size])} data-testid="button">{text}
    </button> 
   )
 };
