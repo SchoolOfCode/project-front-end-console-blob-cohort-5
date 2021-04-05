@@ -16,20 +16,21 @@ box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 position: fixed;
 
 `
+
 export const NavLink = styled(Link)`
 
 display: flex;
 align-items: center;
-justify-items: space-between;
+justify-items: center;
 text-decoration: none;
 font-family: 'Montserrat', sans-serif;
 color: #FFF;
-font-size: 1.7rem;
-padding: 0 1rem;
+font-size: 1.5rem;
+padding: 0 ;
 height: 100%;
 font-size: 1.7rem;
 cursor: pointer; 
-margin: 19px;
+margin: 30px;
 
 &.active{
     color: #FFF;
@@ -38,11 +39,10 @@ margin: 19px;
 }
 
 &:hover{
-    color:white;
-    text-transform: lowercase;
-    border : 1px solid white;
+    color: #fff;
     border-radius: 25px;
-    background: lightblue;
+    background: #aae0ef;
+    opacity: 0.6;
 }`
 
 

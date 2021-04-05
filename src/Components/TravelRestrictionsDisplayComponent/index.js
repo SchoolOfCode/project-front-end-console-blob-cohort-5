@@ -44,7 +44,7 @@ console.log(data)
   }
 
   return (
-    <div data-testid="travelrestrictions">
+    <div data-testid="travelrestrictions" className={css.container}>
     <h1>There is no data for this date, try an older date please...</h1>
     </div>
   )

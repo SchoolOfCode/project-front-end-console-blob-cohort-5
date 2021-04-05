@@ -1,17 +1,35 @@
-.container{
-    display: grid;
-    justify-items: auto;
-    width:100%;
-    background-color: rgb(219, 167, 36,0.8);
-    padding-top: 2%;
-    min-height: 100vh;
-}
 .page{
-    
+    padding-top: 10%;
     display: grid;
-    place-items: center;
     border: 1px solid black;
+    font-family: 'Montserrat', sans-serif;
     
     /* background-color: rgb(219, 167, 36,0.8); */
 
+}
+
+.container{
+    justify-items: center;
+    display: grid;
+    justify-items: auto;
+    width:100%;
+    background-color: #fff;
+    padding-right: 9%;
+    padding-left: 9%;
+    min-height: 100vh;
+    
+}
+
+h1{
+    font-size: 3rem;
+}
+
+span{
+    font-size: 1.6rem;
+}
+
+.title{
+    padding-left: 9%;
+    display: grid;
+    gap:20px;
 }
