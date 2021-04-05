@@ -2,3 +2,33 @@
     font-family: 'Montserrat', sans-serif;
 
 }
+
+button{
+    background-color: #1C9AB0;
+}
+
+h3{
+    color: #1C9AB0;
+}
+
+
+/* BLUE BOX Styling  */
+.blueBox{
+    border: 1px solid black ;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: #1C9AB0;
+    color: white;
+}
+
+.blueBox h4{
+        color:white
+ 
+}
+.blueBox p{
+    color:white
+
+}
+
+
+
