@@ -11,7 +11,7 @@ return(
 <div className={css.columnone}>
 <div className={css.title}>
 <h1>Travel Safely</h1>
-<span>Check out our tips for travelling safe.</span>
+<h3>Check out our tips for travelling safe.</h3>
 </div>
 
 <div className={css.text}>
@@ -37,7 +37,7 @@ return(
     
     
 </ul>
-<p>Remember that even if you have been vaccinated, you still need to wear a mask and social distance, lower the risk of spreading coronavirus.</p>
+<p>Remember that even if you have been vaccinated, you still need to wear a mask and social distance. Lower the risk of spreading coronavirus.</p>
 </div>
 </div>
 <div className={css.columntwo}><img src={logo}></img></div>
