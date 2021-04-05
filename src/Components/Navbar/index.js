@@ -30,6 +30,10 @@ const Navbar = () => {
                     <NavLink to="/WorldTracker" activeStyle>
                         World Stats
                 </NavLink>
+
+                    <NavLink to="/TravelTipsPage" activeStyle>
+                        Travel Tips
+                    </NavLink>
                 </NavMenu>
             </Nav>
 

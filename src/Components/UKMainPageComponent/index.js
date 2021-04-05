@@ -69,6 +69,7 @@ function handleSearch(num){
   };
 
   return (
+
     <div className={css.UKpage}>
       
       <div className={css.flexcontainer}>
@@ -80,9 +81,12 @@ function handleSearch(num){
         <div className={css.UKGovDisplay}>
           {/* this is the API */}
           <h1>Regional stats</h1>
+
           <p>Search for a County, Nation, Region, Town or City</p>
+          </div>
 
 {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
+
           <div >
           <Autocomplete
       id="combo-box-demo"
@@ -112,9 +116,10 @@ function handleSearch(num){
               <HotelWidget />
             </div>
 
+
         </div>
     </div>
-    </div>
+    
   );
 
 }
