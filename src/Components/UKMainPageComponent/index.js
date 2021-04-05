@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import css from "./UKPage.module.css";
-import SearchBar from "../SearchComponent/index.js";
-import UKMap from "../UKMapComponent";
 import UKRestrictionsDisplay from "../UkRestrictionsDisplay";
 import HotelWidget from "../Hotel Widget Component";
 import axios from "axios";
@@ -19,11 +17,8 @@ function UKPage() {
   let DATE2 = new Date();
   DATE2.setMonth(DATE2.getMonth() - 1); //minus mmonth from secodn instance of new date()
   console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
-  let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-04&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
-  let URL2 = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=${DATE2.toISOString().substr(
-    0,
-    10
-  )}&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
+  let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-05&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
+  let URL2 = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=${DATE2.toISOString().substr(0,10)}&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","case s":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
 
   useEffect(() => {
     axios
@@ -31,7 +26,6 @@ function UKPage() {
       .then((responseArr) => {
         setResults(responseArr[0].data.data);
         setResultsPrev(responseArr[1].data.data);
-        console.log(responseArr[0].data.data);
       })
       .catch((err) => {
         console.log(err);
@@ -44,19 +38,16 @@ function UKPage() {
       countryArray[i] = {
         County: value.areaName,
         number: i,
-        group: value.areaType,
+        group: (value.areaType === "ltla") ? "District Council" : (value.areaType === "utla") ? "County Council": value.areaType
       };
       // console.log(countryArray)
       // setSelectRange(countryArray)
       return countryArray;
     });
     setSelectRange(countryArray);
-    console.log(countryArray);
   }, [results]);
 
   function handleSearch(num) {
-    console.log(num);
-
     setSearch(num);
     // setSearch(inputValue)
   }

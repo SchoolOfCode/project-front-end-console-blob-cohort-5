@@ -26,10 +26,10 @@
   }
 
 .columntwo{
-  /* justify-content: center; */
-  /* align-content: center; */
+  justify-content: center;
+  align-content: center;
   /* padding-top: 11%; */
-  
+
   }
   
   
@@ -49,7 +49,7 @@ h2{
 
 
 .WebScrapeInfo {
- padding: 5%; 
+min-width:max-content;
 }
 
 

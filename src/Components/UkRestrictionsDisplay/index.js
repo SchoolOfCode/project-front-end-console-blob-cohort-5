@@ -36,10 +36,11 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 function handleClick(){setClick(!click)}
 
 while (!fetchedData) {
-  return <h1>LOADING</h1>
+  return <h1>Loading...</h1>
 } 
 // (fetchedData){
   return (
+
     <div className = {css.customDiv}>
     <div className={cn(css[color], css[size])}>
       <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
@@ -58,6 +59,7 @@ while (!fetchedData) {
             <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ",")}</p>
           </AccordionPanel>
         </AccordionItem>
+
 
         <AccordionItem className={css.item}>
           <h2 class={css.customHeading}>
