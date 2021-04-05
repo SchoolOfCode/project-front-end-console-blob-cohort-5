@@ -51,13 +51,13 @@ function WwTracker() {
         className="text-center"
         style={{ margin: "10px" }}
       >
-        <Card.Img variant="top" src={data.countryInfo.flag} />
         <Card.Body>
           <Card.Title>{data.country}</Card.Title>
           <Card.Text>Cases: {data.cases}</Card.Text>
           <Card.Text>Deaths: {data.deaths}</Card.Text>
           <Card.Text>Recovered: {data.recovered}</Card.Text>
         </Card.Body>
+        <Card.Img variant="top" src={data.countryInfo.flag} />
       </Card>
     );
   });

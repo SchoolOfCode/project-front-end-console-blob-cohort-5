@@ -16,6 +16,10 @@
   
 }
 
+.columnone{
+  /* display: grid;
+  grid-template-columns: 2fr 1fr; */
+}
 
 .columntwo{
 justify-content: center;

@@ -44,7 +44,7 @@ while (!fetchedData) {
 
      <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
     
-          <Accordion colorScheme={"facebook"}>
+          <Accordion colorScheme={"facebook"} allowToggle>
   <AccordionItem>
     <h2>
       <AccordionButton>
