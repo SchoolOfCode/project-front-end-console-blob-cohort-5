@@ -25,6 +25,7 @@
   justify-content: center;
   align-content: center;
   width: 80%;
+  z-index: 2;
   }
 
 .columntwo{
@@ -33,7 +34,7 @@
   justify-content: center;
   align-content: center;
   width: 90%;
-
+  z-index: 1;
   /* padding-top: 11%; */
   /* max-height: 15%; */
   }
@@ -59,19 +60,18 @@ h2{
  max-width: fit-content;
  min-width: 60vh;
  position:absolute;
- /* z-index: 1000; */
-
 }
 
 
 .HotelWidget {
-  
+  display: grid;
+  place-items: center;
   justify-content: center;
-  align-self: center;
+  align-self:baseline;
   border-top: 1px solid #000;
-  padding-top: 5%;
-  padding-left: 15%;
-  margin-top: 20vh;
+  /* padding-top: 5%; */
+  /* padding-left: 15%; */
+  margin-top: 35vh;
   /* margin-top: 10%; */
 
 }

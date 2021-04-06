@@ -93,7 +93,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
           <div className={css.keyColumns}>
             <h3 className={css.headerthree}>
               Workplace status</h3>
-              <Popover>
+              <Popover >
                 <PopoverTrigger>
                   <button className={css.buttontwo}>Key</button>
                 </PopoverTrigger>

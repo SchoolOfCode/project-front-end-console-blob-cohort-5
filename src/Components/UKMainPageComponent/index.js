@@ -10,15 +10,15 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 function UKPage() {
   const [results, setResults] = useState([]);
   const [resultsPrev, setResultsPrev] = useState([]);
-  const [search, setSearch] = useState(373);
+  const [search, setSearch] = useState(181);
   const [selectRange, setSelectRange] = useState([]);
 
-  let DATE = new Date().toISOString().substr(0, 10); // can we have this display yesterday at all times
-  let DATE2 = new Date();
+  let DATE = new Date().toISOString().substr(0, 10); // Displays today 
+  let DATE2 = new Date(); //
   DATE2.setMonth(DATE2.getMonth() - 1); //minus mmonth from secodn instance of new date()
   console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
-  let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-05&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
-  let URL2 = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=${DATE2.toISOString().substr(0,10)}&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
+  let URL = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-04-06&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
+  let URL2 = `https://api.coronavirus.data.gov.uk//v1/data?filters=date=2021-03-05&structure={"date":"date","areaName":"areaName","areaCode":"areaCode","areaType":"areaType","cases":{"daily":"newCasesByPublishDate","cumulative":"cumCasesByPublishDate"},"deaths":{"daily":"newDeathsByDeathDate","cumulative":"cumDeathsByDeathDate"},"Rate":{"PublishDate":"cumCasesByPublishDateRate"}}`;
 
   useEffect(() => {
     axios
