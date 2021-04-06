@@ -207,6 +207,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
           <p>{`This means that the country is ${stringencyWording} their Covid restrictions internally`}</p>
        
         </div>
+          <p style={{textAlign:"right"}}>Current data shown for {data.stringencyData.country_code}. <br/> Last updated: {data.stringencyData.date_value}</p>
       </div>
     );
   }
