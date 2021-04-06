@@ -7,13 +7,21 @@
   grid-template-areas:
     ". .";
   background-color: #fff;
-  padding: 10% 6%;
+  padding: 1% 6%;
   width: 100%;
   min-height: 100vh;
   justify-items: center;
   font-family: 'Montserrat', sans-serif;
 
   
+}
+.title{
+  padding-top: 7%; 
+  margin-left: 5%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  border-bottom: 1px solid black;
+  width: 50%;
 }
 
 .columnone{
@@ -46,6 +54,10 @@ align-content: center;
   
 } 
 
+.TravelRestrictionsDisplay {
+ margin-top:15px;
+}
+
 /* .map {
   /* display: flex; */
   /* justify-content: center;
@@ -77,10 +89,7 @@ h1 {
 }
 
 
-.TravelRestrictionsDisplay {
-  border: 1px solid black;
-  width: 50%;
-}
+
 
 
 

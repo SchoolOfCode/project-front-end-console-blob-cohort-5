@@ -15,6 +15,11 @@ function Alert(){
 
   // const reload=()=>window.location.reload();
 
+
+  function reDirect(){
+    window.open("https://www.gov.uk/guidance/coronavirus-covid-19-declaration-form-for-international-travel#permitted-reasons-for-international-travel")
+  }
+
   useEffect(()=>{
     
 },[])
@@ -27,15 +32,15 @@ function Alert(){
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Foreign & Commonwealth Office and Foreign, Commonwealth & Development Office</Modal.Title>
+          <Modal.Title>Are you exempt from travel restrictions?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>It is illegal to travel abroad for holidays. Follow current COVID-19 rules where you live: England, Scotland, Wales and Northern Ireland. In England, you must have a permitted reason to travel abroad and complete a declaration form. Click to for an overview of reasonable excuses for international travel from the UK and more infomation about the declaration form.</Modal.Body>
+        <Modal.Body>Currently it is illegal to travel abroad for holidays. Follow current COVID-19 rules where you live: England, Scotland, Wales and Northern Ireland. In England, you must have a permitted reason to travel abroad and complete a declaration form. Click to for an overview of reasonable excuses for international travel from the UK and more infomation about the declaration form.</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Yes, I am exempt
           </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Declaration form
+          <Button variant="primary" onClick={() => {reDirect()}}>
+            I'm not sure
           </Button>
         </Modal.Footer>
       </Modal>

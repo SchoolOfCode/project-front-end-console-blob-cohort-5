@@ -29,12 +29,12 @@ const useStyles = makeStyles((theme) => ({
 
 
   let DATE = new Date();
-  DATE.setUTCDate(DATE.getUTCDate()-8)
+  DATE.setUTCDate(DATE.getUTCDate()-9)
   console.log(DATE)
 
   const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
 
-  const [capital, setCapital] = useState("London");
+  // const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
   let DATE2 = new Date();
@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
 
   return (
     <><Alert/>
+    <h1 className={css.title}>World Wide Stats & Travel Information</h1>
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
@@ -87,13 +88,14 @@ const useStyles = makeStyles((theme) => ({
             <CountrySelect handleChange={handleChange} />
 
             
-         /* <input
+        {/* <input
             id="date"
             type={"date"}
             min="2020-01-01"
             max={today}
             onChange={handleDate}
-          ></input> */
+          ></input> */}
+
             <form className={classes.container} noValidate>
   <TextField
     id="date"
@@ -114,7 +116,7 @@ const useStyles = makeStyles((theme) => ({
               data={countryObj}
               data2={countryObj2}
               color={"#FDFFB6"}
-              capital={capital}
+              // capital={capital}
             />
           </div>
         </div>

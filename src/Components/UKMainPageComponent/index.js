@@ -10,7 +10,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 function UKPage() {
   const [results, setResults] = useState([]);
   const [resultsPrev, setResultsPrev] = useState([]);
-  const [search, setSearch] = useState(0);
+  const [search, setSearch] = useState(373);
   const [selectRange, setSelectRange] = useState([]);
 
   let DATE = new Date().toISOString().substr(0, 10); // can we have this display yesterday at all times
@@ -52,6 +52,8 @@ function UKPage() {
     // setSearch(inputValue)
   }
 
+  console.log(selectRange)
+
   let dataUK = {
     country: "England",
     covidHeadline: "Stay at Home",
@@ -74,7 +76,7 @@ function UKPage() {
             options={selectRange}
             getOptionLabel={(option) => option.County}
             groupBy={(option) => option.group}
-            style={{ width: 300 }}
+            style={{ width: 400 }}
             onChange={(event, value) =>
               handleSearch(value === null ? 0 : value.number)
             }

@@ -3,13 +3,15 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  gap: 5px 5px;
+  gap: 0px 0px;
   grid-template-areas:
     ". .";
   background-color: #fff;
   padding-top: 8%;
   width: 100%;
   min-height: 100vh;
+  padding-left: 6%;
+  padding-right: 6%;
   justify-items: center;
   font-family: 'Montserrat', sans-serif;
 
@@ -31,6 +33,7 @@
   justify-content: center;
   align-content: center;
   width: 90%;
+
   /* padding-top: 11%; */
   /* max-height: 15%; */
   }
@@ -55,6 +58,7 @@ h2{
  padding: 1%; 
  max-width: fit-content;
  min-width: 60vh;
+ position:fixed
 
 }
 
@@ -66,6 +70,7 @@ h2{
   border-top: 1px solid #000;
   padding-top: 5%;
   padding-left: 15%;
+  margin-top: 40%;
   /* margin-top: 10%; */
 
 }

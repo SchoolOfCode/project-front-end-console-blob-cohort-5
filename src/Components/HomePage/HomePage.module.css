@@ -30,12 +30,13 @@
   
   justify-content: center;
   margin-top: 5%;
-  padding: 7%;
+  padding: 5%;
   border: 2px solid black;
   font-family: "Montserrat", sans-serif;
   color: black;
   font-size: 2rem;
   opacity: 0.5;
+  width: 80vw;
 }
 
 .buttons {
@@ -44,4 +45,8 @@
   place-items: center;
   justify-content: space-around;
   width: 70vw;
+}
+
+.slogantext{
+  margin-top: 13px;
 }
