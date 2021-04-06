@@ -21,7 +21,7 @@ function HomePage() {
       <div className={css.slogan}>
         <h1>We are your guide to travel safety.</h1>
         <h3>Sometimes you just need something simple, to help make the informed decision.</h3>
-           
+
       </div>
 
       <div className={css.buttons}>

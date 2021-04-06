@@ -12,7 +12,7 @@ function WwTracker() {
   const [results, setResults] = useState([]);
   const [searchCountry, setSearchCountry] = useState(""); // May need to move to App level
 
-  function formatNumber(num = 100) {
+  function formatNumber(num = "Loading") {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
@@ -126,23 +126,23 @@ function WwTracker() {
           {/* <small>Last updated {lastUpdated}</small> */}
           {/* </Card.Footer> */}
         </Card>
-        
-          <Card 
-            text="dark"
-            className="text-center"
-            style={{ margin: "10px", backgroundColor: "#fdffb6" }}
-          >
-            <Card.Body>
-              <Card.Title>Last updated</Card.Title>
-              <Card.Text>
-                <small>{lastUpdated}</small>
-              </Card.Text>
-            </Card.Body>
-            {/* <Card.Footer>
+
+        <Card
+          text="dark"
+          className="text-center"
+          style={{ margin: "10px", backgroundColor: "#fdffb6" }}
+        >
+          <Card.Body>
+            <Card.Title>Last updated</Card.Title>
+            <Card.Text>
+              <small>{lastUpdated}</small>
+            </Card.Text>
+          </Card.Body>
+          {/* <Card.Footer>
           
           </Card.Footer> */}
-          </Card>
-        
+        </Card>
+
       </CardDeck>
 
       <SearchBar
