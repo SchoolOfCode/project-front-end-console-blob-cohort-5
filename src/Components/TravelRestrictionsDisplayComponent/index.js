@@ -43,8 +43,8 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
 
           <div className={css.twoColumns}>
             <p>
-              <h3 className={css.headerthree}>
-                Border Status{" "}
+              <div className={css.keyColumns}><h3 className={css.headerthree}>
+                Border status</h3>
                 <Popover>
                   <PopoverTrigger>
                     <button className={css.buttonone}>Key</button>
@@ -77,18 +77,22 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
-              </h3>
+                </div>
               {`(${data.policyActions[7].policyvalue}) - ${data.policyActions[7].policy_value_display_field}`}
             </p>
             <p>
-              <h3 className={css.headerthree}>Covid Cases:</h3>
+              <h3 className={css.headerthree}>Covid cases:</h3>
               {formatNumber(data.stringencyData.confirmed)}
             </p>
           </div>
+         
+         
+         
           <div className={css.twoColumns}>
           <p>
+          <div className={css.keyColumns}>
             <h3 className={css.headerthree}>
-              Workplace Status{" "}
+              Workplace status</h3>
               <Popover>
                 <PopoverTrigger>
                   <button className={css.buttontwo}>Key</button>
@@ -124,21 +128,22 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
-
-            </h3>{" "}
+</div>
+          
             {`(${data.policyActions[0].policyvalue}) - ${data.policyActions[0].policy_value_display_field}`}
           </p>
 
           <p>
-                <h3 className={css.headerthree}>What about FaceMasks?</h3>
+                <h3 className={css.headerthree}>What about facemasks?</h3>
                 {data.policyActions[17].policy_value_display_field}
               </p>
 </div>
           <br />
           <div className={css.twoColumns}>
             <div>
+            <div className={css.keyColumns}>
               <h3 className={css.headerthree} className={css.headerthree}>
-                Stringency Index{" "}
+                Stringency index</h3>
                 <Popover>
                   <PopoverTrigger>
                     <button className={css.buttonthree}>Key</button>
@@ -165,12 +170,12 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
-              </h3>
+              </div>
               <p>{data.stringencyData.stringency}</p>
               
             </div>
             <p>
-            <h3 className={css.headerthree}>Public Events</h3>
+            <h3 className={css.headerthree}>Public events</h3>
             {data.policyActions[3].policy_value_display_field}
           </p>
           </div>
@@ -183,19 +188,24 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
         <div className={css.blueBox}>
           <h4>
             Comparison to <u>One Month</u> ago:
-          </h4>
-          <p>{`Stringency Index: ${
+          </h4><br/>
+          <div className={css.twoColumns}>
+            <div><h4>Stringency Index</h4> {`${
             data2.stringencyData.stringency
           } this is a change of ${
             stringencyChange.toFixed(2) > 0
               ? `+${stringencyChange.toFixed(2)}`
               : stringencyChange.toFixed(2)
-          }`}</p>
-          <p>{`This means that the country is ${stringencyWording} their Covid restrictions internally`}</p>
-          <p>
-            <h4>Covid Cases:</h4>
+          }`}</div> 
+             <div>
+            <h4>Covid cases</h4>
             {formatNumber(data2.stringencyData.confirmed)}
-          </p>
+          </div>
+          </div>
+          
+          <br/>
+          <p>{`This means that the country is ${stringencyWording} their Covid restrictions internally`}</p>
+       
         </div>
       </div>
     );
