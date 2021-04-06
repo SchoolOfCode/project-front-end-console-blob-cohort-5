@@ -5,6 +5,8 @@ import FlightWidget from "../Fligh Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
+import Alert from "../Alert";
+
 import TransitionExample from "../Alert";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -31,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   console.log(DATE)
 
   const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
+
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
@@ -72,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
   let today = new Date().toISOString().substr(0, 10);
 
   return (
-    <>
+    <><Alert/>
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
@@ -82,14 +85,15 @@ const useStyles = makeStyles((theme) => ({
 
          <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
-            {/* <TransitionExample/> */}
-          {/* <input
+
+            
+         /* <input
             id="date"
             type={"date"}
             min="2020-01-01"
             max={today}
             onChange={handleDate}
-          ></input> */}
+          ></input> */
             <form className={classes.container} noValidate>
   <TextField
     id="date"

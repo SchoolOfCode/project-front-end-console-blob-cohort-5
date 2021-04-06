@@ -39,7 +39,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
       <p><h3 className={css.headerthree}>Border Status</h3>{`(${data.policyActions[7].policyvalue}) - ${data.policyActions[7].policy_value_display_field}`}
       <Popover>
                   <PopoverTrigger>
-                    <button>Key</button>
+                    <button className={css.buttonone}>Key</button>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="15px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
@@ -57,7 +57,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
       <p><h3 className={css.headerthree}>Workplace Status</h3> {`(${data.policyActions[0].policyvalue}) - ${data.policyActions[0].policy_value_display_field}`}
       <Popover>
                   <PopoverTrigger>
-                    <button>Key</button>
+                    <button className={css.buttontwo}>Key</button>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="20px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
@@ -90,7 +90,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
       
       <Popover>
                   <PopoverTrigger>
-                    <button>Stringency?</button>
+                    <button className={css.buttonthree}>Stringency?</button>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="20px"  width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
