@@ -17,6 +17,7 @@ function UKRestrictionsDisplay(data, color, size, heading) {
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
   const url = process.env.REACT_APP_URL
+  console.log(url)
 
 
   useEffect(() => {
@@ -34,70 +35,75 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 
 function handleClick(){setClick(!click)}
 
-if (fetchedData){
+while (!fetchedData) {
+  return <h1>Loading...</h1>
+} 
+// (fetchedData){
   return (
-   <div className={cn(css[color], css[size])}>
 
-     <h2>Current Gov Restrictions for Travel</h2>
-    
-          <Accordion colorScheme={"facebook"}>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-        Travelling within England:        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-    {fetchedData[1].englandInternal.replace(/&#44;/g, ',')}
-    </AccordionPanel>
-  </AccordionItem>
+    <div className = {css.customDiv}>
+      <h2 className={css.heading} style={{textAlign:'center'}}>Gov Restrictions for Travel</h2>
 
-  
-  <AccordionItem >
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-        Travelling within the UK:     </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <h3>from England...</h3>
-    {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}<br />
-    <h3>to England...</h3>
-    {fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}
-    </AccordionPanel>
-  </AccordionItem>
+      <Accordion colorScheme={"facebook"} allowToggle>
+        <AccordionItem className={css.item}>
+          <h2 class={css.customHeading}>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Travelling within England:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ",")}</p>
+          </AccordionPanel>
+        </AccordionItem>
 
- 
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-       International Travel:   </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-    <h3>from England...</h3> <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ',')}</p>
+
+        <AccordionItem className={css.item}>
+          <h2 class={css.customHeading}>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                Travelling within the UK:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <h3>from England...</h3>
+            <p> {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ",")}</p>
             <br />
-            <h3>to England...</h3> <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ',')}</p>
-    </AccordionPanel>
-  </AccordionItem>
-  
-</Accordion>
-   
-          
-   </div>
+            <h3>to England...</h3>
+            <p>{fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ",")}</p>
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem className={css.item}>
+          <h2 class={css.customHeading}>
+            <AccordionButton>
+              <Box flex="1" textAlign="left">
+                International Travel:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <h3>from England...</h3>{" "}
+            <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ",")}</p>
+            <br />
+            <h3>to England...</h3>{" "}
+            <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ",")}</p>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </div>
   );
 }
-return (
-<><h1>Loading...</h1>
-<button onClick={handleClick}>Check UK Gov Restrictions... </button>
-</>)
-}
+// return (
+// <><h1>Loading...</h1>
+// <button onClick={handleClick}>Check UK Gov Restrictions... </button>
+// </>)
+// }
 
 
 export default UKRestrictionsDisplay;

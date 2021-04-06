@@ -1,56 +1,71 @@
-.UKpage {
-  padding-top: 7%;
-  align-content: center;
-  background-color: #f4f0e1;
+.container {
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 5px 5px;
+  grid-template-areas:
+    ". .";
+  background-color: #fff;
+  padding-top: 8%;
+  width: 100%;
   min-height: 100vh;
+  justify-items: center;
+  font-family: 'Montserrat', sans-serif;
+
 }
 
-.flexcontainer {
-  display: flex;
-  flex-direction: row;
+.title{
+  border-bottom: 1px solid #000;
 }
 
-.flexLeft {
-  width: 50%;
-  height: 100vh;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.columnone{
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+  }
+
+.columntwo{
+  display: grid;
+  place-items: center;
+  justify-content: center;
+  align-content: center;
+  width: 90%;
+  /* padding-top: 11%; */
+  /* max-height: 15%; */
+  }
+  
+  
+
+h2{
+  padding-top: 10%;
+  font-family: 'Montserrat', sans-serif;
 }
+
+.customHeading {
+  /* padding-top:  */
+}
+
+.content{
+  padding-top: 8%;
+}
+
 
 .WebScrapeInfo {
-  border: 1px solid black;
+ padding: 1%; 
+ max-width: fit-content;
+ min-width: 60vh;
+
 }
 
-.UKRestrictionsDisplay {
-  border: 1px solid black;
-}
-
-.flexRight {
-  height: 100vh;
-  width: 50%;
-  margin: 5px;
-  padding: 5px;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
 
 .HotelWidget {
-  display: flex;
+  
   justify-content: center;
   align-self: center;
-  /* border: 2px solid rebeccapurple; */
-  height: 50vh;
-}
+  border-top: 1px solid #000;
+  padding-top: 5%;
+  padding-left: 15%;
+  /* margin-top: 10%; */
 
-.UKMap {
-  /* added this in to center the map */
-  display: flex;
-  justify-content: center;
-  /* border: 2px solid chartreuse; */
 }

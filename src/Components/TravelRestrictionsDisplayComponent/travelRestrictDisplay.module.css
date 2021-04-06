@@ -1,53 +1,58 @@
-/* Colours */
-.mustardBox{
-    background-color: rgb(226, 215, 65);
-    align-self: auto;
-    margin: auto;
-    color: dimgrey;
-    width:auto;
-    
+.container{
+    font-family: 'Montserrat', sans-serif;
+
 }
 
+.buttonone{
+    background-color: #ffc2a9;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
+}
+
+.buttontwo{
+    background-color: #ffc2a9;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
+}
+
+.buttonthree{
+    background-color: #ffadad;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
+}
+
+
+
+.headerthree{
+    color: #1C9AB0;
+}
+
+
+/* BLUE BOX Styling  */
 .blueBox{
-    background-color: rgb(67, 138, 231);
-    align-self: auto;
-    margin: auto;
-    color: blanchedalmond;
-    width: auto;
+    border: 1px solid black ;
+    border-radius: 15px;
+    padding: 5%;
+    background-color: #1C9AB0;
+    color: white;
 }
 
-/* Sizes */
-.smallBox{
-    height: 250px;
-    width:200px;
-    border: aqua;
-    border-width: medium;
-    border-style: solid;
-    font-size:medium;
+.blueBox h4{
+        color:white
+ 
+}
+.blueBox p{
+    color:white
+
 }
 
-.largeBox{
-    height: 400px;
-    width:400px;
-    border: aqua;
-    border-width: medium;
-    border-style: solid;
-    font-size:x-large;
+.twoColumns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
-/* Image Sizes */
-.smallImg{
-    height: 25px;
-}
 
-.smallImg:hover{
-    height:200px;
-}
 
-.largeImg{
-    height: 75px;
-}
 
-.largeImg:hover{
-    height:250px;
-}
+
+
