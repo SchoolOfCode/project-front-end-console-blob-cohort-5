@@ -84,6 +84,7 @@ function UKPage() {
                 label="Area Search"
                 variant="outlined"
                 placeholder="Search an Area"
+                // defaultValue="United Kingdom"
               />
             )}
           />
