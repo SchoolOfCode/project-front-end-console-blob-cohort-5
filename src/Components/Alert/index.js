@@ -34,7 +34,7 @@ function Alert(){
         <Modal.Header closeButton>
           <Modal.Title>Are you exempt from travel restrictions?</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Currently it is illegal to travel abroad for holidays. Follow current COVID-19 rules where you live: England, Scotland, Wales and Northern Ireland. In England, you must have a permitted reason to travel abroad and complete a declaration form. Click to for an overview of reasonable excuses for international travel from the UK and more infomation about the declaration form.</Modal.Body>
+        <Modal.Body><h5 style={{color:"red"}}>Currently it is illegal to travel abroad for holidays.</h5> Follow current COVID-19 rules where you live: England, Scotland, Wales and Northern Ireland. In England, you must have a permitted reason to travel abroad and complete a declaration form. Click to for an overview of reasonable excuses for international travel from the UK and more infomation about the declaration form.</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Yes, I am exempt
