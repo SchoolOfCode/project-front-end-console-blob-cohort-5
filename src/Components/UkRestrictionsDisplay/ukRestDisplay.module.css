@@ -10,13 +10,13 @@
     transition: 0.4s;
   } */
 .item{
-  margin: 1px;
+  margin-top: -60px;
 }
   
   
-  .active, .accordion:hover {
+  /* .active, .accordion:hover {
     background-color: #ccc; 
-  }
+  } */
   
   .panel {
     padding: 0 18px;
@@ -31,14 +31,21 @@
     background-color: #1C9AB0;
     border-radius: 25px;
     
+    
   }
-
+.customHeading {
+  padding-top: 0 !important;
+}
   p{
     color:lightslategray;
   }
 
   .chakra-accordion__item{
     border-radius: 25px;
+  }
+
+  .customDiv{
+    width: 500px;
   }
 
 

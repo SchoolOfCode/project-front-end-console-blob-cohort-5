@@ -2,6 +2,8 @@ import React from "react";
 import Button from "../ButtonComponent/index";
 import css from "./HomePage.module.css";
 import { useHistory } from "react-router-dom";
+import UKPage from "../UKMainPageComponent/index";
+import WorldMainPageComponent from "../WorldMainPageComponent/index";
 
 
 function HomePage() {
@@ -28,14 +30,13 @@ function HomePage() {
         <Button
           size="medium"
           text="Traveling Within UK"
-          handleclick={() => history.push("../UKPage")}
+          onClick={() => history.push("../UKPage")}
         />
 
         <Button
           size="medium"
           text="Traveling Abroad"
-          handleclick={() => history.push("../WorldPage")}
-        />
+          onClick={() => history.push("../WorldPage")} />
       </div>
 
       {/* <div className={css.slogan}>

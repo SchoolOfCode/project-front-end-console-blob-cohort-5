@@ -3,9 +3,25 @@
 
 }
 
-button{
-    background-color: #1C9AB0;
+.buttonone{
+    background-color: #ffc2a9;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
 }
+
+.buttontwo{
+    background-color: #ffc2a9;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
+}
+
+.buttonthree{
+    background-color: #ffadad;
+    margin-left: 4%;
+    color: rgb(70, 66, 66);
+}
+
+
 
 .headerthree{
     color: #1C9AB0;
@@ -28,6 +44,11 @@ button{
 .blueBox p{
     color:white
 
+}
+
+.twoColumns{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 
