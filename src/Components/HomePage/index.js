@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import UKPage from "../UKMainPageComponent/index";
 import WorldMainPageComponent from "../WorldMainPageComponent/index";
 
-
 function HomePage() {
   let url = "https://localhost:5001/country";
 
@@ -22,8 +21,24 @@ function HomePage() {
     <div className={css.main}>
       <div className={css.slogan}>
         <h1>We are your guide to travel safety.</h1>
-        <h3>Sometimes you just need something simple, to help make the informed decision.</h3>
-           
+        <div className={css.slogantext}>
+        <h3>
+          Sometimes you just need something simple, to help make the informed
+          decision.
+        </h3>
+        <span>
+          TravelSafe is your one stop app for all your latest travel safety
+          concerns.
+        </span>
+        <span>
+          {" "}
+          If you are thinking of visiting a place in the UK or abroad. Find here up to date information on covid rates, travel
+          restrictions. 
+        </span><br />
+        <span> We are here to give you peace of mind for your travels, be safe in the
+          knowledge TravelSafe has got you.
+</span>
+</div>
       </div>
 
       <div className={css.buttons}>
@@ -36,7 +51,8 @@ function HomePage() {
         <Button
           size="medium"
           text="Traveling Abroad"
-          onClick={() => history.push("../WorldPage")} />
+          onClick={() => history.push("../WorldPage")}
+        />
       </div>
 
       {/* <div className={css.slogan}>
