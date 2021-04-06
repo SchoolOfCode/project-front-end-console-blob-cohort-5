@@ -44,14 +44,14 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
   return (
     <>
    
-       <br/><h4>Cumulative Cases: {data[search]?.cases.cumulative ? formatNumber(data[search]?.cases.cumulative) : "No Data for this Area"}</h4> 
+       <br/><h4>Cumulative Cases: {data[search]?.cases.cumulative ? formatNumber((data[search]?.cases.cumulative/10).toFixed(0)) : "No Data for this Area"}</h4> 
     
 
      <div className={css.stats}>
        
                   <h2>Covid Rates:</h2>
 
-                  <Popover width="40%" placement="right">
+                  <Popover width="40%" placement="left" trigger={'hover'} >
                   <PopoverTrigger>
                     <div className={css.keyButton} style={{fontWeight:"bolder"}}>?</div>
                   </PopoverTrigger>
@@ -59,15 +59,15 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2><u>Covid Rates Key</u></h2></PopoverHeader>
-                    <PopoverBody >
+                    <PopoverBody bg={'white'} >
                       Covid Rate is the number of current cases per 100,000 of the area's population.<br/> <br/>
                       <ul>
-                        <li><span style={{color:"rgb(59, 112, 182)"}}>Low = 5000 and below</span></li> <br/>
-                      <li><span style={{color:"#eed202"}}>Medium = 5001 to 8000</span></li> <br/>
-                     <li><span style={{color:" rgb(206, 95, 95)"}}> High = 8001 and Over</span></li> <br/>
+                        <li><span style={{color:"rgb(59, 112, 182)"}}>Low = 500 and below</span></li> <br/>
+                      <li><span style={{color:"#eed202"}}>Medium = 501 to 800</span></li> <br/>
+                     <li><span style={{color:" rgb(206, 95, 95)"}}> High = 801 and Over</span></li> <br/>
                      <li>For the Rate Change we have: <span style={{color:" rgb(206, 95, 95)", fontWeight:'bold'}}> RISE</span> and <span style={{color:" rgb(66, 190, 103)", fontWeight:'bold'}}>FALL</span> in the retrospective Covid Rate</li> <br/> 
                       <div style={{fontWeight:'bold'}}><span style={{textDecoration:"underline"
-                      }}>{data[search]?.areaName}</span>  currently has a Rate of...   <span style={{color:color}}>{covidRate}</span> per 100,000 people</div>
+                      }}>{data[search]?.areaName}</span>  currently has a Rate of...   <span style={{color:color}}>{(covidRate/10).toFixed(2)}</span> per 100,000 people</div>
                       </ul>
                       </PopoverBody>
                   </PopoverContent>
@@ -88,11 +88,11 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
 
               <div className={css.rates} >
                   <div className={css[color]}>
-                       <h4 style={{color:'white'}}>Last Month <br/> {covidRatePrev}</h4>
+                       <h4 style={{color:'white'}}>Last Month <br/> {(covidRatePrev/10).toFixed(2)}</h4>
                    </div>
      
                   <div className={css[color]}>
-                         <h4 style={{color:'white'}}>Today <br/>{covidRate}</h4>
+                         <h4 style={{color:'white'}}>Today <br/>{(covidRate/10).toFixed(2)}</h4>
                   </div>  
               </div>
 

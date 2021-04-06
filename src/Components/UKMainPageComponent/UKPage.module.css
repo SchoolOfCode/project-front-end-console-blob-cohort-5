@@ -58,7 +58,8 @@ h2{
  padding: 1%; 
  max-width: fit-content;
  min-width: 60vh;
- position:fixed
+ position:absolute;
+ /* z-index: 1000; */
 
 }
 
