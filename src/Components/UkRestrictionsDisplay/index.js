@@ -54,7 +54,7 @@ while (!fetchedData) {
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel pb={4} bg="white">
             <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ",")}</p>
           </AccordionPanel>
         </AccordionItem>
@@ -69,7 +69,7 @@ while (!fetchedData) {
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel pb={4} bg="white">
             <h3>from England...</h3>
             <p> {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ",")}</p>
             <br />
@@ -87,7 +87,7 @@ while (!fetchedData) {
               <AccordionIcon />
             </AccordionButton>
           </h2>
-          <AccordionPanel pb={4}>
+          <AccordionPanel pb={4} bg="white">
             <h3>from England...</h3>{" "}
             <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ",")}</p>
             <br />
