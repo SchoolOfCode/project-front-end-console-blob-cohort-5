@@ -20,6 +20,10 @@ import decrease from "./decrease.png";
 
 function UkGovApiDisplay({data, data2, search=0}) {
 
+  function formatNumber(num = "Loading...") {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
+  }
+
   let color = "blue"
 let covidRate = data[search]?.Rate.PublishDate;
 let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
@@ -40,7 +44,7 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
   return (
     <>
    
-       <br/><h4>Cumulative Cases: {data[search]?.cases.cumulative ? data[search]?.cases.cumulative : "No Data for this Area"}</h4> 
+       <br/><h4>Cumulative Cases: {data[search]?.cases.cumulative ? formatNumber(data[search]?.cases.cumulative) : "No Data for this Area"}</h4> 
     
 
      <div className={css.stats}>
@@ -95,7 +99,7 @@ let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
 
         </div>
 
-     <div className={css.update}>Last Updated on: {data[search]?.date}</div>
+     <div className={css.update}>Data for {data[search]?.areaName}: Last Updated on: {data[search]?.date}</div>
      {/* <h2>{data[search]?.areaName}</h2> */}
    </>
   );
