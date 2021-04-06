@@ -7,11 +7,33 @@ import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
 
+import TransitionExample from "../Alert";
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
 
 function WorldPage() {
-  
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
-  const [date, setDate] = useState("2021-03-28");
+
+  const classes = useStyles();
+
+
+  let DATE = new Date();
+  DATE.setUTCDate(DATE.getUTCDate()-8)
+  console.log(DATE)
+
+  const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
+
   const [capital, setCapital] = useState("London");
   let API_WORLD_STATS = `https://covidtrackerapi.bsg.ox.ac.uk/api/v2/stringency/actions`;
 
@@ -32,12 +54,21 @@ function WorldPage() {
     countryCode,
   ]);
 
-  function handleChange(value) {
+  // handle change on search bar 
+  function handleChange(value) { 
     setCountryCode((value === null) ? "GBR" : value.ISO3 );
-    setCapital(value.Capital)
+    // setCapital(value.Capital)
+    // console.log(value["Country Name"])
+  }
+
+// handle map country change
+  function handleCountryChange(value){
+    setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
+    console.log(value.sourceTarget.feature.properties.ADMIN)
   }
   
   function handleDate(e) {
+    console.log(e.target.value)
     setDate(e.target.value);
   }
 
@@ -50,18 +81,33 @@ function WorldPage() {
     <TravelRestrictionsDisplay /> */}
 
         <div className={css.columnone}>
+      
 
-         
+         <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
+
             
-          <input
+         /* <input
             id="date"
             type={"date"}
             min="2020-01-01"
             max={today}
             onChange={handleDate}
-          ></input>
-      
+          ></input> */
+            <form className={classes.container} noValidate>
+  <TextField
+    id="date"
+    label="Change Date"
+    type="date"
+    defaultValue={DATE.toISOString().substr(0, 10)}
+    className={classes.textField}
+    InputLabelProps={{
+      shrink: true,
+    }}
+    onChangeCapture={handleDate}
+  />
+</form>
+      </div>
 
           <div className={css.TravelRestrictionsDisplay}>
             <TravelRestrictionsDisplay
@@ -74,7 +120,7 @@ function WorldPage() {
         </div>
 
         <div className={css.columntwo}>
-        <div className={css.map}><MyMap handleCountryChange={setCountryCode} /></div>
+        <div className={css.map}><MyMap handleCountryChange={handleCountryChange} /></div>
           
           <div className={css.flightWidget}>
             <FlightWidget  />

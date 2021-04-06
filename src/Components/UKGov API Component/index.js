@@ -24,7 +24,6 @@ function UkGovApiDisplay({data, data2, search=0}) {
 let covidRate = data[search]?.Rate.PublishDate;
 let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
 let covidChange = ((covidRate / covidRatePrev -1)*100).toFixed(2)
-let covidChangeSign = (covidRate>= 0 ? increase : decrease )
 
 
    if (covidRate>5000 && covidRate<8000){
@@ -48,14 +47,14 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
        
                   <h2>Covid Rates:</h2>
 
-                  <Popover width="40%">
+                  <Popover width="40%" placement="right">
                   <PopoverTrigger>
                     <div className={css.keyButton} style={{fontWeight:"bolder"}}>?</div>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="20px"  boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
-                    <PopoverHeader><h2>Covid Rates Key:</h2></PopoverHeader>
+                    <PopoverHeader><h2><u>Covid Rates Key</u></h2></PopoverHeader>
                     <PopoverBody >
                       Covid Rate is the number of current cases per 100,000 of the area's population.<br/> <br/>
                       <ul>
@@ -76,8 +75,8 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
       <div className={css.stats}>
                 
               <div className={css[colorRate]}>
-                  <h4>Change since last Month</h4>  <br/> 
-                  <h5 >{`${covidChange}%`} <img src={covidChangeSign}></img> </h5>
+                 <p style={{color:'white'}}> <h4 >Rate Change</h4> since last Month</p> 
+                  <h5 >{`${covidChange}%`} <img src={((covidChange >= 0) ? increase : decrease )}></img> </h5>
                </div>
 
       
@@ -89,7 +88,7 @@ let covidChangeSign = (covidRate>= 0 ? increase : decrease )
                    </div>
      
                   <div className={css[color]}>
-                         <h4 style={{color:'white'}}>Today: <br/>{covidRate}</h4>
+                         <h4 style={{color:'white'}}>Today <br/>{covidRate}</h4>
                   </div>  
               </div>
 

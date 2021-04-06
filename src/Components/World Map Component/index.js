@@ -3,7 +3,6 @@ import { MapContainer, GeoJSON } from "react-leaflet";
 import mapData from "../../mapdatajson/countries.json";
 import "leaflet/dist/leaflet.css";
 import "./MyMap.css";
-import { geoJSON } from "leaflet";
 import { usePrevious } from "@chakra-ui/hooks";
 
 
@@ -52,7 +51,7 @@ function MyMap({handleCountryChange})  {
     layer.on({
       click: (event) => {
       
-        
+        console.log(event)
           event.target.setStyle({
             color: "blue",
             fillColor: "white",
@@ -62,8 +61,7 @@ function MyMap({handleCountryChange})  {
           
           // function reset highlight:
           event.target.bringToFront();
-          console.log(event.sourceTarget.feature.properties.ISO_A3);
-          handleCountryChange(event.sourceTarget.feature.properties.ISO_A3);
+          handleCountryChange(event);
       
           //we might want to add a function tu display som data or to take us to the country stats :)
         },

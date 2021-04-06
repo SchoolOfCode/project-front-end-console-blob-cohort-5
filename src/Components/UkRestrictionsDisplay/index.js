@@ -42,8 +42,7 @@ while (!fetchedData) {
   return (
 
     <div className = {css.customDiv}>
-    <div className={cn(css[color], css[size])}>
-      <h2 className={css.heading}>Current Gov Restrictions for Travel</h2>
+      <h2 className={css.heading} style={{textAlign:'center'}}>Gov Restrictions for Travel</h2>
 
       <Accordion colorScheme={"facebook"} allowToggle>
         <AccordionItem className={css.item}>
@@ -97,7 +96,6 @@ while (!fetchedData) {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-    </div>
     </div>
   );
 }
