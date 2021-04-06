@@ -34,54 +34,63 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
 
           <h5>Capital: {capital}</h5>
 
-      <p>{`Border Status: ${data.policyActions[7].policy_value_display_field} - Code(${data.policyActions[7].policyvalue})`}
+
+          <div className={css.twoColumns}>
+      <p><h3 className={css.headerthree}>Border Status</h3>{`(${data.policyActions[7].policyvalue}) - ${data.policyActions[7].policy_value_display_field}`}
       <Popover>
                   <PopoverTrigger>
-                    <button>Border Key</button>
+                    <button className={css.buttonone}>Key</button>
                   </PopoverTrigger>
-                  <PopoverContent  bg="white" border="1px solid black" padding="20px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
+                  <PopoverContent  bg="white" border="1px solid black" padding="15px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2>Border Key</h2></PopoverHeader>
                     <PopoverBody >
-                     SOME explanation about what the border codes mean 
-                     <p>0 - No measures 1 - Screening 2 - Quarantine arrivals from high-risk regions 3 - Ban on arrivals from some regions 4 – Ban on all regions or total border closure</p>
+                     An explanation about what the border codes mean...
+                     <p>0 - No measures <br/> 1 - Screening <br/>2 - Quarantine arrivals from high-risk regions <br/>3 - Ban on arrivals from some regions <br/>4 – Ban on all regions or total border closure</p>
 
                       </PopoverBody>
                   </PopoverContent>
                 </Popover>
 </p>
 
-      <p>{` WorkPlace Status: ${data.policyActions[0].policy_value_display_field} - Code: (${data.policyActions[0].policyvalue})`}
+      <p><h3 className={css.headerthree}>Workplace Status</h3> {`(${data.policyActions[0].policyvalue}) - ${data.policyActions[0].policy_value_display_field}`}
       <Popover>
                   <PopoverTrigger>
-                    <button>Workplace Status Key</button>
+                    <button className={css.buttontwo}>Key</button>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="20px" width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
                     <PopoverCloseButton bg="rgb(59, 182, 155)" borderRadius="10px" width="30px"/>
                     <PopoverHeader><h2>WorkPlace Status Key</h2></PopoverHeader>
                     <PopoverBody >
-                     SOME explanation about what the border codes mean 
-                     <p>0 - No measures 1 - recommend closing (or work from home) 2 - require closing (or work from home) for some sectors or categories of workers 3 - require closing (or work from home) all-but-essential workplaces (e.g. grocery stores, doctors) No data - blank</p>
+                     An explanation of the status codes for wrokplace restrictions...
+                     <p>0 - No measures<br/> 1 - recommend closing (or work from home) <br/>2 - require closing (or work from home) for some sectors or categories of workers <br/>3 - require closing (or work from home) all-but-essential workplaces (e.g. grocery stores, doctors) No data - blank</p>
                       </PopoverBody>
                   </PopoverContent>
                 </Popover></p>
+                </div>
       
 <br/>
-      <h3 className={css.headerthree}>What about FaceMasks?</h3>
-        <p>{data.policyActions[17].policy_value_display_field}</p>
+<div className={css.twoColumns}>
+<p><h3 className={css.headerthree}>What about FaceMasks?</h3>
+       {data.policyActions[17].policy_value_display_field}</p>
 
 
-      <h3 className={css.headerthree}>Public Events</h3>
-      <p>{data.policyActions[3].policy_value_display_field}</p>
+       <p><h3 className={css.headerthree}>Public Events</h3>
+      {data.policyActions[3].policy_value_display_field}</p>
 
+     </div>
+
+<div className={css.twoColumns}>
+      <p><h3 className={css.headerthree}>Covid Cases:</h3>{formatNumber(data.stringencyData.confirmed)}</p>
+  <div>
       <h3 className={css.headerthree}className={css.headerthree}>Stringency Index</h3>
       <p>{data.stringencyData.stringency}
       
       <Popover>
                   <PopoverTrigger>
-                    <button>Stringency?</button>
+                    <button className={css.buttonthree}>Stringency?</button>
                   </PopoverTrigger>
                   <PopoverContent  bg="white" border="1px solid black" padding="20px"  width="50vh" boxShadow="5px 5px #888888" borderRadius="15px">
                     <PopoverArrow />
@@ -92,13 +101,14 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
                       </PopoverBody>
                   </PopoverContent>
                 </Popover></p>
+                </div>
 
 
-      <p><h3 className={css.headerthree}>Covid Cases:</h3>{formatNumber(data.stringencyData.confirmed)}</p>
+      </div>
 </div>
 
 <div className={css.blueBox}>
-<h4>Comparison to Start of the Month:</h4>
+<h4>Comparison to <u>One Month</u> ago:</h4>
       <p>{`Stringency Index: ${data2.stringencyData.stringency} this is a change of ${((stringencyChange).toFixed(2) > 0 ) ? `+${(stringencyChange).toFixed(2)}` : (stringencyChange).toFixed(2) }`}</p>
       <p>{`This means that the country is ${stringencyWording} their Covid restrictions internally`}</p>
       <p><h4>Covid Cases:</h4>{formatNumber(data2.stringencyData.confirmed)}</p>
@@ -113,7 +123,7 @@ let stringencyWording = (data2.stringencyData.stringency-data.stringencyData.str
 
   return (
     <div data-testid="travelrestrictions" className={css.container}>
-    <h1>There is no data for this date, try an older date please...</h1>
+    <h3>There is no data for this date, <br/>try an older date please...</h3>
     </div>
   )
 }

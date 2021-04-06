@@ -26,10 +26,12 @@
   }
 
 .columntwo{
-  /* justify-content: center; */
-  /* align-content: center; */
+  justify-content: center;
+  align-content: center;
   /* padding-top: 11%; */
+  max-height: 15%;
   
+
   }
   
   
@@ -39,6 +41,9 @@ h2{
   font-family: 'Montserrat', sans-serif;
 }
 
+.customHeading {
+  padding-top: 
+}
 
 .content{
   padding-top: 8%;
@@ -46,7 +51,10 @@ h2{
 
 
 .WebScrapeInfo {
- padding: 5%; 
+ padding: 1%; 
+ max-width: fit-content;
+ min-width: 60vh;
+
 }
 
 
