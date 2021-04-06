@@ -12,7 +12,7 @@ function WwTracker() {
   const [results, setResults] = useState([]);
   const [searchCountry, setSearchCountry] = useState(""); // May need to move to App level
 
-  function formatNumber(num = 100) {
+  function formatNumber(num = "Loading...") {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
