@@ -59,7 +59,7 @@ h2{
  padding: 1%; 
  max-width: fit-content;
  min-width: 60vh;
- position:absolute;
+ /* position:absolute; */
 }
 
 
@@ -71,7 +71,7 @@ h2{
   border-top: 1px solid #000;
   /* padding-top: 5%; */
   /* padding-left: 15%; */
-  margin-top: 35vh;
+  margin-top: 5vh;
   /* margin-top: 10%; */
 
 }

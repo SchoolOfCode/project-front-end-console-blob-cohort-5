@@ -47,7 +47,7 @@ while (!fetchedData) {
       <Accordion colorScheme={"facebook"} allowToggle zIndex="300">
         <AccordionItem className={css.item} zIndex="3">
           <h2 class={css.customHeading}>
-            <AccordionButton zIndex="3">
+            <AccordionButton zIndex="3" borderRadius="15px">
               <Box flex="1" textAlign="left" zIndex="3">
                 Travelling within England:{" "}
               </Box>
@@ -64,7 +64,7 @@ while (!fetchedData) {
 
         <AccordionItem className={css.item}>
           <h2 class={css.customHeading}>
-            <AccordionButton>
+            <AccordionButton borderRadius="15px">
               <Box flex="1" textAlign="left">
                 Travelling within the UK:{" "}
               </Box>
@@ -86,12 +86,12 @@ while (!fetchedData) {
 
         <AccordionItem className={css.item}>
           <h2 class={css.customHeading}>
-            <AccordionButton>
+            <AccordionButton borderRadius="15px">
               <Box flex="1" textAlign="left">
                 International Travel:{" "}
               </Box>
               <AccordionIcon />
-            </AccordionButton>
+            </AccordionButton >
           </h2>
           <AccordionPanel pb={4} bg="white">
             <h3>from England...</h3>{" "}

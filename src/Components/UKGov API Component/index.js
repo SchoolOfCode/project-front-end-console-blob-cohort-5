@@ -82,7 +82,7 @@ if (actualRatePrev>3 && actualRatePrev<=6){
                       Covid Rate is the current average number of cases per 100,000 of the area's population.<br/> <br/>
                       <ul>
                         <li><span style={{color:"rgb(59, 112, 182)"}}>Low = 3 or Below</span></li> <br/>
-                      <li><span style={{color:"#eea702;"}}>Medium = 3.1 to 6 </span></li> <br/>
+                      <li><span style={{color:"#eea702"}}>Medium = 3.1 to 6 </span></li> <br/>
                      <li><span style={{color:" rgb(206, 95, 95)"}}> High = 6.1 or More</span></li> <br/>
                      <li>For the Rate Change we have: <span style={{color:" rgb(206, 95, 95)", fontWeight:'bold'}}> RISE</span> and <span style={{color:" rgb(66, 190, 103)", fontWeight:'bold'}}>FALL</span> in the respective Covid Rate</li> <br/> 
                       <div style={{fontWeight:'bold'}}><span style={{textDecoration:"underline"

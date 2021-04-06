@@ -32,7 +32,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
     let stringencyChange =
       data2.stringencyData.stringency - data.stringencyData.stringency;
     let stringencyWording =
-      data2.stringencyData.stringency - data.stringencyData.stringency > 0
+      data2.stringencyData.stringency - data.stringencyData.stringency < 0
         ? "tightening"
         : "loosening";
 
@@ -123,7 +123,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                       require closing (or work from home) for some sectors or
                       categories of workers <br />3 - require closing (or work
                       from home) all-but-essential workplaces (e.g. grocery
-                      stores, doctors) No data - blank
+                      stores, doctors) <br/>No data - blank
                     </p>
                   </PopoverBody>
                 </PopoverContent>
@@ -166,7 +166,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                       <h2>Stringency Index Explained</h2>
                     </PopoverHeader>
                     <PopoverBody>
-                      Stringency Index 100 = strict and 0 = very lax
+                      Stringency Index: <br/> 100 = Strict <br/> 0 = Very Lax
                     </PopoverBody>
                   </PopoverContent>
                 </Popover>
