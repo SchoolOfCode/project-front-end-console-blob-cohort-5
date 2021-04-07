@@ -31,10 +31,11 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
   ) {
     let stringencyChange =
       data2.stringencyData.stringency - data.stringencyData.stringency;
-    let stringencyWording =
-      data2.stringencyData.stringency - data.stringencyData.stringency < 0
-        ? "tightening"
-        : "loosening";
+    let stringencyWording = "tightening"
+    if (stringencyChange === 0 ){stringencyWording = "maintaining"}
+    else if (stringencyChange>0){stringencyWording = "tightening" }
+    else if (stringencyChange<0){ stringencyWording = "loosening"}
+      // stringencyChange < 0 ? "tightening" : stringencyChange = 0 ? "No Change" : "loosening";
 
     return (
       <div data-testid="travelrestrictions">
@@ -193,9 +194,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
             <div><h4>Stringency Index</h4> {`${
             data2.stringencyData.stringency
           } this is a change of ${
-            stringencyChange.toFixed(2) > 0
-              ? `+${stringencyChange.toFixed(2)}`
-              : stringencyChange.toFixed(2)
+            stringencyChange.toFixed(2) > 0 ? `+${stringencyChange.toFixed(2)}` : stringencyChange.toFixed(2)
           }`}</div> 
              <div>
             <h4>Covid cases</h4>

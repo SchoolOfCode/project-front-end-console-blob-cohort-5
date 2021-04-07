@@ -35,9 +35,9 @@ function TravelTipsPage() {
             <li>Wash your hands often or use hand sanitizer.</li>
             <li>Do not travel if you have symptoms of COVID-19.</li>
             <li>
-              Purchase a travel insurance that include cover for COVID-19.
+              Purchase travel insurance that includes cover for COVID-19.
             </li>
-            <li>Continue to check on Travelsafe app for updates.</li>
+            <li>Continue to check on TravelSafe app for updates.</li>
             <li>
             Be prepared to follow local changing Covid-19 regulations, for
             example border closures, testing and quarantine requirements.
