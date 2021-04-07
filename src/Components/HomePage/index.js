@@ -37,7 +37,7 @@ function HomePage() {
        
       <br />
         <span> We are here to give you peace of mind for your travels, be safe in the
-          knowledge <b>TravelSafe</b> has got you. Go ahead and get up to date information on covid rates & travel
+          knowledge <b>TravelSafe</b> has got you. Go ahead and get up to date information on Covid rates & travel
        restrictions.
 </span>
 </div>
