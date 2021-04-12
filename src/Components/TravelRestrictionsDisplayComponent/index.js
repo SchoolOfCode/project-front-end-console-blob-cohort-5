@@ -1,18 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import cn from "classnames";
 import css from "./travelRestrictDisplay.module.css";
 import {
-  Button,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
-  PopoverCloseButton,
-  GridItem,
-} from "@chakra-ui/react";
+  PopoverCloseButton,} from "@chakra-ui/react";
 
 function TravelRestrictionsDisplay({ data, data2, color, capital }) {
   // console.log(data);
@@ -23,10 +19,10 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
 
   if (
     data?.policyActions &&
-    data.stringencyData.country_code != undefined &&
+    data.stringencyData.country_code !== undefined &&
     data.policyActions.length > 1 &&
     data2?.policyActions &&
-    data2.stringencyData.country_code != undefined &&
+    data2.stringencyData.country_code !== undefined &&
     data2.policyActions.length > 1
   ) {
     let stringencyChange =
@@ -145,7 +141,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
           <div className={css.twoColumns}>
             <div>
             <div className={css.keyColumns}>
-              <h3 className={css.headerthree} className={css.headerthree}>
+              <h3 className={css.headerthree}>
                 Stringency index</h3>
                 <Popover>
                   <PopoverTrigger>

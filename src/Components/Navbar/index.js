@@ -15,7 +15,7 @@ const Navbar = () => {
                     <img src={logo} />
 
                 </NavLink> */}
-                <div><img src={logo} /></div>
+                <div><img src={logo} alt="logo"/></div>
                 <Bars />
                 <NavMenu>
                     <NavLink to="/" activeStyle>

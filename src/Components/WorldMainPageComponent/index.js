@@ -6,8 +6,6 @@ import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
-
-import TransitionExample from "../Alert";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
@@ -74,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     setDate(e.target.value);
   }
 
-  let today = new Date().toISOString().substr(0, 10);
+  // let today = new Date().toISOString().substr(0, 10);
 
   return (
     <><Alert/>

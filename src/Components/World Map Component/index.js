@@ -39,7 +39,7 @@ function MyMap({handleCountryChange})  {
 
   const onEachCountry = (country, layer) => {
 
-    const countryCode = country.properties.ISO_A3;
+    // const countryCode = country.properties.ISO_A3;
 
     const countryName = country.properties.ADMIN;
 

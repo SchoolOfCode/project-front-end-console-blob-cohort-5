@@ -6,7 +6,7 @@ return(
 
     <div>
 <div>
-<iframe className={css.widget}
+<iframe className={css.widget} title="hotel-widget"
   src="https://widgets.skyscanner.net/widget-server/widgets/iframe?skyscannerWidget=HotelSearchWidget&locale=en-GB&market=GB&currency=GBP&destinationName='Birmingham'"
 ></iframe>
 
