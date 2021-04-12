@@ -13,18 +13,19 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  
+  let url = "http://localhost:5000/country";
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
+
   const url = process.env.REACT_APP_URL
   console.log(url)
+
 
 
   useEffect(() => {
     const webScrapeFetch =async () => {
     
         let res = await fetch(url);
-        console.log(url)
         let data = await res.json();
         setFetchedData(data);
         console.log(data);
@@ -107,11 +108,7 @@ while (!fetchedData) {
     </div>
   );
 }
-// return (
-// <><h1>Loading...</h1>
-// <button onClick={handleClick}>Check UK Gov Restrictions... </button>
-// </>)
-// }
+
 
 
 export default UKRestrictionsDisplay;

@@ -41,6 +41,7 @@ const useStyles = makeStyles((theme) => ({
   DATE2.setMonth(DATE2.getMonth() - 1); //minus mmonth from secodn instance of new date()
   // console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
 
+
   const [countryCode, setCountryCode] = useState("GBR");
   //WHILE countryObj array less than 2 keep fetching
   
@@ -65,6 +66,7 @@ const useStyles = makeStyles((theme) => ({
   function handleCountryChange(value){
     setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
     console.log(value.sourceTarget.feature.properties.ADMIN)
+
   }
   
   function handleDate(e) {
@@ -80,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
+
 
         <div className={css.columnone}>
       
@@ -109,6 +112,7 @@ const useStyles = makeStyles((theme) => ({
     onChangeCapture={handleDate}
   />
 </form>
+
       </div>
 
           <div className={css.TravelRestrictionsDisplay}>

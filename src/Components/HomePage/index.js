@@ -1,9 +1,15 @@
 import React from "react";
 import Button from "../ButtonComponent/index";
 import css from "./HomePage.module.css";
+
 import { useHistory } from "react-router-dom";
 import UKPage from "../UKMainPageComponent/index";
 import WorldMainPageComponent from "../WorldMainPageComponent/index";
+import logo from './animatedlogo.gif';
+
+
+
+
 
 function HomePage() {
   let url = "https://localhost:5001/country";

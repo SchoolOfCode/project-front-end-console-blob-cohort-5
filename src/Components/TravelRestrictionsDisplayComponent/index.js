@@ -40,6 +40,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
     return (
       <div data-testid="travelrestrictions">
         <div className={cn(css[color])}>
+
           {/* <h5>Capital: {capital}</h5> */}
 
           <div className={css.twoColumns}>
@@ -129,6 +130,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                   </PopoverBody>
                 </PopoverContent>
               </Popover>
+
 </div>
           
             {`(${data.policyActions[0].policyvalue}) - ${data.policyActions[0].policy_value_display_field}`}
