@@ -27,15 +27,16 @@ function UkGovApiDisplay({data, data2, search=0}) {
   let color = "blue"
   let colorPrev ="red"
 let covidRate = data[search]?.Rate.PublishDate;
-let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
-let population = (data[search]?.cases.cumulative / data[search]?.Rate.PublishDate)*100000
+// let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
+let population = (data2[search]?.cases.cumulative / data2[search]?.Rate.PublishDate)*100000
 let actualRate =  data[search]?.cases.daily / population * 100000
 let actualRatePrev =  data2[search]?.cases.daily / population * 100000
 let covidChange = (actualRate - actualRatePrev ).toFixed(2)
-// console.log(actualRatePrev)
-// // console.log(data2)
-// console.log(actualRate)
-// console.log(population)
+console.log()
+console.log(data)
+console.log(data2)
+console.log(actualRate)
+console.log(actualRatePrev)
 //cases per 100k 
 
 

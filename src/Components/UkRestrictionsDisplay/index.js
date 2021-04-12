@@ -13,11 +13,11 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  // let url = "http://localhost:5000/country";
+  let url = "http://localhost:5000/country";
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
 
-  const url = process.env.REACT_APP_URL
+  // const url = process.env.REACT_APP_URL
  
 
 
@@ -28,7 +28,7 @@ function UKRestrictionsDisplay(data, color, size, heading) {
         let res = await fetch(url);
         let data = await res.json();
         setFetchedData(data);
-        // console.log(data);
+        console.log(data);
     }
     webScrapeFetch()
   }, [click])
@@ -37,7 +37,8 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 function handleClick(){setClick(!click)}
 
 while (!fetchedData) {
-  return <h1>Loading...</h1>
+  return (<div style={{textAlign:'center'}}><h1>Loading...</h1>
+  <p>information is flying over to us now and will be displayed shortly</p><button onClick={handleClick}>Click Me if nothing is happening</button></div>)
 } 
 // (fetchedData){
   return (
@@ -56,7 +57,8 @@ while (!fetchedData) {
             </AccordionButton>
           </h2>
           <AccordionPanel pb={4} bg="white">
-            {/* <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ",")}</p>
+
+            {/* <p>{fetchedData[1].WithinEng.replace(/&#44;/g, ",")}</p>
              */}
              <p>You should minimise travel where possible. This means you should avoid making unnecessary trips and combine trips where possible. You should not stay away from home overnight for a holiday.</p>
           </AccordionPanel>
@@ -96,11 +98,11 @@ while (!fetchedData) {
           </h2>
           <AccordionPanel pb={4} bg="white">
             <h3>from England...</h3>{" "}
-            {/* <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ",")}</p> */}
+            {/* <p>{fetchedData[1].IntFromEng.replace(/&#44;/g, ",")}</p> */}
             <p>You can only travel internationally from England where you have a reasonable excuse to leave the UK, such as work. International holidays are not permitted.</p>
             <br />
             <h3>to England...</h3>{" "}
-            {/* <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ",")}</p> */}
+            {/* <p>{fetchedData[1].toEngFromInt.replace(/&#44;/g, ",")}</p> */}
             <p>All those planning to travel to England should follow the guidance on entering the UK. Before travelling to the UK, you must complete a passenger locator form and have proof of a negative COVID-19 test, unless you are exempt.</p>
           </AccordionPanel>
         </AccordionItem>
