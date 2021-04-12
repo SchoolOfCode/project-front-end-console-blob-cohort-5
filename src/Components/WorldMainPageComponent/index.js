@@ -30,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
 
   let DATE = new Date();
   DATE.setUTCDate(DATE.getUTCDate()-9)
-  console.log(DATE)
+  // console.log(DATE)
 
   const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
 
@@ -65,12 +65,12 @@ const useStyles = makeStyles((theme) => ({
 // handle map country change
   function handleCountryChange(value){
     setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
-    console.log(value.sourceTarget.feature.properties.ADMIN)
+    // console.log(value.sourceTarget.feature.properties.ADMIN)
 
   }
   
   function handleDate(e) {
-    console.log(e.target.value)
+    // console.log(e.target.value)
     setDate(e.target.value);
   }
 

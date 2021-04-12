@@ -13,12 +13,12 @@ import {
 
 
 function UKRestrictionsDisplay(data, color, size, heading) {
-  let url = "http://localhost:5000/country";
+  // let url = "http://localhost:5000/country";
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
 
   const url = process.env.REACT_APP_URL
-  console.log(url)
+ 
 
 
 
@@ -28,7 +28,7 @@ function UKRestrictionsDisplay(data, color, size, heading) {
         let res = await fetch(url);
         let data = await res.json();
         setFetchedData(data);
-        console.log(data);
+        // console.log(data);
     }
     webScrapeFetch()
   }, [click])

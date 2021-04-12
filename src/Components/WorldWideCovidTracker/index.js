@@ -25,7 +25,7 @@ function WwTracker() {
       .then((responseArr) => {
         setLatest(responseArr[0].data);
         setResults(responseArr[1].data);
-        console.log(responseArr[1].data);
+        // console.log(responseArr[1].data);
       })
       .catch((err) => {
         console.log(err);

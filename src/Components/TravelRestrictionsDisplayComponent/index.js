@@ -15,7 +15,7 @@ import {
 } from "@chakra-ui/react";
 
 function TravelRestrictionsDisplay({ data, data2, color, capital }) {
-  console.log(data);
+  // console.log(data);
 
   function formatNumber(num = 100) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");

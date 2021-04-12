@@ -18,7 +18,7 @@ function HomePage() {
     let res = await fetch(url);
     let data = await res.json();
 
-    console.log(data);
+    // console.log(data);
   };
 
   const history = useHistory();

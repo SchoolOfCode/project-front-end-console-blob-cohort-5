@@ -36,7 +36,7 @@ function MyMap({handleCountryChange})  {
       fillColor: "black",
       fillOpacity: 0.5,
     });
-    console.log(event.sourceTarget.feature.properties.ISO_A3);
+    // console.log(event.sourceTarget.feature.properties.ISO_A3);
     handleCountryChange(event.sourceTarget.feature.properties.ISO_A3);
     //we might want to add a function tu display som data or to take us to the country stats :)
   };

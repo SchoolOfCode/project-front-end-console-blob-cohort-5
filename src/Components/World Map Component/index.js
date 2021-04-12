@@ -51,7 +51,7 @@ function MyMap({handleCountryChange})  {
     layer.on({
       click: (event) => {
       
-        console.log(event)
+        // console.log(event)
           event.target.setStyle({
             color: "blue",
             fillColor: "white",

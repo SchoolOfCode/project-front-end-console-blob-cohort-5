@@ -32,10 +32,10 @@ let population = (data[search]?.cases.cumulative / data[search]?.Rate.PublishDat
 let actualRate =  data[search]?.cases.daily / population * 100000
 let actualRatePrev =  data2[search]?.cases.daily / population * 100000
 let covidChange = (actualRate - actualRatePrev ).toFixed(2)
-console.log(actualRatePrev)
-// console.log(data2)
-console.log(actualRate)
-console.log(population)
+// console.log(actualRatePrev)
+// // console.log(data2)
+// console.log(actualRate)
+// console.log(population)
 //cases per 100k 
 
 
@@ -58,7 +58,7 @@ if (actualRatePrev>3 && actualRatePrev<=6){
   
     let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
    
-    console.log(data)
+    // console.log(data)
   return (
     <>
    
