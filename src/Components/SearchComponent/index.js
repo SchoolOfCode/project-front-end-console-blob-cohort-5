@@ -9,7 +9,7 @@ function SearchBar({searchCountry, setSearchCountry, placeholderText, variant}) 
     //If we want to have just one searchbar component for countries and UK we need to change the props???
   
     return (
-        < Form >
+        < Form onSubmit={e => e.preventDefault()}>
             <Form.Group controlId="formGroupEmail">
                 <Form.Control
                     type="text"

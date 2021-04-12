@@ -3,26 +3,29 @@ import { MapContainer, GeoJSON } from "react-leaflet";
 import mapData from "../../mapdatajson/countries.json";
 import "leaflet/dist/leaflet.css";
 import "./MyMap.css";
-
-//old react uses this.setState
-//google the docs
-//bestbet to convert to new React
-
-//converted to new React
+import { usePrevious } from "@chakra-ui/hooks";
 
 
 
 function MyMap({handleCountryChange})  {
 
 
-  //this colors can be depending on travel ban for each country
-  let color = ['green', 'orange', 'red'];
-
   useEffect(() => {
     // console.log(mapData)
     //big object slowing down computer
 
   }, [])
+
+
+  const [selectedCountry, setSelectedCountry] = useState(null);
+  const previousCountry = usePrevious(selectedCountry);
+  useEffect(()=>{
+    if (previousCountry) {
+      previousCountry.setStyle(countryStyle);
+    }
+  }, [selectedCountry]);
+
+
 
   let countryStyle = {
     fillColor: "green",
@@ -32,18 +35,7 @@ function MyMap({handleCountryChange})  {
     // dashArray: 5,
   };
 
-  const onCountryClick = (event) => {
-    event.target.setStyle({
-      color: "blue",
-      fillColor: "white",
-      fillOpacity: 0.5,
-    });
-
-    console.log(event.sourceTarget.feature.properties.ISO_A3);
-    handleCountryChange(event.sourceTarget.feature.properties.ISO_A3);
-
-    //we might want to add a function tu display som data or to take us to the country stats :)
-  };
+  
 
   const onEachCountry = (country, layer) => {
 
@@ -56,20 +48,25 @@ function MyMap({handleCountryChange})  {
 
     layer.bindPopup(countryName); 
 
-
-
-
-    const colorIndex = 1; //we need to create a function that depending on travel ban status, a different color will be selected  
-    layer.options.fillColor = color[colorIndex];
-
     layer.on({
-      click: onCountryClick,
-    });
-
-    return
-
-  };
-
+      click: (event) => {
+      
+        console.log(event)
+          event.target.setStyle({
+            color: "blue",
+            fillColor: "white",
+            fillOpacity: 0.5,
+          });
+          setSelectedCountry(event.target)
+          
+          // function reset highlight:
+          event.target.bringToFront();
+          handleCountryChange(event);
+      
+          //we might want to add a function tu display som data or to take us to the country stats :)
+        },
+      });
+  }
 
 
   return (
@@ -80,11 +77,13 @@ function MyMap({handleCountryChange})  {
         style={{ height: "50vh", width: "78vh" }}
         zoom={1}
         center={[20, 10]}
+        mapPane={1}
       >
         <GeoJSON
           style={countryStyle}
           data={mapData.features}
           onEachFeature={onEachCountry}
+          mapPane={1}
         />
       </MapContainer>
     </div>

@@ -17,6 +17,10 @@ function UKRestrictionsDisplay(data, color, size, heading) {
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
 
+  const url = process.env.REACT_APP_URL
+  console.log(url)
+
+
 
   useEffect(() => {
     const webScrapeFetch =async () => {
@@ -32,70 +36,79 @@ function UKRestrictionsDisplay(data, color, size, heading) {
 
 function handleClick(){setClick(!click)}
 
-if (fetchedData){
+while (!fetchedData) {
+  return <h1>Loading...</h1>
+} 
+// (fetchedData){
   return (
-   <div className={cn(css[color], css[size])}>
 
-     <h2>Current Gov Restrictions for Travel</h2>
-    
-          <Accordion colorScheme={"facebook"}>
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-        Travelling within England:        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-    {fetchedData[1].englandInternal.replace(/&#44;/g, ',')}
-    </AccordionPanel>
-  </AccordionItem>
+    <div className = {css.customDiv}>
+      <h2 className={css.heading} style={{textAlign:'center'}}>Gov Restrictions for Travel</h2>
 
-  
-  <AccordionItem >
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-        Travelling within the UK:     </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      <h3>from England...</h3>
-    {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ',')}<br />
-    <h3>to England...</h3>
-    {fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ',')}
-    </AccordionPanel>
-  </AccordionItem>
+      <Accordion colorScheme={"facebook"} allowToggle zIndex="300">
+        <AccordionItem className={css.item} zIndex="3">
+          <h2 class={css.customHeading}>
+            <AccordionButton zIndex="3" borderRadius="15px">
+              <Box flex="1" textAlign="left" zIndex="3">
+                Travelling within England:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} bg="white">
+            {/* <p>{fetchedData[1].englandInternal.replace(/&#44;/g, ",")}</p>
+             */}
+             <p>You should minimise travel where possible. This means you should avoid making unnecessary trips and combine trips where possible. You should not stay away from home overnight for a holiday.</p>
+          </AccordionPanel>
+        </AccordionItem>
 
- 
-  <AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex="1" textAlign="left">
-       International Travel:   </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-    <h3>from England...</h3> <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ',')}</p>
+
+        <AccordionItem className={css.item}>
+          <h2 class={css.customHeading}>
+            <AccordionButton borderRadius="15px">
+              <Box flex="1" textAlign="left">
+                Travelling within the UK:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4} bg="white">
+            <h3>from England...</h3>
+            {/* <p> {fetchedData[1].toUkFromEngland.replace(/&#44;/g, ",")}</p> */}
+            <p>You may leave England to travel to other parts of the UK, the Republic of Ireland, Jersey, Guernsey or the Isle of Man. However, there may be restrictions in place in the area you intend to travel to which prevent you from travelling. You may only be able to travel for certain reasons, such as work. You should check the restrictions in place at your intended destination before making arrangements to travel.</p>
+         
             <br />
-            <h3>to England...</h3> <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ',')}</p>
-    </AccordionPanel>
-  </AccordionItem>
-  
-</Accordion>
-   
-          
-   </div>
+            <h3>to England...</h3>
+            {/* <p>{fetchedData[1].toEnglandFromUK.replace(/&#44;/g, ",")}</p> */}
+            <p>You can enter England from other parts of the UK, the Republic of Ireland, Jersey, Guernsey and the Isle of Man. This is sometimes known as the Common Travel Area.  However, there may be restrictions in place in the area you intend to travel from which prevent you from travelling. For example, if you are in Wales, Scotland or Northern Ireland, there may be a requirement to stay at home or “Stay Local” where you live, which means you cannot travel to England.</p>
+            
+          </AccordionPanel>
+        </AccordionItem>
+
+        <AccordionItem className={css.item}>
+          <h2 class={css.customHeading}>
+            <AccordionButton borderRadius="15px">
+              <Box flex="1" textAlign="left">
+                International Travel:{" "}
+              </Box>
+              <AccordionIcon />
+            </AccordionButton >
+          </h2>
+          <AccordionPanel pb={4} bg="white">
+            <h3>from England...</h3>{" "}
+            {/* <p>{fetchedData[1].inetnationalFromEng.replace(/&#44;/g, ",")}</p> */}
+            <p>You can only travel internationally from England where you have a reasonable excuse to leave the UK, such as work. International holidays are not permitted.</p>
+            <br />
+            <h3>to England...</h3>{" "}
+            {/* <p>{fetchedData[1].toEngfFromInt.replace(/&#44;/g, ",")}</p> */}
+            <p>All those planning to travel to England should follow the guidance on entering the UK. Before travelling to the UK, you must complete a passenger locator form and have proof of a negative COVID-19 test, unless you are exempt.</p>
+          </AccordionPanel>
+        </AccordionItem>
+      </Accordion>
+    </div>
   );
 }
-return (
-<><h1>Loading...</h1>
-{/* <button onClick={handleClick}>Check UK Gov Restrictions... </button> */}
-</>)
-}
+
 
 
 export default UKRestrictionsDisplay;

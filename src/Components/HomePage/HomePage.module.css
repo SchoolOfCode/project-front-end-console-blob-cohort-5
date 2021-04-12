@@ -1,33 +1,53 @@
-.main{
-  
-  display: flex;
-  flex-direction: column;
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: center;
-  padding: 15%; 
+  padding-top: 5%;
   min-height: 100vh;
- background-image: url('./Backgroundimage.jpg') ; 
- background-repeat: no-repeat;
- background-size: cover;
-  }
-
-  .slogan{
-  display: flex;
-  justify-content: space-between;
-  width: 50vw;
-  border: 1px solid black;
-  }
-
-
-.buttons{
-
-  display: flex;
-  justify-content: space-evenly;
-  width: 50vw;
-  margin-top: 40px;
-  
+  background-image: url("./Backgroundimage.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-items: center;
+  height: 100vh;
 }
 
-img {
-background-color: transparent;
+/* .slogan2{
+  
+    display: grid;
+    /* place-items: center; */
+/* width: 80vw; */
+/* padding: 2%;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    background-color: rgba(41, 105, 179, 0.8);
+    opacity: 10; */
+/* color: rgb(216, 163, 30);
+    margin: 4%;
+    }  */
 
+.slogan {
+  
+  justify-content: center;
+  margin-top: 5%;
+  padding: 5%;
+  border: 2px solid black;
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-size: 2rem;
+  opacity: 0.5;
+  width: 80vw;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  justify-content: space-around;
+  width: 70vw;
+}
+
+.slogantext{
+  margin-top: 13px;
+  text-align: center;
 }
