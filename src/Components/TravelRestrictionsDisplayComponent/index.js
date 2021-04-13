@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 import css from "./travelRestrictDisplay.module.css";
 import {
   Popover,
@@ -10,8 +9,22 @@ import {
   PopoverArrow,
   PopoverCloseButton,} from "@chakra-ui/react";
 
-function TravelRestrictionsDisplay({ data, data2, color, capital }) {
-  // console.log(data);
+function TravelRestrictionsDisplay({ data, data2 }) {
+  
+  let facemaskData = data?.policyActions.length > 19 ? data.policyActions[17].policy_value_display_field : "no data";
+  let workplaceDataCode =  data?.policyActions.length > 19 ? data.policyActions[1].policyvalue : "-"
+  let workplaceData = data?.policyActions.length > 19 ? data.policyActions[1].policy_value_display_field : "no data"
+  let countryCode = data?.stringencyData.country_code !== undefined ? data.stringencyData.country_code : "this selection"
+  let travelDataCode = data?.policyActions.length > 19 ? data.policyActions[7].policyvalue : "-"
+  let travelData = data?.policyActions.length > 19 ? data.policyActions[7].policy_value_display_field : "no data"
+  let stringency = data?.stringencyData.stringency !== undefined ? data.stringencyData.stringency : 0
+  let stringencyPast = data2?.stringencyData.stringency !== undefined ? data2.stringencyData.stringency : 0
+  let stringencyChange = stringencyPast - stringency;
+  let publicEvents = data?.policyActions.length > 19 ? data.policyActions[3].policy_value_display_field : "no data"
+  let stringencyWording = ""
+  let casesCum =  data?.stringencyData.confirmed !== undefined ? data.stringencyData.confirmed : '0000'
+  let updateDate = data?.stringencyData.date_value !== undefined ? data.stringencyData.date_value : '0000-00-00'
+  // let dateLastMonth = data2?.stringencyData.date_value
 
   function formatNumber(num = 100) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
@@ -25,19 +38,13 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
     data2.stringencyData.country_code !== undefined &&
     data2.policyActions.length > 1
   ) {
-    let stringencyChange =
-      data2.stringencyData.stringency - data.stringencyData.stringency;
-    let stringencyWording = "tightening"
-    if (stringencyChange === 0 ){stringencyWording = "maintaining"}
-    else if (stringencyChange>0){stringencyWording = "tightening" }
-    else if (stringencyChange<0){ stringencyWording = "loosening"}
-      // stringencyChange < 0 ? "tightening" : stringencyChange = 0 ? "No Change" : "loosening";
+    
+    stringencyChange === 0 ? stringencyWording="maintaining" : stringencyChange > 0 ? stringencyWording="tightening": stringencyWording="loosening"
+
 
     return (
       <div data-testid="travelrestrictions">
-        <div className={cn(css[color])}>
-
-          {/* <h5>Capital: {capital}</h5> */}
+        <div>
 
           <div className={css.twoColumns}>
             <p>
@@ -76,11 +83,11 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                   </PopoverContent>
                 </Popover>
                 </div>
-              {`(${data.policyActions[7].policyvalue}) - ${data.policyActions[7].policy_value_display_field}`}
+              {`(${travelDataCode}) - ${travelData}`}
             </p>
             <p>
               <h3 className={css.headerthree}>Covid cases:</h3>
-              {formatNumber(data.stringencyData.confirmed)}
+              {formatNumber(casesCum)}
             </p>
           </div>
          
@@ -129,12 +136,12 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
 
 </div>
           
-            {`(${data.policyActions[0].policyvalue}) - ${data.policyActions[0].policy_value_display_field}`}
+            {`(${workplaceDataCode}) - ${workplaceData}`}
           </p>
 
           <p>
                 <h3 className={css.headerthree}>What about facemasks?</h3>
-                {data.policyActions[17].policy_value_display_field}
+                {facemaskData}
               </p>
 </div>
           <br />
@@ -170,12 +177,12 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
                   </PopoverContent>
                 </Popover>
               </div>
-              <p>{data.stringencyData.stringency}</p>
+              <p>{stringency}</p>
               
             </div>
             <p>
             <h3 className={css.headerthree}>Public events</h3>
-            {data.policyActions[3].policy_value_display_field}
+            {publicEvents}
           </p>
           </div>
 
@@ -187,24 +194,24 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
         <div className={css.blueBox}>
           <h4>
             Comparison to <u>One Month</u> ago:
-          </h4><br/>
+          </h4>
           <div className={css.twoColumns}>
             <div><h4>Stringency Index</h4> {`${
-            data2.stringencyData.stringency
+            stringencyPast
           } this is a change of ${
             stringencyChange.toFixed(2) > 0 ? `+${stringencyChange.toFixed(2)}` : stringencyChange.toFixed(2)
           }`}</div> 
              <div>
             <h4>Covid cases</h4>
-            {formatNumber(data2.stringencyData.confirmed)}
+            {formatNumber(casesCum)}
           </div>
           </div>
           
           <br/>
-          <p>{`This means that the country is ${stringencyWording} their Covid restrictions internally`}</p>
+          <p>{`This means that ${countryCode} is ${stringencyWording} their Covid restrictions internally`}</p>
        
         </div>
-          <p style={{textAlign:"right"}}>Current data shown for {data.stringencyData.country_code}. <br/> Last updated: {data.stringencyData.date_value}</p>
+          <p style={{textAlign:"right"}}>Current data shown for {countryCode}. <br/> Last updated: {updateDate}</p>
       </div>
     );
   }
@@ -212,7 +219,7 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
   return (
     <div data-testid="travelrestrictions" className={css.container}>
       <h3>
-        There is no data for this date, <br />
+        There is no data for {countryCode} on this date, <br />
         try an older date please...
       </h3>
     </div>
