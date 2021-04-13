@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import WwTracker from "../WorldWideCovidTracker";
 import css from "./worldTracker.module.css";
 

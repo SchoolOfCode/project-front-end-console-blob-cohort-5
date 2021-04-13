@@ -39,7 +39,7 @@ function MyMap({handleCountryChange})  {
 
   const onEachCountry = (country, layer) => {
 
-    const countryCode = country.properties.ISO_A3;
+    // const countryCode = country.properties.ISO_A3;
 
     const countryName = country.properties.ADMIN;
 
@@ -51,7 +51,7 @@ function MyMap({handleCountryChange})  {
     layer.on({
       click: (event) => {
       
-        console.log(event)
+        // console.log(event)
           event.target.setStyle({
             color: "blue",
             fillColor: "white",

@@ -10,7 +10,7 @@ function Alert(){
   const handleClose = () => {
     setShow(false);
   };
-  const handleShow = () => setShow(true);
+  // const handleShow = () => setShow(true);
 
 
   // const reload=()=>window.location.reload();

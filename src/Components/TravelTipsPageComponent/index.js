@@ -54,7 +54,7 @@ function TravelTipsPage() {
         </div>
       </div>
       <div className={css.columntwo}>
-        <img src={logo}></img>
+        <img src={logo} alt="logo"></img>
       </div>
     </div>
   );
