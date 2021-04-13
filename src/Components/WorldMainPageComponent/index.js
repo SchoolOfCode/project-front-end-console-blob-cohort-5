@@ -117,8 +117,6 @@ const useStyles = makeStyles((theme) => ({
             <TravelRestrictionsDisplay
               data={countryObj}
               data2={countryObj2}
-              color={"#FDFFB6"}
-              // capital={capital}
             />
           </div>
         </div>
