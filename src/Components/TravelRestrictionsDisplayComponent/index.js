@@ -22,28 +22,30 @@ function TravelRestrictionsDisplay({ data, data2 }) {
   let stringencyChange = stringencyPast - stringency;
   let publicEvents = data?.policyActions.length > 19 ? data.policyActions[3].policy_value_display_field : "no data"
   let stringencyWording = ""
-  let casesCum =  data?.stringencyData.confirmed !== undefined ? data.stringencyData.confirmed : '0000'
-  let updateDate = data?.stringencyData.date_value !== undefined ? data.stringencyData.date_value : '0000-00-00'
-  // let dateLastMonth = data2?.stringencyData.date_value
+  let casesCum =  data?.stringencyData.confirmed !== undefined ? data.stringencyData.confirmed : 'no data'
+  let casesCumPast =  data2?.stringencyData.confirmed !== undefined ? data2.stringencyData.confirmed : 'no data'
+  let updateDate = data?.stringencyData.date_value !== undefined ? data.stringencyData.date_value : 'no data found, please check another date'
 
   function formatNumber(num = 100) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1,");
   }
-
-  if (
-    data?.policyActions &&
-    data.stringencyData.country_code !== undefined &&
-    data.policyActions.length > 1 &&
-    data2?.policyActions &&
-    data2.stringencyData.country_code !== undefined &&
-    data2.policyActions.length > 1
-  ) {
-    
-    stringencyChange === 0 ? stringencyWording="maintaining" : stringencyChange > 0 ? stringencyWording="tightening": stringencyWording="loosening"
-
-
-    return (
-      <div data-testid="travelrestrictions">
+  
+  while (data === null) {
+  return (
+    <div data-testid="travelrestrictions" className={css.container}>
+      <h3>
+        There is no data for {countryCode} on this date, <br />
+        try an older date please...
+      </h3>
+    </div>
+  );
+  }
+  
+  stringencyChange === 0 ? stringencyWording="maintaining" : stringencyChange > 0 ? stringencyWording="tightening": stringencyWording="loosening"
+  
+  
+  return (
+    <div data-testid="travelrestrictions">
         <div>
 
           <div className={css.twoColumns}>
@@ -61,13 +63,13 @@ function TravelRestrictionsDisplay({ data, data2 }) {
                     width="50vh"
                     boxShadow="5px 5px #888888"
                     borderRadius="15px"
-                  >
+                    >
                     <PopoverArrow />
                     <PopoverCloseButton
                       bg="rgb(59, 182, 155)"
                       borderRadius="10px"
                       width="30px"
-                    />
+                      />
                     <PopoverHeader>
                       <h2>Border Key</h2>
                     </PopoverHeader>
@@ -109,13 +111,13 @@ function TravelRestrictionsDisplay({ data, data2 }) {
                   width="50vh"
                   boxShadow="5px 5px #888888"
                   borderRadius="15px"
-                >
+                  >
                   <PopoverArrow />
                   <PopoverCloseButton
                     bg="rgb(59, 182, 155)"
                     borderRadius="10px"
                     width="30px"
-                  />
+                    />
                   <PopoverHeader>
                     <h2>WorkPlace Status Key</h2>
                   </PopoverHeader>
@@ -161,7 +163,7 @@ function TravelRestrictionsDisplay({ data, data2 }) {
                     width="50vh"
                     boxShadow="5px 5px #888888"
                     borderRadius="15px"
-                  >
+                    >
                     <PopoverArrow />
                     <PopoverCloseButton
                       bg="rgb(59, 182, 155)"
@@ -196,14 +198,14 @@ function TravelRestrictionsDisplay({ data, data2 }) {
             Comparison to <u>One Month</u> ago:
           </h4>
           <div className={css.twoColumns}>
-            <div><h4>Stringency Index</h4> {`${
-            stringencyPast
-          } this is a change of ${
-            stringencyChange.toFixed(2) > 0 ? `+${stringencyChange.toFixed(2)}` : stringencyChange.toFixed(2)
-          }`}</div> 
+            <div><h4>Stringency Index</h4>
+            <p> {stringencyPast} <br/>
+            this is a change of...        
+            {stringencyChange.toFixed(2) > 0 ? `+${stringencyChange.toFixed(2)}` : stringencyChange.toFixed(2)
+          }</p></div> 
              <div>
             <h4>Covid cases</h4>
-            {formatNumber(casesCum)}
+            {formatNumber(casesCumPast)}
           </div>
           </div>
           
@@ -216,14 +218,5 @@ function TravelRestrictionsDisplay({ data, data2 }) {
     );
   }
 
-  return (
-    <div data-testid="travelrestrictions" className={css.container}>
-      <h3>
-        There is no data for {countryCode} on this date, <br />
-        try an older date please...
-      </h3>
-    </div>
-  );
-}
 
 export default TravelRestrictionsDisplay;
