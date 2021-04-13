@@ -6,28 +6,30 @@ import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
-import { makeStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
+import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import RedCountriesModal from "../Modal Component/index";
+import { Button } from "react-bootstrap";
 
 function WorldPage() {
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  textField: {
-    marginLeft: theme.spacing(1),
-    marginRight: theme.spacing(1),
-    width: 200,
-  },
-}));
+  const [modalShow, setModalShow] = React.useState(false);
 
+  const useStyles = makeStyles((theme) => ({
+    container: {
+      display: "flex",
+      flexWrap: "wrap",
+    },
+    textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+    },
+  }));
 
   const classes = useStyles();
 
-
   let DATE = new Date();
-  DATE.setUTCDate(DATE.getUTCDate()-9)
+  DATE.setUTCDate(DATE.getUTCDate() - 9);
   // console.log(DATE)
 
   const [date, setDate] = useState(DATE.toISOString().substr(0, 10));
@@ -39,34 +41,34 @@ const useStyles = makeStyles((theme) => ({
   DATE2.setMonth(DATE2.getMonth() - 1); //minus mmonth from secodn instance of new date()
   // console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
 
-
   const [countryCode, setCountryCode] = useState("GBR");
   //WHILE countryObj array less than 2 keep fetching
-  
-  let  countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, 
-  [
+
+  let countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, [
     countryCode,
     date,
   ]);
-  
-  const countryObj2 = useFetch(`${API_WORLD_STATS}/${countryCode}/${DATE2.toISOString().substr(0, 10)}`, [
-    countryCode,
-  ]);
 
-  // handle change on search bar 
-  function handleChange(value) { 
-    setCountryCode((value === null) ? "GBR" : value.ISO3 );
+  const countryObj2 = useFetch(
+    `${API_WORLD_STATS}/${countryCode}/${DATE2.toISOString().substr(0, 10)}`,
+    [countryCode]
+  );
+
+  // handle change on search bar
+  function handleChange(value) {
+    setCountryCode(value === null ? "GBR" : value.ISO3);
     // setCapital(value.Capital)
     // console.log(value["Country Name"])
   }
 
-// handle map country change
-  function handleCountryChange(value){
-    setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
+  // handle map country change
+  function handleCountryChange(value) {
+    setCountryCode(
+      value === null ? "GBR" : value.sourceTarget.feature.properties.ISO_A3
+    );
     // console.log(value.sourceTarget.feature.properties.ADMIN)
-
   }
-  
+
   function handleDate(e) {
     // console.log(e.target.value)
     setDate(e.target.value);
@@ -75,21 +77,47 @@ const useStyles = makeStyles((theme) => ({
   // let today = new Date().toISOString().substr(0, 10);
 
   return (
-    <><Alert/>
-    <h1 className={css.title}>World Wide Stats & Travel Information</h1>
+    <>
+      <Alert />
+      <h1 className={css.title}>World Wide Stats & Travel Information</h1>
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
 
-
         <div className={css.columnone}>
-      
-
-         <div className={css.twoColumns}>
+          <div className={css.redcountries}>
+            <div className={css.redone}>
+              <h3>Important Notice</h3>
+              <p>
+                A framework to chart the safe return of international travel was
+                set out on 9 April 2021 by Transport Secretary Grant Shapps.
+              </p>
+              <p>
+                {" "}
+                A traffic light system, which will categorise countries based on
+                risk alongside the restrictions required for travel, will be set
+                up to protect the public and the vaccine rollout from
+                international COVID-19 variants.
+              </p>
+            </div>
+            <div className={css.redtwo}>
+              <Button
+                className={css.redcountriesbutton}
+                variant="primary"
+                onClick={() => setModalShow(true)}
+              >
+                See 'red-list' countries
+              </Button>
+            </div>
+          </div>
+          <RedCountriesModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
+          <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
 
-            
-        {/* <input
+            {/* <input
             id="date"
             type={"date"}
             min="2020-01-01"
@@ -98,21 +126,19 @@ const useStyles = makeStyles((theme) => ({
           ></input> */}
 
             <form className={classes.container} noValidate>
-  <TextField
-    id="date"
-    label="Change Date"
-    type="date"
-    defaultValue={DATE.toISOString().substr(0, 10)}
-    className={classes.textField}
-    InputLabelProps={{
-      shrink: true,
-    }}
-    onChangeCapture={handleDate}
-  />
-</form>
-
-      </div>
-
+              <TextField
+                id="date"
+                label="Change Date"
+                type="date"
+                defaultValue={DATE.toISOString().substr(0, 10)}
+                className={classes.textField}
+                InputLabelProps={{
+                  shrink: true,
+                }}
+                onChangeCapture={handleDate}
+              />
+            </form>
+          </div>
           <div className={css.TravelRestrictionsDisplay}>
             <TravelRestrictionsDisplay
               data={countryObj}
@@ -124,12 +150,13 @@ const useStyles = makeStyles((theme) => ({
         </div>
 
         <div className={css.columntwo}>
-        <div className={css.map}><MyMap handleCountryChange={handleCountryChange} /></div>
-          
-          <div className={css.flightWidget}>
-            <FlightWidget  />
+          <div className={css.map}>
+            <MyMap handleCountryChange={handleCountryChange} />
           </div>
-         
+
+          <div className={css.flightWidget}>
+            <FlightWidget />
+          </div>
         </div>
       </div>
     </>

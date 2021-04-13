@@ -58,6 +58,17 @@ align-content: center;
  margin-top:15px;
 }
 
+.redcountries{
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  border: 2px solid #1C9AB0;
+  padding: 3%;
+  margin-bottom: 5%;
+}
+
+.rctwo{
+  justify-items: end;
+}
 /* .map {
   /* display: flex; */
   /* justify-content: center;
