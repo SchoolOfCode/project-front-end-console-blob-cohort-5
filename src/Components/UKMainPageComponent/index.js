@@ -102,7 +102,7 @@ function UKPage() {
           <HotelWidget />
         </div>
         
-        {/* Select is populated using lines 42 - 45 which is referencing the county array, pulled from API */}
+        {/* Select is populated using lines 42 - 45 which is referencing the county array, populated from for each loop of options.js array */}
       </div>
     </div>
   );
