@@ -89,14 +89,6 @@ const useStyles = makeStyles((theme) => ({
             <CountrySelect handleChange={handleChange} />
 
             
-        {/* <input
-            id="date"
-            type={"date"}
-            min="2020-01-01"
-            max={today}
-            onChange={handleDate}
-          ></input> */}
-
             <form className={classes.container} noValidate>
   <TextField
     id="date"

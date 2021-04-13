@@ -21,10 +21,6 @@ function UkGovApiDisplay({data, data2}) {
     return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,')
   }
 
-  // let color = "blue"
-  // let colorPrev ="red"
-// let covidRate = data[search]?.Rate.PublishDate;
-// let covidRatePrev = data2[search]?.Rate.PublishDate ? data2[search]?.Rate.PublishDate : (covidRate-((Math.random()*400)-200)).toFixed(1); 
 let actualRate =  data.newCasesByPublishDateRollingRate/7
 let actualRatePrev =  data2.newCasesByPublishDateRollingRate/7
 let covidChange = (actualRate - actualRatePrev).toFixed(2)
@@ -33,28 +29,13 @@ let updateDate = data.date
 let areaName = data.areaName
 
 
-// if (actualRate>3 && actualRate<=6){
-//         color="orange"
-//    }
-//    else if (actualRate>6){
-//     color="red"
-// } else if (actualRate<=3){
-//     color="blue"}
+
 
     let color = actualRate<=3 ? "blue": actualRate >6 ? "red" : "orange" 
     let colorPrev = actualRatePrev<=3 ? "blue": actualRatePrev >6 ? "red" : "orange" 
     let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
 
-// if (actualRatePrev>3 && actualRatePrev<=6){
-//       colorPrev="orange"
-//  }
-//  else if (actualRatePrev>6){
-//   colorPrev="red"
-// } else if (actualRatePrev<=3){
-//   colorPrev="blue"}
-  
-   
-    // console.log(data)
+
   return (
     <>
    
@@ -116,7 +97,6 @@ let areaName = data.areaName
         </div>
 
      <div className={css.update}>Data for {areaName}: Last Updated on: {updateDate}</div>
-     {/* <h2>{data[search]?.areaName}</h2> */}
    </>
   );
 }

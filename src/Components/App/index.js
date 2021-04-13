@@ -7,6 +7,9 @@ import TravelTipsPage from '../TravelTipsPageComponent'
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "../Navbar";
 
+
+
+
 function App() {
   return (
     <div className="App">
@@ -16,30 +19,19 @@ function App() {
 
       </nav>
       <div>
-          {/* <Link to="/">Home</Link>
-      
-          <Link to="/UKPage">UK Page</Link>
-          <Link to="/WorldPage">World Page</Link>
-          <Link to="/WorldTracker">World Covid Tracker</Link> */}
+     
 <Navbar/>
       <Switch>
-      
-
         <Route path="/UKPage"><UKPage/></Route>
         <Route path="/WorldPage"><WorldPage/></Route>
         <Route path="/WorldTracker"><WorldTrackerPage/></Route>
         <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
         <Route path="/"><Home /></Route>
-
       </Switch>
     </div>
-
-   
     </Router>
     </div>
   );
 }
-
-
 
 export default App;

@@ -13,6 +13,5 @@ function SourceComponent({data, color, size}){
 
 }
 
-
 export default SourceComponent;
 

@@ -37,8 +37,6 @@ function TravelRestrictionsDisplay({ data, data2, color, capital }) {
       <div data-testid="travelrestrictions">
         <div className={cn(css[color])}>
 
-          {/* <h5>Capital: {capital}</h5> */}
-
           <div className={css.twoColumns}>
             <p>
               <div className={css.keyColumns}><h3 className={css.headerthree}>
