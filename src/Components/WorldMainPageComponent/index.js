@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
-import FlightWidget from "../Fligh Widget Component";
+import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
