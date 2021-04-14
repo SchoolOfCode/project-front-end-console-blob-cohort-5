@@ -11,10 +11,6 @@ const Navbar = () => {
         <div>
             
             <Nav data-testid="nav">                                   
-                {/* <NavLink to="/" >
-                    <img src={logo} />
-
-                </NavLink> */}
                 <div><img src={logo} alt="logo"/></div>
                 <Bars />
                 <NavMenu>

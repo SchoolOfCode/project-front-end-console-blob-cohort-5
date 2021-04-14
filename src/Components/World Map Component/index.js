@@ -9,14 +9,6 @@ import { usePrevious } from "@chakra-ui/hooks";
 
 function MyMap({handleCountryChange})  {
 
-
-  useEffect(() => {
-    // console.log(mapData)
-    //big object slowing down computer
-
-  }, [])
-
-
   const [selectedCountry, setSelectedCountry] = useState(null);
   const previousCountry = usePrevious(selectedCountry);
   useEffect(()=>{
@@ -42,7 +34,6 @@ function MyMap({handleCountryChange})  {
     // const countryCode = country.properties.ISO_A3;
 
     const countryName = country.properties.ADMIN;
-
 
     // console.log(`${countryName},${countryCode}`);
 

@@ -83,7 +83,6 @@ function WwTracker() {
       <br />
       <br />
       <br />
-      {/* <h2 style={{ textAlign: "center" }}>Covid-19 Live Stats</h2> */}
       <CardDeck>
         <Card
           text="black"
@@ -94,9 +93,6 @@ function WwTracker() {
             <Card.Title>Cases</Card.Title>
             <Card.Text>{formatNumber(latest.cases)}</Card.Text>
           </Card.Body>
-          {/* <Card.Footer> */}
-          {/* <small>Last updated {lastUpdated}</small> */}
-          {/* </Card.Footer> */}
         </Card>
 
         <Card
@@ -108,10 +104,7 @@ function WwTracker() {
             <Card.Title>Deaths</Card.Title>
             <Card.Text>{formatNumber(latest.deaths)}</Card.Text>
           </Card.Body>
-          {/* <Card.Footer> */}
-          {/* <small>Last updated {lastUpdated}</small> */}
-          {/* </Card.Footer> */}
-        </Card>
+         </Card>
 
         <Card
           text="dark"
@@ -122,9 +115,6 @@ function WwTracker() {
             <Card.Title>Recovered</Card.Title>
             <Card.Text>{formatNumber(latest.recovered)}</Card.Text>
           </Card.Body>
-          {/* <Card.Footer> */}
-          {/* <small>Last updated {lastUpdated}</small> */}
-          {/* </Card.Footer> */}
         </Card>
         
           <Card 
@@ -138,9 +128,6 @@ function WwTracker() {
                 <small>{lastUpdated}</small>
               </Card.Text>
             </Card.Body>
-            {/* <Card.Footer>
-          
-          </Card.Footer> */}
           </Card>
         
       </CardDeck>
