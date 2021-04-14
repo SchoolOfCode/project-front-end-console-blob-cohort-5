@@ -102,7 +102,6 @@ function WorldPage() {
           <div className={css.TravelRestrictionsDisplay}>
             <TravelRestrictionsDisplay
               data={countryObj}
-              data2={countryObj2}
             />
           </div>
         </div>
