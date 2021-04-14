@@ -1,9 +1,4 @@
 import React, { lazy, Suspense } from "react";
-// import Home from "../HomePage";
-// import UKPage from "../UKMainPageComponent";
-// import WorldPage from "../WorldMainPageComponent";
-// import WorldTrackerPage from "../WorldTrackerPage";
-// import TravelTipsPage from '../TravelTipsPageComponent';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "../Navbar";
 
