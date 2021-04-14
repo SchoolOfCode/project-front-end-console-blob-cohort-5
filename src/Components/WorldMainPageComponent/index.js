@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, lazy, Suspense } from "react";
 import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
 import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
-import MyMap from "../World Map Component/index.js";
+// import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
 import { makeStyles } from "@material-ui/core/styles";
@@ -51,23 +51,26 @@ function WorldPage() {
     date,
   ]);
 
-
+  
+  
   // handle change on search bar 
   function handleChange(value) { 
     setCountryCode((value === null) ? "GBR" : value.ISO3 );
   }
-
-// handle map country change
+  
+  // handle map country change
   function handleCountryChange(value){
     setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
-
+    
   }
-
+  
   function handleDate(e) {
     setDate(e.target.value);
   }
-
-
+  
+  //lazy loading of the Map
+  const LazyMyMap = lazy(()=>import('../World Map Component/index.js'));
+  
   return (
     <>
       <Alert />
@@ -132,7 +135,9 @@ function WorldPage() {
             onHide={() => setModalShow(false)}
           />
           <div className={css.map}>
-            <MyMap handleCountryChange={handleCountryChange} />
+          <Suspense fallback={<div className={css.mapLoading}>Loading...</div>}>
+            <LazyMyMap handleCountryChange={handleCountryChange} />
+          </Suspense>
           </div>
 
           <div className={css.flightWidget}>
