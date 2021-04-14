@@ -1,13 +1,19 @@
-import React from "react";
-import Home from "../HomePage";
-import UKPage from "../UKMainPageComponent";
-import WorldPage from "../WorldMainPageComponent";
-import WorldTrackerPage from "../WorldTrackerPage";
-import TravelTipsPage from '../TravelTipsPageComponent'
+import React, { lazy, Suspense } from "react";
+// import Home from "../HomePage";
+// import UKPage from "../UKMainPageComponent";
+// import WorldPage from "../WorldMainPageComponent";
+// import WorldTrackerPage from "../WorldTrackerPage";
+// import TravelTipsPage from '../TravelTipsPageComponent';
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "../Navbar";
 
 
+//Lazy loading
+const LazyHomePage = lazy(()=>import('../HomePage'));
+const LazyUKPage = lazy(()=>import('../UKMainPageComponent'));
+const LazyWorldPage = lazy(()=>import('../WorldMainPageComponent'));
+const LazyWorldTrackerPage = lazy(()=>import('../WorldTrackerPage'));
+const LazyTravelTipsPage = lazy(()=>import('../TravelTipsPageComponent'));
 
 
 function App() {
@@ -21,13 +27,15 @@ function App() {
       <div>
      
 <Navbar/>
-      <Switch>
-        <Route path="/UKPage"><UKPage/></Route>
-        <Route path="/WorldPage"><WorldPage/></Route>
-        <Route path="/WorldTracker"><WorldTrackerPage/></Route>
-        <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
-        <Route path="/"><Home /></Route>
-      </Switch>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Route path="/UKPage"><LazyUKPage/></Route>
+          <Route path="/WorldPage"><LazyWorldPage/></Route>
+          <Route path="/WorldTracker"><LazyWorldTrackerPage/></Route>
+          <Route path="/TravelTipsPage"><LazyTravelTipsPage/></Route>
+          <Route path="/"><LazyHomePage /></Route>
+        </Switch>
+      </Suspense>
     </div>
     </Router>
     </div>
