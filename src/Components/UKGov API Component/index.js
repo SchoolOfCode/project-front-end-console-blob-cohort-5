@@ -28,15 +28,11 @@ let cumulative = data.cumCasesByPublishDate
 let updateDate = data.date
 let areaName = data.areaName
 
-
-
-
-    let color = actualRate<=3 ? "blue": actualRate >6 ? "red" : "orange" 
-    let colorPrev = actualRatePrev<=3 ? "blue": actualRatePrev >6 ? "red" : "orange" 
-    let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
-
-
-  return (
+let color = actualRate<=3 ? "blue": actualRate >6 ? "red" : "orange" 
+let colorPrev = actualRatePrev<=3 ? "blue": actualRatePrev >6 ? "red" : "orange" 
+let colorRate = (covidChange >= 0) ? "redRate" : "greenRate";
+  
+     return (
     <>
    
        <br/><h4>Cumulative Cases: {cumulative ? formatNumber(cumulative) : "No Data for this Area"}</h4> 

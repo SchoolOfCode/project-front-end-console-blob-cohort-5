@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
-import FlightWidget from "../Fligh Widget Component";
+import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
@@ -41,7 +41,6 @@ const useStyles = makeStyles((theme) => ({
 
 
   const [countryCode, setCountryCode] = useState("GBR");
-  //WHILE countryObj array less than 2 keep fetching
   
   let  countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, 
   [
@@ -56,23 +55,17 @@ const useStyles = makeStyles((theme) => ({
   // handle change on search bar 
   function handleChange(value) { 
     setCountryCode((value === null) ? "GBR" : value.ISO3 );
-    // setCapital(value.Capital)
-    // console.log(value["Country Name"])
   }
 
 // handle map country change
   function handleCountryChange(value){
     setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
-    // console.log(value.sourceTarget.feature.properties.ADMIN)
-
   }
   
   function handleDate(e) {
-    // console.log(e.target.value)
     setDate(e.target.value);
   }
 
-  // let today = new Date().toISOString().substr(0, 10);
 
   return (
     <><Alert/>
@@ -109,8 +102,6 @@ const useStyles = makeStyles((theme) => ({
             <TravelRestrictionsDisplay
               data={countryObj}
               data2={countryObj2}
-              color={"#FDFFB6"}
-              // capital={capital}
             />
           </div>
         </div>

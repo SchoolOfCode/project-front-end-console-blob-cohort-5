@@ -28,7 +28,6 @@ function UKRestrictionsDisplay() {
         let res = await fetch(url);
         let data = await res.json();
         setFetchedData(data);
-        // console.log(data);
         setFetchLength(data.length-1)
     }
     webScrapeFetch()
@@ -109,7 +108,7 @@ while (!fetchedData) {
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
-      <p style={{textAlign:'right', fontSize:'small', color:'black'}}>This information was last update on: {fetchedData[fetchLength].date}</p>
+      <p style={{textAlign:'right', fontSize:'small', color:'black'}}>This information was last updated on: {fetchedData[fetchLength].date}</p>
     </div>
   );
 }
