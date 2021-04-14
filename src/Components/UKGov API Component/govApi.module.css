@@ -1,6 +1,5 @@
 .govText{
 display: grid;    
-/* place-items: left; */
 }
 
 .stats{
@@ -104,7 +103,6 @@ justify-items: right;
     display: grid;
     place-items: right;
     background-color: #b3fbdf;
-    /* place-self: right; */
 }
 
 .rates{

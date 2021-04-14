@@ -1,22 +1,7 @@
-/* .accordion {
-   
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    text-align: left;
-    outline: none;
-    font-size: 1.6rem;
-    transition: 0.4s;
-  } */
+
 .item{
 }
-  
-  
-  /* .active, .accordion:hover {
-    background-color: #ccc; 
-  } */
-  
+   
   .panel {
     padding: 0 18px;
     display: none;
@@ -38,10 +23,6 @@
   p{
     color:lightslategray;
   }
-
-  /* .chakra-accordion__item{
-    border-radius: 25px;
-  } */
 
   .customDiv{
     width: 40vw;

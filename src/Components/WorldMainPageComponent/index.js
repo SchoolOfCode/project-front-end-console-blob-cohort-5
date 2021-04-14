@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
-import FlightWidget from "../Fligh Widget Component";
+import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
 import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
@@ -42,39 +42,31 @@ function WorldPage() {
   // console.log(DATE2.toISOString().substr(0, 10)); //convert back date to readable string
 
   const [countryCode, setCountryCode] = useState("GBR");
-  //WHILE countryObj array less than 2 keep fetching
 
-  let countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, [
+  
+  let  countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, 
+  [
+
     countryCode,
     date,
   ]);
 
-  const countryObj2 = useFetch(
-    `${API_WORLD_STATS}/${countryCode}/${DATE2.toISOString().substr(0, 10)}`,
-    [countryCode]
-  );
 
-  // handle change on search bar
-  function handleChange(value) {
-    setCountryCode(value === null ? "GBR" : value.ISO3);
-    // setCapital(value.Capital)
-    // console.log(value["Country Name"])
+  // handle change on search bar 
+  function handleChange(value) { 
+    setCountryCode((value === null) ? "GBR" : value.ISO3 );
   }
 
-  // handle map country change
-  function handleCountryChange(value) {
-    setCountryCode(
-      value === null ? "GBR" : value.sourceTarget.feature.properties.ISO_A3
-    );
-    // console.log(value.sourceTarget.feature.properties.ADMIN)
+// handle map country change
+  function handleCountryChange(value){
+    setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
+
   }
 
   function handleDate(e) {
-    // console.log(e.target.value)
     setDate(e.target.value);
   }
 
-  // let today = new Date().toISOString().substr(0, 10);
 
   return (
     <>
@@ -90,13 +82,8 @@ function WorldPage() {
           <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
 
-            {/* <input
-            id="date"
-            type={"date"}
-            min="2020-01-01"
-            max={today}
-            onChange={handleDate}
-          ></input> */}
+
+            
 
             <form className={classes.container} noValidate>
               <TextField
@@ -116,8 +103,6 @@ function WorldPage() {
             <TravelRestrictionsDisplay
               data={countryObj}
               data2={countryObj2}
-              color={"#FDFFB6"}
-              // capital={capital}
             />
           </div>
         </div>
