@@ -110,9 +110,9 @@ function WorldPage() {
         <div className={css.redcountries}>
             <div className={css.redone}>
               <h3>Important Notice</h3>
-              <p>  
-                A <b>traffic light system</b>, which will categorise countries based on
-                risk alongside the restrictions required for travel was set out on <b>9th April 2021</b>.
+              <p className={css.TLS}>   
+              On <span>9th April 2021</span> the government has set out a <span>Traffic Light System</span>, which categorises countries based on travel
+                risk and the current restrictions required for travel.
               </p>
              
             </div>
