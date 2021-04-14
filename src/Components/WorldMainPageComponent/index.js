@@ -79,41 +79,14 @@ function WorldPage() {
   return (
     <>
       <Alert />
-      <h1 className={css.title}>World Wide Stats & Travel Information</h1>
+      
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
 
         <div className={css.columnone}>
-          <div className={css.redcountries}>
-            <div className={css.redone}>
-              <h3>Important Notice</h3>
-              <p>
-                A framework to chart the safe return of international travel was
-                set out on 9 April 2021 by Transport Secretary Grant Shapps.
-              </p>
-              <p>
-                {" "}
-                A traffic light system, which will categorise countries based on
-                risk alongside the restrictions required for travel, will be set
-                up to protect the public and the vaccine rollout from
-                international COVID-19 variants.
-              </p>
-            </div>
-            <div className={css.redtwo}>
-              <Button
-                className={css.redcountriesbutton}
-                variant="primary"
-                onClick={() => setModalShow(true)}
-              >
-                See 'red-list' countries
-              </Button>
-            </div>
-          </div>
-          <RedCountriesModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
+        <h1 className={css.title}>World Wide Stats & Travel Information</h1>
+          
           <div className={css.twoColumns}>
             <CountrySelect handleChange={handleChange} />
 
@@ -150,6 +123,30 @@ function WorldPage() {
         </div>
 
         <div className={css.columntwo}>
+        <div className={css.redcountries}>
+            <div className={css.redone}>
+              <h3>Important Notice</h3>
+              <p>  
+                A <b>traffic light system</b>, which will categorise countries based on
+                risk alongside the restrictions required for travel was set out on <b>9th April 2021</b>.
+              </p>
+             
+            </div>
+            <div className={css.redtwo}>
+              <Button
+                className={css.redcountriesbutton}
+                variant="primary"
+                size="sm"
+                onClick={() => setModalShow(true)}
+              >
+                See 'red-list' countries
+              </Button>
+            </div>
+          </div>
+          <RedCountriesModal
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
           <div className={css.map}>
             <MyMap handleCountryChange={handleCountryChange} />
           </div>

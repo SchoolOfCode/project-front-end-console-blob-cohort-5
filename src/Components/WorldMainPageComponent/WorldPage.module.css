@@ -12,26 +12,26 @@
   min-height: 100vh;
   justify-items: center;
   font-family: 'Montserrat', sans-serif;
-
-  
+    
 }
 .title{
   padding-top: 7%; 
-  margin-left: 5%;
+  
   font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   border-bottom: 1px solid black;
-  width: 50%;
+  
 }
 
 .columnone{
   /* display: grid;
   grid-template-columns: 2fr 1fr; */
   padding-left: 5%;
-
+  margin-top: 7%;
 }
 
 .columntwo{
+  margin-top: 7%;
 justify-content: center;
 align-content: center;
 
@@ -49,7 +49,7 @@ align-content: center;
 
 .flightWidget { 
   padding-top: 30px;
-  padding-left: 100px;
+  padding-left: 25%;
   border-top: #000 2px ridge;
   
 } 
@@ -59,15 +59,30 @@ align-content: center;
 }
 
 .redcountries{
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  border: 2px solid #1C9AB0;
-  padding: 3%;
-  margin-bottom: 5%;
+  /* display: grid;
+  grid-template-rows: 1fr 1fr; */
+  background-color: #ffadad;
+  border-radius: 15px;
+  /* opacity: 0.5; */
+  padding: 2%;
+  font-size: 0.8rem;
+  margin-top: 7%;
+  margin-left: 9%;
+  margin-bottom: 2%;
+  max-width: fit-content;
+  max-height:min-content;
 }
 
-.rctwo{
-  justify-items: end;
+.redone h3{
+  font-weight: bold;
+}
+
+.redone p{
+  color: #000;
+}
+
+.redtwo{
+  padding-left: 65%;
 }
 /* .map {
   /* display: flex; */
