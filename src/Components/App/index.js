@@ -26,10 +26,11 @@ function App() {
           <Route path="/UKPage"><UKPage/></Route>
           <Suspense fallback={<div>Loading...</div>}>
           <Route path="/WorldPage"><LazyWorldPage/></Route>
-          </Suspense>
+        
           <Route path="/WorldTracker"><WorldTrackerPage/></Route>
           <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
           <Route path="/"><HomePage /></Route>
+          </Suspense>
         </Switch>
       {/* </Suspense> */}
       
