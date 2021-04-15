@@ -9,7 +9,8 @@ import TravelTipsPage from '../TravelTipsPageComponent';
 //Lazy loading
 const LazyWorldPage = lazy(()=>import('../WorldMainPageComponent'));
 const LazyWorldTrackerPage = lazy(()=>import('../WorldTrackerPage'));
-
+const LazyTravelTipsPage = lazy(()=>import('../TravelTipsPageComponent'));
+const LazyUKPage = lazy(()=>import('../UKMainPageComponent'));
 function App() {
 
   return (
@@ -28,7 +29,7 @@ function App() {
           <Route path="/UKPage"><UKPage/></Route>
           <Route path="/WorldPage"><LazyWorldPage/></Route>
           <Route path="/WorldTracker"><LazyWorldTrackerPage/></Route>
-          <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
+          <Route path="/TravelTipsPage"><LazyTravelTipsPage/></Route>
           <Route path="/"><HomePage /></Route>
           </Suspense>
         </Switch>
