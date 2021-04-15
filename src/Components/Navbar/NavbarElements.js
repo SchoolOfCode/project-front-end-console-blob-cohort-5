@@ -30,7 +30,7 @@ padding: 4px ;
 height: 100%;
 font-size: 1.7rem;
 cursor: pointer; 
-margin: 30px;
+margin: 50px;
 
 &.active{
     color: #FFF;
