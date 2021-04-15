@@ -3,13 +3,20 @@ import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
 import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
-// import MyMap from "../World Map Component/index.js";
+import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import RedCountriesModal from "../Modal Component/index";
 import { Button } from "react-bootstrap";
+
+const LazyTravelRestrictionsDisplay = lazy(() =>
+  import("../TravelRestrictionsDisplayComponent")
+);
+const LazyFlightWidget = lazy(() => import("../Flight Widget Component"));
+const LazyRedCountriesModal = lazy(() => import("../Modal Component/index"));
+const LazyCountrySelect = lazy(()=>import("../CountrySelect/CountrySelect"));
 
 function WorldPage() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -43,51 +50,44 @@ function WorldPage() {
 
   const [countryCode, setCountryCode] = useState("GBR");
 
-  
-  let  countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, 
-  [
-
+  let countryObj = useFetch(`${API_WORLD_STATS}/${countryCode}/${date}`, [
     countryCode,
     date,
   ]);
 
-  
-  
-  // handle change on search bar 
-  function handleChange(value) { 
-    setCountryCode((value === null) ? "GBR" : value.ISO3 );
+  // handle change on search bar
+  function handleChange(value) {
+    setCountryCode(value === null ? "GBR" : value.ISO3);
   }
-  
+
   // handle map country change
-  function handleCountryChange(value){
-    setCountryCode((value === null) ? "GBR" : value.sourceTarget.feature.properties.ISO_A3 );
-    
+  function handleCountryChange(value) {
+    setCountryCode(
+      value === null ? "GBR" : value.sourceTarget.feature.properties.ISO_A3
+    );
   }
-  
+
   function handleDate(e) {
     setDate(e.target.value);
   }
-  
+
   //lazy loading of the Map
-  const LazyMyMap = lazy(()=>import('../World Map Component/index.js'));
-  
+
   return (
     <>
       <Alert />
-      
+
       <div className={css.container}>
         {/* <SearchBar />
     <TravelRestrictionsDisplay /> */}
 
         <div className={css.columnone}>
-        <h1 className={css.title}>World Wide Stats & Travel Information</h1>
-          
+          <h1 className={css.title}>World Wide Stats & Travel Information</h1>
+
           <div className={css.twoColumns}>
-            <CountrySelect handleChange={handleChange} />
-
-
-            
-
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyCountrySelect handleChange={handleChange} />
+            </Suspense>
             <form className={classes.container} noValidate>
               <TextField
                 id="date"
@@ -103,21 +103,22 @@ function WorldPage() {
             </form>
           </div>
           <div className={css.TravelRestrictionsDisplay}>
-            <TravelRestrictionsDisplay
-              data={countryObj}
-            />
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyTravelRestrictionsDisplay data={countryObj} />
+            </Suspense>
           </div>
         </div>
 
         <div className={css.columntwo}>
-        <div className={css.redcountries}>
+          <div className={css.redcountries}>
             <div className={css.redone}>
               <h3>Important Notice</h3>
-              <p className={css.TLS}>   
-              On <span>9th April 2021</span> the government has set out a <span>Traffic Light System</span>, which categorises countries based on travel
-                risk and the current restrictions required for travel.
+              <p className={css.TLS}>
+                On <span>9th April 2021</span> the government has set out a{" "}
+                <span>Traffic Light System</span>, which categorises countries
+                based on travel risk and the current restrictions required for
+                travel.
               </p>
-             
             </div>
             <div className={css.redtwo}>
               <Button
@@ -130,18 +131,20 @@ function WorldPage() {
               </Button>
             </div>
           </div>
-          <RedCountriesModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
-          <div className={css.map}>
-          <Suspense fallback={<div className={css.mapLoading}>Loading...</div>}>
-            <LazyMyMap handleCountryChange={handleCountryChange} />
+          <Suspense fallback={<div>Loading...</div>}>
+            <LazyRedCountriesModal
+              show={modalShow}
+              onHide={() => setModalShow(false)}
+            />
           </Suspense>
+          <div className={css.map}>
+            <MyMap handleCountryChange={handleCountryChange} />
           </div>
 
           <div className={css.flightWidget}>
-            <FlightWidget />
+            <Suspense fallback={<div>Loading...</div>}>
+              <LazyFlightWidget />
+            </Suspense>
           </div>
         </div>
       </div>
