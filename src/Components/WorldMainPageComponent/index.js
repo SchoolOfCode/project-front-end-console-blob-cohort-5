@@ -3,13 +3,15 @@ import css from "./WorldPage.module.css";
 import TravelRestrictionsDisplay from "../TravelRestrictionsDisplayComponent";
 import FlightWidget from "../Flight Widget Component";
 import useFetch from "../../CustomHooks/useFetch";
-// import MyMap from "../World Map Component/index.js";
+import MyMap from "../World Map Component/index.js";
 import CountrySelect from "../CountrySelect/CountrySelect";
 import Alert from "../Alert";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import RedCountriesModal from "../Modal Component/index";
 import { Button } from "react-bootstrap";
+
+
 
 function WorldPage() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -69,7 +71,7 @@ function WorldPage() {
   }
   
   //lazy loading of the Map
-  const LazyMyMap = lazy(()=>import('../World Map Component/index.js'));
+  
   
   return (
     <>
@@ -135,9 +137,9 @@ function WorldPage() {
             onHide={() => setModalShow(false)}
           />
           <div className={css.map}>
-          <Suspense fallback={<div className={css.mapLoading}>Loading...</div>}>
-            <LazyMyMap handleCountryChange={handleCountryChange} />
-          </Suspense>
+          
+            <MyMap handleCountryChange={handleCountryChange} />
+          
           </div>
 
           <div className={css.flightWidget}>
