@@ -12,6 +12,7 @@ const LazyTravelTipsPage = lazy(()=>import('../TravelTipsPageComponent'));
 
 
 function App() {
+
   return (
     <div className="App">
     <link rel="icon" href="images/favicon.ico" />
