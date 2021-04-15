@@ -7,7 +7,7 @@ import WorldPage from '../WorldMainPageComponent';
 import WorldTrackerPage from '../WorldTrackerPage';
 import TravelTipsPage from '../TravelTipsPageComponent';
 //Lazy loading
-
+const LazyWorldPage = lazy(()=>import('../WorldMainPageComponent'));
 
 function App() {
 
@@ -24,7 +24,9 @@ function App() {
       {/* <Suspense fallback={<div>Loading...</div>}> */}
         <Switch>
           <Route path="/UKPage"><UKPage/></Route>
-          <Route path="/WorldPage"><WorldPage/></Route>
+          <Suspense fallback={<div>Loading...</div>}>
+          <Route path="/WorldPage"><LazyWorldPage/></Route>
+          </Suspense>
           <Route path="/WorldTracker"><WorldTrackerPage/></Route>
           <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
           <Route path="/"><HomePage /></Route>
