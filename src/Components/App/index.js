@@ -24,15 +24,17 @@ function App() {
      
 <Navbar/>
       {/* <Suspense fallback={<div>Loading...</div>}> */}
+      <Suspense fallback={<div>Loading...</div>}>
         <Switch>
-        <Suspense fallback={<div>Loading...</div>}>
+        
           <Route path="/UKPage"><UKPage/></Route>
           <Route path="/WorldPage"><LazyWorldPage/></Route>
           <Route path="/WorldTracker"><LazyWorldTrackerPage/></Route>
           <Route path="/TravelTipsPage"><LazyTravelTipsPage/></Route>
           <Route path="/"><HomePage /></Route>
-          </Suspense>
+          
         </Switch>
+        </Suspense>
       {/* </Suspense> */}
       
     </div>
