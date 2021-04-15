@@ -1,7 +1,9 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Button from "../ButtonComponent/index";
 import css from "./HomePage.module.css";
 import { useHistory } from "react-router-dom";
+
+const LazyButton = lazy(()=>import("../ButtonComponent/index"));
 
 function HomePage() {
   const history = useHistory();
@@ -36,17 +38,19 @@ function HomePage() {
       </div>
 
       <div className={css.buttons}>
-        <Button
+      <Suspense fallback={<div>Loading...</div>}>
+        <LazyButton
           size="medium"
           text="Traveling Within UK"
           onClick={() => history.push("../UKPage")}
         />
 
-        <Button
+        <LazyButton
           size="medium"
           text="Traveling Abroad"
           onClick={() => history.push("../WorldPage")}
         />
+        </Suspense>
       </div>
     </div>
   );
