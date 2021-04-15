@@ -24,11 +24,11 @@ const Navbar = () => {
                         Abroad
                     </NavLink>
                     <NavLink to="/WorldTracker" activeStyle>
-                        World Stats
+                        Stats
                 </NavLink>
 
                     <NavLink to="/TravelTipsPage" activeStyle>
-                        Travel Tips
+                        Tips
                     </NavLink>
                 </NavMenu>
             </Nav>
