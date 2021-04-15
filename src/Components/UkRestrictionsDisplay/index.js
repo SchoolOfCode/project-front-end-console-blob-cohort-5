@@ -12,12 +12,11 @@ import {
 
 
 function UKRestrictionsDisplay() {
-  let url = "https://travelsafe-soc.herokuapp.com/country";
   const [fetchedData, setFetchedData] = useState(null);
   const [click, setClick] = useState(true);
   const [fetchLength, setFetchLength] = useState(0)
 
-  // const url = process.env.REACT_APP_URL
+  const url = process.env.REACT_APP_URL
  
 
 
