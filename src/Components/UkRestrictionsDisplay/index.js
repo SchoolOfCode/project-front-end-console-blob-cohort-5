@@ -8,6 +8,7 @@ import {
   AccordionIcon,
   Box
 } from "@chakra-ui/react"
+import loading from "./loadingImage.gif"
 
 
 
@@ -37,7 +38,7 @@ function UKRestrictionsDisplay() {
 function handleClick(){setClick(!click)}
 
 while (!fetchedData) {
-  return (<div style={{textAlign:'center'}}><h1>Loading...</h1>
+  return (<div style={{textAlign:'center'}}><img src={loading}/>
   <p>information is flying over to us now and will be displayed shortly</p><button onClick={handleClick}>Click Me if nothing is happening</button></div>)
 } 
 // (fetchedData){

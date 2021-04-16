@@ -10,7 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import RedCountriesModal from "../Modal Component/index";
 import { Button } from "react-bootstrap";
-import loadingimage from "./loadingImage.gif"
+
 
 const LazyTravelRestrictionsDisplay = lazy(() =>
   import("../TravelRestrictionsDisplayComponent")

@@ -11,16 +11,13 @@ import Loadingimage from "./loadingImage.gif"
 //Lazy loading
 
 
-function App() {
 
-  return (
+function App() {
+return(
     <Suspense
       fallback={
-        <div>
-          <img src="./loadingImage.gif" alt="loading" />
-        </div>
-      }
-    >
+        <div><img src={Loadingimage} alt="loading" /></div>}>
+
       <div className="App">
         <link rel="icon" href="./loadingImage.gif" />
         <Router>
@@ -48,7 +45,7 @@ function App() {
         </Router>
       </div>
     </Suspense>
-  );
+)
 }
 
 export default App;
