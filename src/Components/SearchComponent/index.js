@@ -21,6 +21,7 @@ function SearchBar({
           placeholder={placeholderText}
           onChange={(e) => setSearchCountry(e.target.value)}
           className={cn(css.input, css[variant])}
+          data-testid="searchbar"
         />
       </Form.Group>
     </Form>

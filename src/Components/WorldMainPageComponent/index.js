@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import RedCountriesModal from "../Modal Component/index";
 import { Button } from "react-bootstrap";
+import loadingimage from "./loadingImage.gif"
 
 const LazyTravelRestrictionsDisplay = lazy(() =>
   import("../TravelRestrictionsDisplayComponent")
@@ -85,8 +86,14 @@ function WorldPage() {
           <h1 className={css.title}>World Wide Stats & Travel Information</h1>
 
           <div className={css.twoColumns}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <LazyCountrySelect handleChange={handleChange} />
+            <Suspense
+              fallback={
+                <div>
+                  Loading...
+                </div>
+              }
+            >
+              <LazyCountrySelect handleChange={handleChange} />
             </Suspense>
             <form className={classes.container} noValidate>
               <TextField
@@ -103,7 +110,13 @@ function WorldPage() {
             </form>
           </div>
           <div className={css.TravelRestrictionsDisplay}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  Loading...
+                </div>
+              }
+            >
               <LazyTravelRestrictionsDisplay data={countryObj} />
             </Suspense>
           </div>
@@ -131,7 +144,13 @@ function WorldPage() {
               </Button>
             </div>
           </div>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div>
+                Loading...
+              </div>
+            }
+          >
             <LazyRedCountriesModal
               show={modalShow}
               onHide={() => setModalShow(false)}
@@ -142,7 +161,13 @@ function WorldPage() {
           </div>
 
           <div className={css.flightWidget}>
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div>
+                  Loading...
+                </div>
+              }
+            >
               <LazyFlightWidget />
             </Suspense>
           </div>
