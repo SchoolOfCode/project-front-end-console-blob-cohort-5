@@ -11,11 +11,7 @@ const Navbar = () => {
         <div>
             
             <Nav data-testid="nav">                                   
-                {/* <NavLink to="/" >
-                    <img src={logo} />
-
-                </NavLink> */}
-                <div><img src={logo} /></div>
+                <div><img src={logo} alt="logo"/></div>
                 <Bars />
                 <NavMenu>
                     <NavLink to="/" activeStyle>
@@ -28,11 +24,11 @@ const Navbar = () => {
                         Abroad
                     </NavLink>
                     <NavLink to="/WorldTracker" activeStyle>
-                        World Stats
+                        Stats
                 </NavLink>
 
                     <NavLink to="/TravelTipsPage" activeStyle>
-                        Travel Tips
+                        Tips
                     </NavLink>
                 </NavMenu>
             </Nav>

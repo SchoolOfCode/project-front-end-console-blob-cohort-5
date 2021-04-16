@@ -26,11 +26,11 @@ text-decoration: none;
 font-family: 'Montserrat', sans-serif;
 color: #FFF;
 font-size: 1.5rem;
-padding: 0 ;
+padding: 4px ;
 height: 100%;
 font-size: 1.7rem;
 cursor: pointer; 
-margin: 30px;
+margin: 50px;
 
 &.active{
     color: #FFF;
@@ -43,6 +43,7 @@ margin: 30px;
     border-radius: 25px;
     background: #aae0ef;
     opacity: 0.6;
+    padding: 4px;
 }`
 
 

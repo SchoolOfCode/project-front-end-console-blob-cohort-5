@@ -1,45 +1,51 @@
-import React from "react";
-import Home from "../HomePage";
-import UKPage from "../UKMainPageComponent";
-import WorldPage from "../WorldMainPageComponent";
-import WorldTrackerPage from "../WorldTrackerPage";
-import TravelTipsPage from '../TravelTipsPageComponent'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Navbar from "../Navbar";
+import HomePage from "../HomePage";
+import UKPage from '../UKMainPageComponent';
+import WorldPage from '../WorldMainPageComponent';
+import WorldTrackerPage from '../WorldTrackerPage';
+import TravelTipsPage from '../TravelTipsPageComponent';
+import Loadingimage from "./loadingImage.gif"
+
+//Lazy loading
+
+
 
 function App() {
-  return (
-    <div className="App">
-    <link rel="icon" href="images/favicon.ico" />
-    <Router>
-    <nav className="nav-bar">
+return(
+    <Suspense
+      fallback={
+        <div><img src={Loadingimage} alt="loading" /></div>}>
 
-      </nav>
-      <div>
-          {/* <Link to="/">Home</Link>
-      
-          <Link to="/UKPage">UK Page</Link>
-          <Link to="/WorldPage">World Page</Link>
-          <Link to="/WorldTracker">World Covid Tracker</Link> */}
-<Navbar/>
-      <Switch>
-      
-
-        <Route path="/UKPage"><UKPage/></Route>
-        <Route path="/WorldPage"><WorldPage/></Route>
-        <Route path="/WorldTracker"><WorldTrackerPage/></Route>
-        <Route path="/TravelTipsPage"><TravelTipsPage/></Route>
-        <Route path="/"><Home /></Route>
-
-      </Switch>
-    </div>
-
-   
-    </Router>
-    </div>
-  );
+      <div className="App">
+        <link rel="icon" href="./loadingImage.gif" />
+        <Router>
+          <nav className="nav-bar"></nav>
+          <div>
+            <Navbar />
+            <Switch>
+              <Route path="/UKPage">
+                <UKPage />
+              </Route>
+              <Route path="/WorldPage">
+                <WorldPage />
+              </Route>
+              <Route path="/WorldTracker">
+                <WorldTrackerPage />
+              </Route>
+              <Route path="/TravelTipsPage">
+                <TravelTipsPage />
+              </Route>
+              <Route path="/">
+                <HomePage />
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </div>
+    </Suspense>
+)
 }
-
-
 
 export default App;
