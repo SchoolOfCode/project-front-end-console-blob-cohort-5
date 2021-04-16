@@ -7,8 +7,8 @@ import useFetch from "../../CustomHooks/useFetch"
 function RedCountriesModal(props) {
 
   let data = [1,2,3,4,5]
+  const url = process.env.REACT_APP_RED_URL
 
-  let url = "https://travelsafe-soc.herokuapp.com/red"
 // import red ist country data from heroku db 
 data = useFetch(url, []);
 // rows 1-2 are info rows import as p 
